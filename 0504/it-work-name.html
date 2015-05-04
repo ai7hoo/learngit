@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>it-work-name</title>
+	<style>
+		body {
+			margin:0px;
+			padding:0px;
+			font-family:Microsoft Yahei;
+		}
+		.clearfix {
+			clear:both;
+		}
+		.listul {
+			width: 80%;
+			height:auto;
+			margin: 20px auto;
+			border: 1px solid #aaa;
+			padding: 0;
+		}
+		ul {
+			width:auto;
+			margin:0px;
+			padding:0px;
+		}
+		li {
+			float: left;
+			list-style:none;
+			padding: 5px 20px;
+		}
+		li a{
+			text-decoration:none;
+			color:#999;
+		}
+		li i{
+			font-style:normal;
+			color: #aaa;
+		}
+		li i:before {
+			content: ' ';
+		}
+		.showmore {
+			text-align:center;
+			padding:20px;
+			cursor:pointer;
+		}
+		.showmore:before {
+			content:' ';
+		}
+	</style>
+	<script src="/global/jquery.js"></script>
+	<script>
+		$(function() {
+			$(".listul ul li:gt(3)").hide();
+			$(".showmore").click(function() {
+				if( !$(".listul ul li").eq(5).is(":visible") ) {
+					$(".listul ul li").show(300);
+				}
+				else {
+					$(".listul ul li:gt(3)").hide(300);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="listul">
+		<ul>
+			<li><a href="###">Java</a><i>01</i></li>
+			<li><a href="###">PHP</a><i>01</i></li>
+			<li><a href="###">C</a><i>01</i></li>
+			<li><a href="###">C++</a><i>01</i></li>
+			<li><a href="###">Android</a><i>01</i></li>
+			<li><a href="###">VB</a><i>01</i></li>
+			<li><a href="###">Delphi</a><i>01</i></li>
+			<li><a href="###">Perl</a><i>01</i></li>
+			<li><a href="###">Ruby</a><i>01</i></li>
+			<li><a href="###">Hadoop</a><i>01</i></li>
+			<li><a href="###">Nood.js</a><i>01</i></li>
+			<li><a href="###">HTML5</a><i>01</i></li>
+			<li><a href="###">Javascript</a><i>01</i></li>
+			<li><a href="###">WEB</a><i>01</i></li>
+			<li><a href="###">Others</a><i>01</i></li>
+			<div class="clearfix"></div>
+		</ul>
+		<div class="showmore"><i>></i><span>显示全部</span></div>
+	</div>
+</body>
+</html>
