@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>print-num-of-check</title>
+	<script>
+			window.onload = function() {
+				var btn = document.getElementById('checkbtn');
+				btn.onclick = function() {
+					var checkArr = new Array();
+					var iteamcheck = document.getElementsByName('check');
+
+					for(var i=0;i<iteamcheck.length;i++) {
+						if(iteamcheck[i].checked) {
+							checkArr.push(iteamcheck[i].value);
+						}
+					}
+					alert(checkArr.length);
+				}
+
+			}
+	</script>
+</head>
+<body>
+	<div class="box">
+		<label for="one">
+			<input type="checkbox" name="check" id="one" >
+			<span>第一个</span>
+		</label>
+		<label for="two">
+			<input type="checkbox" name="check" id="two">
+			<span>第二个</span>
+		</label>
+		<label for="three">
+			<input type="checkbox" name="check" id="three">
+			<span>第三个</span>
+		</label>
+		<button id="checkbtn">查看</button>
+	</div>
+</body>
+</html>

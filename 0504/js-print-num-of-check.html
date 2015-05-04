@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-print-num-of-check</title>
+	<script src="/global/jquery.js"></script>
+	<script>
+		$(function() {
+			$("#checkbtn").click(function() {
+				alert( $('[name=check]:checked').length );
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="box">
+		<label for="one">
+			<input type="checkbox" name="check" id="one" >
+			<span>第一个</span>
+		</label>
+		<label for="two">
+			<input type="checkbox" name="check" id="two">
+			<span>第二个</span>
+		</label>
+		<label for="three">
+			<input type="checkbox" name="check" id="three">
+			<span>第三个</span>
+		</label>
+		<button id="checkbtn">查看</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-table-bgcolor-changed</title>
+	<script src="/global/jquery.js"></script>
+	<script>
+		$(function() {
+			$("#tbl > tbody > tr:even").css("background","#bbb");
+		});
+	</script>
+</head>
+<body>
+	<table id="tbl">
+		<tbody>
+			<tr><td>第一行</td><td>第一行</td></tr>
+			<tr><td>第二行</td><td>第二行</td></tr>
+			<tr><td>第三行</td><td>第三行</td></tr>
+			<tr><td>第四行</td><td>第四行</td></tr>
+			<tr><td>第五行</td><td>第五行</td></tr>
+			<tr><td>第六行</td><td>六五行</td></tr>
+			<tr><td>第七行</td><td>第七行</td></tr>
+		</tbody>
+	</table>
+</body>
+</html>
