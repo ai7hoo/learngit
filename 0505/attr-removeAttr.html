@@ -3,6 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>attr-removeAttr</title>
+	<style>
+		.bcolor {
+			background: #aaaaaa;
+			-webkit-transition: all .3s;
+		}
+		.fcolor {
+			color: #a25;
+			font-weight: bold;
+		}
+	</style>
 	<script src="/global/jquery.js" type="text/javascript"></script>
 	<script>
 		$(function(){
@@ -12,6 +22,23 @@
 			$(".btn2").bind("click",function(){
 				$("#ahref").removeAttr("id class name title target href");
 			});
+			$(".btn3").bind('click',function(){
+				$("#ahref").toggleClass('bcolor');
+			});
+			$(".btn4").bind('click',function(){
+				$("#ahref").addClass('fcolor');
+			});
+			$(".btn5").bind("click",function(){
+				$("#ahref").removeClass('fcolor');
+			});
+			$(".btn6").bind('click',function(){
+				if( $("#ahref").hasClass('fcolor') ) {
+					alert('yes');
+				}
+				else {
+					alert('no');
+				}
+			});
 		});
 	</script>
 </head>
@@ -19,5 +46,9 @@
 	<a href="http://www.baidu.com" id="ahref" class="abox" title="baidu" target="_blank">Baidu</a>
 	<button class="btn1">change title</button>
 	<button class="btn2">delete attr</button>
+	<button class="btn3">toggle</button>
+	<button class="btn4">addClass</button>
+	<button class="btn5">removeClass</button>
+	<button class="btn6">hasClass</button>
 </body>
 </html>
