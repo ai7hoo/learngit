@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>attr-removeAttr</title>
+	<script src="/global/jquery.js" type="text/javascript"></script>
+	<script>
+		$(function(){
+			$(".btn1").bind("click",function(){
+				$("#ahref").attr("title","BD");
+			});
+			$(".btn2").bind("click",function(){
+				$("#ahref").removeAttr("id class name title target href");
+			});
+		});
+	</script>
+</head>
+<body>
+	<a href="http://www.baidu.com" id="ahref" class="abox" title="baidu" target="_blank">Baidu</a>
+	<button class="btn1">change title</button>
+	<button class="btn2">delete attr</button>
+</body>
+</html>
