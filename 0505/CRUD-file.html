@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title>CRUD-file</title>
+		<script src="/global/jquery.js"></script>
+		<script>
+			$(function() {
+				$("ul li").eq(0).click(function(){
+					$("ul").append('<li>ooo</li>');
+				});
+				$("ul li").eq(1).click(function(){
+					$("ul li").eq(-1).remove();
+				});
+				$("ul li").eq(2).click(function(){
+					$(this).clone(true).appendTo("ul");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>增删查改CRUD,create/delete/read/update,创建/删除/读取/修改</h1>
+		<ul>
+			<li><a href="###" title="fruit">增加</a></li>
+			<li><a href="###" title="fruit">删除</a></li>
+			<li><a href="###" title="fruit">复制</a></li>
+			<li><a href="###" title="fruit">删除</a></li>
+		</ul>
+	</body>
+
+</html>
