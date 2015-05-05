@@ -49,18 +49,31 @@
 			content:' ';
 		}
 	</style>
-	<script src="/global/jquery.js"></script>
+	<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+		!window.jQuery && document.write('<script src="\/global/jquery.js"><\/script>');
+	</script>
 	<script>
 		$(function() {
-			$(".listul ul li:gt(3)").hide();
+			var $itemli = $(".listul ul li:gt(3):not(:last)");
+			$itemli.hide();
 			$(".showmore").click(function() {
-				if( !$(".listul ul li").eq(5).is(":visible") ) {
-					$(".listul ul li").show(300);
-				}
-				else {
-					$(".listul ul li:gt(3)").hide(300);
-				}
+				$(".listul ul li:gt(3):not(:last)").toggle(300);
 			});
+			
+			$('a.btn').bind('click',function() {
+				alert('a');
+			});
+			//bind 绑定到a.btn元素的click事件
+			
+			$("button").live('click',function() {
+				alert('click here');
+			});
+			
+			$(".listul ul").delegate('li','click',function() {
+				alert($(this).text());
+			});
+			//delegate 绑定到.listul ul下的li元素的click事件
 		});
 	</script>
 </head>
@@ -85,6 +98,12 @@
 			<div class="clearfix"></div>
 		</ul>
 		<div class="showmore"><i>></i><span>显示全部</span></div>
+	</div>
+	<div class="box">
+		<a href="###" class="btn">click me</a>
+	</div>
+	<div class="putinbox">
+		<button>click here</button>
 	</div>
 </body>
 </html>
