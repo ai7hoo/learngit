@@ -15,6 +15,9 @@
 				$("ul li").eq(2).click(function(){
 					$(this).clone(true).appendTo("ul");
 				});
+				$("ul li").eq(3).click(function(){
+					$(this).prependTo("ul");
+				});
 			});
 		</script>
 	</head>
@@ -24,7 +27,7 @@
 			<li><a href="###" title="fruit">增加</a></li>
 			<li><a href="###" title="fruit">删除</a></li>
 			<li><a href="###" title="fruit">复制</a></li>
-			<li><a href="###" title="fruit">删除</a></li>
+			<li><a href="###" title="fruit">移动</a></li>
 		</ul>
 	</body>
 

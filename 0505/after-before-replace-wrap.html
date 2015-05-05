@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>after-before-replace-wrap</title>
+		<style>
+</style>
+		<script src="/global/jquery.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function(){
+				//after
+				$(".btn1").click(function(){
+					$(".afterbox ul li:last").after('<li>after</li>');
+					$('<li>after</li>').insertAfter('.afterbox ul li:last');
+				});
+				$(".btn2").click(function(){
+					//$(".beforebox ul li:first").before("<li>before</li>");
+					$("<li>before</li>").insertBefore($(".beforebox ul li:first"));
+				});
+				$(".btn3").click(function(){
+					//$(".replace ul li").replaceWith("<li>replacewith</li>");
+					$("<li>replaceAll</li>").replaceAll($(".replace ul li"));
+				});
+				$(".btn4").click(function(){
+					//$(".wrap ul li").wrap("<a></a");
+					//$(".wrap ul li").wrapAll("<a></a>");
+					$(".wrap ul li").wrapInner("<i></i>");
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+		<div class="afterbox">
+			<ul>
+				<li>after</li>
+			</ul>
+		</div>
+		<div class="beforebox">
+			<ul>
+				<li>before</li>
+			</ul>
+		</div>
+		<div class="replace">
+			<ul>
+				<li>replace</li>
+			</ul>
+		</div>
+		<div class="wrap">
+			<ul>
+				<li>wrap</li>
+			</ul>
+		</div>
+		<div class="btnbox">
+			<button class="btn1">after</button>
+			<button class="btn2">before</button>
+			<button class="btn3">replace</button>
+			<button class="btn4">wrap</button>
+		</div>
+	</body>
+
+</html>
