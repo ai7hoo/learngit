@@ -13,6 +13,7 @@
 			$('.tooltip').mouseover(function(){
 				this.myTitle = this.title;//设置一个对象属性this.myTitle,可以在内部使用.
 				$(this).attr('title','');
+				
 			})
 			.mouseout(function(){
 				this.title = this.myTitle;
