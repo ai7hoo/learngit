@@ -3,12 +3,35 @@
 <head>
 	<meta charset="UTF-8">
 	<title>offset-position-scrollTop</title>
+	<link rel="stylesheet" href="/global/bootstrap.css">
 	<style>
-		
+		.container {
+			margin-top: 50px;
+			position: relative
+		}
+		.bigbox {
+			height: 1500px;
+			width: 100%;
+		}
 	</style>
 	<script src="/global/jquery.js"></script>
 	<script>
-		
+		$(function(){
+			$('.sct-f').click(function(){
+				alert('顶部：' + $(this).offset().top + '左边:' + $(this).offset().left);
+			});
+			
+			$('.sct-s').click(function(){
+				alert('距离上一个relative或者absolute的顶部' + $(this).position().top + '左边' + $(this).position().left);
+			});
+			
+			$('.bigbox').click(function(){
+				alert( $(window).scrollTop() );
+				$('html,body').animate({
+					scrollTop: '500'
+				},3000);
+			});
+		});
 	</script>
 </head>
 <body>
@@ -16,7 +39,9 @@
 		<h2>Offset-Position-ScrollTop</h2>
 	</header>
 	<div class="container">
-		
+		<section class="sct-f">First</section>
+		<section class="sct-s">Second</section>
+		<div class="bigbox">aaa</div>
 	</div>
 </body>
 </html>

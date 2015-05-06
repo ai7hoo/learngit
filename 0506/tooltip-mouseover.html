@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tooltip-mouseover</title>
+	<link rel="stylesheet" href="global/bootstrap.css">
+	<style>
+		
+	</style>
+	<script src="/global/jquery.js"></script>
+	<script>
+		$(function(){
+			$('.tooltip').mouseover(function(){
+				this.myTitle = this.title;//设置一个对象属性this.myTitle,可以在内部使用.
+				$(this).attr('title','');
+			})
+			.mouseout(function(){
+				this.title = this.myTitle;
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h2>title自定义显示效果</h2>
+		<div class="tooltip" title="这里是提示">提示</div>
+	</div>
+</body>
+</html>
