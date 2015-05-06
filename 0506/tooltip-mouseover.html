@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>tooltip-mouseover</title>
-	<link rel="stylesheet" href="global/bootstrap.css">
-	<style>
-		
-	</style>
-	<script src="/global/jquery.js"></script>
-	<script>
-		$(function(){
-			$('.tooltip').mouseover(function(){
-				this.myTitle = this.title;//设置一个对象属性this.myTitle,可以在内部使用.
-				$(this).attr('title','');
-				
-			})
-			.mouseout(function(){
-				this.title = this.myTitle;
+	<head>
+		<meta charset="UTF-8">
+		<title>tooltiptext-mouseover</title>
+		<link rel="stylesheet" href="/global/bootstrap.css">
+		<style>
+			.tooltiptext {
+				background: #aaa;
+				width: 100%;
+				height: 100px;
+			}
+			.tooltipbox {
+				position: absolute;
+				padding: 20px;
+				background: #000;
+				opacity: 0.6;
+				border-radius: 15px;
+				color: #fff;
+				font-family: Microsoft Yahei;
+			}
+		</style>
+		<script src="/global/jquery.js"></script>
+		<script>
+			$(function(){
+				$('.tooltiptext').mouseover(function(e){
+					this.myTitle = this.title;//设置一个对象属性this.myTitle,可以在内部使用.
+					$(this).attr('title','');
+					$('body').append('<div class="tooltipbox">' + this.myTitle + '</div>');
+					$('.tooltipbox').css({
+						"top": e.pageY+10 + 'px',
+						"left": e.pageX+10 + 'px'
+					});
+				})
+				.mouseout(function(){
+					$('.tooltipbox').remove();
+					this.title = this.myTitle;
+				}).mousemove(function(e){
+					$('.tooltipbox').css({
+						"top": e.pageY+10 + 'px',
+						"left": e.pageX+10 + 'px'
+					});
+				});
 			});
-		});
-	</script>
-</head>
-<body>
-	<div class="container">
-		<h2>title自定义显示效果</h2>
-		<div class="tooltip" title="这里是提示">提示</div>
-	</div>
-</body>
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<h2>title自定义显示效果</h2>
+			<div class="tooltiptext" title="这里是提示">提示</div>
+		</div>
+	</body>
+
 </html>
