@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>show-fadeIn-slideDown-animate</title>
+	<link rel="stylesheet" href="/global/bootstrap.css">
+	<style>
+		.btn {
+			width: 100%;
+		}
+		.showbox {
+			width: 100%;
+			height: 50px;
+			background: #aaa;
+		}
+		.fadeinbox{
+			width: 100%;
+			height: 50px;
+			background: #bbb;
+		}
+		.slidedownbox {
+			width: 100%;
+			height: 50px;
+			background: #ccc;
+		}
+		.animatebox {
+			position: relative;
+			width: 100px;
+			height: 50px;
+			background: #666;
+			-webkit-transition: background .7s;
+		}
+	</style>
+	<script src="/global/jquery.js"></script>
+	<script>
+		$(function(){
+			
+			//show() hide()
+			$(".btn1").click(function(){
+//				$(".showbox").hide();
+				if($(".showbox").is(':hidden')){
+					$(".showbox").show('fast');
+				}
+				else{
+					$(".showbox").hide('fast');
+				}
+			});
+			
+			//fadeIn() fadeOut()
+			$(".btn2").click(function(){
+				if($(".fadeinbox").is(":hidden")){
+					$(".fadeinbox").fadeIn();
+				}
+				else{
+					$(".fadeinbox").fadeOut();
+				}
+			});
+			
+			//slideDown() slideUp()
+			$(".btn3").click(function(){
+				if($(".slidedownbox").is(":hidden")){
+					$(".slidedownbox").slideDown();
+				}
+				else{
+					$(".slidedownbox").slideUp();
+				}
+			});
+			
+			//animate()
+			$(".btn4").one('click',function(){
+				$(".animatebox").animate({
+					"left": "50px",
+					"opacity": '0'
+				},700,function(){
+					$(this).append('<br>aaa');
+				}).css("background","red").animate({
+					"left": "+=50px",
+					"opacity": '1'
+				},500);
+			});
+			
+			//测试使用eval(),把json字符串转为json对象
+			var data = "{'name':'ai7hoo','age':'22','sex':'man'}";
+			var objDate = eval("(" + data + ")");
+			setTimeout(function(){
+				$('h2:first').html(objDate.name).css("color","red");
+			},2000);
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h2>show</h2>
+		<button class="btn1">show</button>
+		<div class="showbox">showbox</div>
+		<hr>
+		<h2>fadeIn</h2>
+		<button class="btn2">fadeIn</button>
+		<div class="fadeinbox">fadeinbox</div>
+		<hr>
+		<h2>slideDown</h2>
+		<button class="btn3">slideDown</button>
+		<div class="slidedownbox">slidedownbox</div>
+		<hr>
+		<h2>animate</h2>
+		<button class="btn4">animate</button>
+		<div class="animatebox">animatebox</div>
+	</div>
+</body>
+</html>
