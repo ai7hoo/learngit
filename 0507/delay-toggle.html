@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>delay-toggle</title>
+	<link rel="stylesheet" href="/global/bootstrap.css">
+	<style>
+		.delaybox {
+			position: relative;
+			width: 50px;
+			height: 50px;
+			background: #ccc;
+		}
+		.stopbox {
+			width: 100px;
+			height: 30px;
+			background: #ac1234;
+		}
+	</style>
+	<script src="/global/jquery.js"></script>
+	<script>
+		$(function(){
+			$(".btn1").bind('click',function(){
+				$(".delaybox").animate({
+					"left": "+=50px"
+				},500).delay(1000).animate({
+					"width": "+=50px"
+				},500);
+			});
+			
+			//stop()
+			$(".stopbox").mouseover(function(){
+				if( $(this).is(":animated") ){
+					return false;
+				}
+				else{
+					$(this).animate({
+						"width": "200px"
+					},300);
+				}
+			});
+			$(".stopbox").mouseout(function(){
+				if( $(this).is(":animated") ){
+					return false;
+				}
+				else{
+					$(this).animate({
+						"width": "100px"
+					},300);
+				}
+			});
+			
+			//toggle(),fadeToggle(),slideToggle()
+			$(".btn2").bind('click',function(){
+				$(".togglebox").toggle('fast');
+			});
+			$(".btn3").bind('click',function(){
+				$(".slidetogglebox").slideToggle('fast');
+			});
+			$(".btn4").bind('click',function(){
+				$(".fadetoggle").fadeToggle('fast');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h2>delay</h2>
+		<button class="btn1">start</button>
+		<div class="delaybox">delay延时动画</div>
+		<hr>
+		<h2>stop()</h2>
+		<div class="stopbox"></div>
+		<hr>
+		<h2>toggle</h2>
+		<button class="btn2">toggle</button>
+		<div class="togglebox">togglebox</div>
+		<hr>
+		<h2>slideToggle</h2>
+		<button class="btn3">slideToggle</button>
+		<div class="slidetogglebox">slidetoggle</div>
+		<hr>
+		<h2>fadeToggle</h2>
+		<button class="btn4">fadeToggle</button>
+		<div class="fadetoggle">fadetoggle</div>
+	</div>
+</body>
+</html>
