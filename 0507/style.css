@@ -1,0 +1,58 @@
+body {
+	font-family: Microsoft Yahei;
+}
+.container {
+	padding-top: 20px;
+	width: 1200px;
+}
+.vpic{
+	width: 100%;
+	height: 200px;
+	border: 1px solid #aaa;
+}
+.vpic_head {
+	width: 100%;
+	height: 30px;
+	border-bottom: 1px solid #aaa;
+}
+.vpic_title {
+	display: block;
+	float: left;
+	line-height: 30px;
+	margin-left: 20px;
+}
+.v_circle {
+	float: left;
+	margin-left: 20px;
+}
+.v_circle span {
+	display: block;
+	float: left;
+	width: 15px;
+	height: 15px;
+	margin-top: 6px;
+	border-radius: 50%;
+	background: #cc4211;;
+	margin-right: 5px;
+	cursor: pointer;
+
+}
+.v_circle .v_cursor {
+	background: #aaa;
+	cursor: default;
+}
+.change_btn {
+	float: left;
+	line-height: 30px;
+	margin-left: 20px;
+}
+.btn_cursor {
+	color: #cc4211;
+	cursor: pointer;
+}
+.v_more {
+	display: block;
+	float: right;
+	margin-right: 20px;
+	line-height: 30px;
+}
