@@ -7,17 +7,86 @@
 	<script src="/global/jquery.js"></script>
 	<script>
 		$(function(){
-			$('.container').mousedown(function(event){
+			$('.whickevent').mousedown(function(event){
 				//鼠标按键事件,1为左键2中键3为右键
 				alert(event.which);
 				return false;
 			});
+			
+			//bind
+			$('.btn1').bind('click',myClickEvent1 = function(){
+				$("#msg").append('绑定的事件一<br>');
+				return false;
+			}).bind('click',myClickEvent2 = function(){
+				$("#msg").append('绑定的事件二<br>');
+				return false;
+			}).bind('click',myClickEvent3 = function(){
+				$("#msg").append('绑定的事件三<br>');
+				return false;
+			});
+			//unbind
+			$(".btn2").click(function(){
+				//$(".btn1").unbind();
+				$(".btn1").unbind('click');
+			});
+			$(".btn3").click(function(){
+				$('.btn1').unbind('click',myClickEvent1);
+			});
+			$(".btn4").click(function(){
+				$(".btn1").unbind('click',myClickEvent2);
+			});
+			$(".btn5").click(function(){
+				$(".btn1").unbind('click',myClickEvent3);
+			});
+			
+			//one() 绑定一次事件
+			$(".btn6").one('click',function(e){
+				alert(e.target.title);
+			});
+			
+			//triggle
+			setTimeout(function(){
+				$('.btn1').trigger('click');
+			},500);
+			//触发自定义事件
+			$(".btn7").bind('myClick',function(){
+				$('#msg').css("background","#fa2");
+			});
+			$(".btn7").trigger('myClick');
+			
+			//添加命名空间适合管理
+			$(".btn8").bind('click.plugin',function(){
+				$("#msg").append('click.plugin<br>');
+			}).bind('mouseover.plugin',function(){
+				$("#msg").append('mouseover.plugin<br>');
+			}).bind('mouseout',function(){
+				$("#msg").append('mouseout<br>');
+			});
+			
+			//删除命名空间的事件
+			$(".btn9").click(function(){
+				$(".btn8").unbind('.plugin');
+			});
+			
 		});
 	</script>
 </head>
 <body>
-	<div class="container">
+	<div class="container whickevent">
 		<span>event.which</span>
+	</div>
+	<hr>
+	<div class="container bdlink">
+		<button class="btn1">点击我</button>
+		<button class="btn2">删除所有事件</button>
+		<button class="btn3">删除第一个事件</button>
+		<button class="btn4">删除第二个事件</button>
+		<button class="btn5">删除第三个事件</button>
+		<button class="btn6" name="name" title="只会弹出一次on()绑定一次事件">只会弹出一次on()绑定一次事件</button>
+		<button class="btn7">触发自定义事件</button>
+		<button class="btn8">添加命名空间用管理</button>
+		<button class="btn9">删除上一个button的带命名空间的事件</button>
+		<div id="msg"></div>
 	</div>
 </body>
 </html>
