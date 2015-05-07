@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>event.which-bind-unbind</title>
+	<link rel="stylesheet" href="/global/bootstrap.css">
+	<script src="/global/jquery.js"></script>
+	<script>
+		$(function(){
+			$('.container').mousedown(function(event){
+				//鼠标按键事件,1为左键2中键3为右键
+				alert(event.which);
+				return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<span>event.which</span>
+	</div>
+</body>
+</html>
