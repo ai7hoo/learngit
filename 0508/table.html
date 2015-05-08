@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table</title>
+	<link rel="stylesheet" href="/global/bootstrap.css">
+	<style>
+		.container {
+			margin-top: 20px;
+		}
+		#mytable {
+			text-align: center
+		}
+		.trtitle {
+			background: #cccccc;
+			cursor: pointer
+		}
+		.filter_con {
+			color: #f60;
+		}
+	</style>
+	<script src="/global/jquery.js"></script>
+	<script>
+		$(function(){
+			$(".par1").click(function(){
+				$(".chi1").toggle();
+			});
+			
+			$(".par2").click(function(){
+				$("#mytable tbody tr:contains('bonho')").addClass('filter_con');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<table id="mytable" border=1 width=100%>
+			<thead>
+				<tr>
+					<td>name</td>
+					<td>sex</td>
+					<td>add</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="trtitle par1">
+					<td colspan="3">html</td>
+				</tr>
+				<tr class="chi1">
+					<td>ai7hoo</td>
+					<td>man</td>
+					<td>linyi</td>
+				</tr>
+				<tr class="chi1">
+					<td>ai7hoo</td>
+					<td>man</td>
+					<td>linyi</td>
+				</tr>
+				<tr class="chi1">
+					<td>ai7hoo</td>
+					<td>man</td>
+					<td>linyi</td>
+				</tr>
+				<tr class="trtitle par2">
+					<td colspan="3">select bonho bd content</td>
+				</tr>
+				<tr>
+					<td>bonho</td>
+					<td>man</td>
+					<td>qingdao</td>
+				</tr>
+				<tr>
+					<td>bonho</td>
+					<td>man</td>
+					<td>qingdao</td>
+				</tr>
+				<tr>
+					<td>bonho</td>
+					<td>man</td>
+					<td>qingdao</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

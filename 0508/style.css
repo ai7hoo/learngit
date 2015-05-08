@@ -1,0 +1,11 @@
+.form_focus {
+	background: #aaa;
+}
+#tta {
+	width: 200px;
+	height: 200px;
+}
+.err_msg {
+	color: #f00;
+	padding-left: 20px;
+}
