@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getJSON</title>
+	<link rel="stylesheet" href="/global/bootstrap.css">
+	<script src="/global/jquery.js"></script>
+	<script>
+		$(function(){
+			$(".btn").bind('click',function() {
+				$(".getjsonbox").empty();
+				var searchword = $("#searchword").val();
+				$.getJSON('http://api.flickr.com/services/feeds/photos_public.gne?tags='+ searchword +'&tagmode=any&format=json&jsoncallback=?', function(data) {
+						/*optional stuff to do after success */
+						var htmlbox = '';
+						$.each(data.items, function(i, item) {
+							var picsrc = item.media.m;
+							$("<img class='' />").attr('src', picsrc).appendTo('.getjsonbox');
+							if(i == 10){
+								return false;
+							}
+						});
+				});
+			});
+
+			//失去焦点触发btn的click事件
+			$("#searchword").blur(function() {
+				$('.btn').trigger('click');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<input type="text" value="beauty" id="searchword">
+		<button class="btn">Flickr搜索</button>
+		<hr>
+		<div class="getjsonbox"></div>
+	</div>
+</body>
+</html>
