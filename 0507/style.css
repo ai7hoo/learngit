@@ -9,6 +9,7 @@ body {
 	width: 100%;
 	height: 200px;
 	border: 1px solid #aaa;
+	overflow: hidden;
 }
 .vpic_head {
 	width: 100%;
@@ -32,13 +33,13 @@ body {
 	height: 15px;
 	margin-top: 6px;
 	border-radius: 50%;
-	background: #cc4211;;
+	background: #aaaaaa;;
 	margin-right: 5px;
 	cursor: pointer;
 
 }
 .v_circle .v_cursor {
-	background: #aaa;
+	background: #cc4211;
 	cursor: default;
 }
 .change_btn {
@@ -55,4 +56,28 @@ body {
 	float: right;
 	margin-right: 20px;
 	line-height: 30px;
+}
+.vpic_content {
+	width: 100%;
+	height: 170px;
+	position: relative;
+}
+.vpic_content ul {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	height: 170px;
+}
+.vpic_content ul li {
+	list-style: none;
+	float: left;
+	width: 292px;
+	height: 170px;
+	padding: 20px;
+}
+.vpic_content ul li:nth-child(2n) {
+	background: #cc4211;
+}
+.vpic_content ul li:Nth-child(2n+1) {
+	background: #aaa;
 }
