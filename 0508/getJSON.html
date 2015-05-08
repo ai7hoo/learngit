@@ -12,7 +12,7 @@
 				var searchword = $("#searchword").val();
 				$.getJSON('http://api.flickr.com/services/feeds/photos_public.gne?tags='+ searchword +'&tagmode=any&format=json&jsoncallback=?', function(data) {
 						/*optional stuff to do after success */
-						var htmlbox = '';
+						//var htmlbox = '';
 						$.each(data.items, function(i, item) {
 							var picsrc = item.media.m;
 							$("<img class='' />").attr('src', picsrc).appendTo('.getjsonbox');
