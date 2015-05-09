@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>getJSON</title>
 	<link rel="stylesheet" href="/global/bootstrap.css">
+	<style>
+		.loadbtn {
+			display: none;
+		}
+	</style>
 	<script src="/global/jquery.js"></script>
 	<script>
 		$(function(){
 			$(".btn").bind('click',function() {
-				$(".getjsonbox").empty();
 				var searchword = $("#searchword").val();
 				$.getJSON('http://api.flickr.com/services/feeds/photos_public.gne?tags='+ searchword +'&tagmode=any&format=json&jsoncallback=?', function(data) {
 						/*optional stuff to do after success */
@@ -21,6 +26,7 @@
 							}
 						});
 				});
+
 			});
 
 			//失去焦点触发btn的click事件
@@ -35,7 +41,9 @@
 		<input type="text" value="beauty" id="searchword">
 		<button class="btn">Flickr搜索</button>
 		<hr>
-		<div class="getjsonbox"></div>
+		<div class="getjsonbox">
+			<button class="btn btn-info loadbtn">加载中</button>
+		</div>
 	</div>
 </body>
 </html>

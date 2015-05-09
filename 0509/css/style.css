@@ -1,0 +1,7 @@
+.comment h6 {
+	border-top: 1px solid #aaa;
+	padding-top: 10px;
+}
+.loadbox {
+	display: none;
+}
