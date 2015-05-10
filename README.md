@@ -8,6 +8,13 @@
 
 ### CDN
 - [jQuery](http://cdn.bootcss.com/jquery/2.1.4/jquery.js)
---<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+
+```HTML
+<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+```HMLT
+
 - [bootstrap](http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css)
---<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+
+```HTML
+<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+```HTML
