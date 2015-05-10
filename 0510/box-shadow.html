@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+		<style>
+			.box {
+				width: 20%;
+				height: 50px;
+				transition: all .3s;
+				box-shadow: 0 0 1px RGB(56,121,217);
+			}
+			.box:hover {
+				box-shadow: 0 0 5px RGB(56,121,217);
+			}
+			p {
+				font-family: myFontName;
+				font-size: 30px;
+			}
+			@font-face {
+				font-family: myFontName;
+				src: url(Zenzai.ttf);
+				font-weight: bold;
+				font-style: normal;
+			}
+			.text-overflow {
+				width: 100px;
+				border: 1px solid chocolate;
+				overflow: hidden;
+				white-space: nowrap;/*强制一行文本*/
+			}
+		</style>
+		<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="box"></div>
+			<hr />
+			<button class="btn btn-default">Default</button>
+			<button class="btn btn-info">Info</button>
+			<button class="btn btn-success">Success</button>
+			<button class="btn btn-warning">Warning</button>
+			<button class="btn btn-danger">Danger</button>
+			<button class="btn btn-primary">Primary</button>
+			<button class="btn btn-link">Link</button>
+			<hr>
+			<p>@font-face webfont is very nice!</p>
+			<hr>
+			<div class="text-overflow">
+				cdn bootcs com jquery css3 javascript
+			</div>
+		</div>
+	</body>
+
+</html>
