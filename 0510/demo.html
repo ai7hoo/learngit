@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>css3 animated</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css">
+	<style>
+		.container {
+			
+		}
+		.itembox {
+			-webkit-transition: all .4s;
+			-webkit-transform-origin: center;
+			-webkit-transform: scale(.8);
+		}
+		.itembox:hover {
+			-webkit-transform: scale(1);
+		}
+		.box {
+			width: 30%;
+			margin-right: 3%;
+			margin-bottom: 50px;
+			background: #a2c222;
+		}
+		.box1, .box2, .box4, .box5 {
+			height: 200px;
+			float: left;
+		}
+		.box3 {
+			height: 450px;
+			float: right;
+		}
+	</style>
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+	<script>
+		
+	</script>
+</head>
+<!--http://demo.jq22.com/win8ui-150507231003/-->
+<body>
+	<div class="container">
+        <div class="itembox clearfix">
+			<div class="box box1">SEARCH</div>
+			<div class="box box2">SETTING</div>
+			<div class="box box3">MOVE</div>
+			<div class="box box4">CONTACT</div>
+			<div class="box box5">SNS</div>
+		</div>
+    </div>
+</body>
+</html>
