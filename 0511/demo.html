@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+	<style>
+		#colorbox {
+			width: 100%;
+			height: 200px;
+			font-size: 40px;
+			color: lightcoral;
+			margin-top: 20px;
+			padding: 20px;
+		}
+		.tb-odd {
+			background: #eee;
+		}
+		.tb-even {
+			background: #fff;
+		}
+		.tb-selected {
+			background: orangered;
+		}
+	</style>
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+	<script src="javascript/jquery.color.js"></script>
+	<script src="javascript/jquery.alterBgColor.js"></script>
+	<script>
+		$(function(){
+			$("#getcolor").bind('click',function(){
+				alert( $("#colorbox").color() );
+			});
+			$("#setcolor").bind('click',function(){
+				$("#colorbox").color( '#' + get16num(6) );
+				console.log( get16num(64) );
+			});
+			
+			$("#alter").bind('click',function(){
+				$("#altertable").alterBgColor();
+			});
+			
+			$("#altertable2").alterBgColor().find('td').css('color',"#aaa");
+		});
+		
+		//获取十六进制颜色
+		function get16num(numlength){
+			var allnum = '';
+			for(var i = 0;i < numlength;i++) {
+				var a = Math.ceil( Math.random() * 15 );
+				if( a > 9 ){
+					switch(a) {
+						case(10):
+							a = 'b';
+							break;
+						case(11):
+							a = 'b';
+							break;
+						case(12):
+							a = 'c';
+							break;
+						case(13):
+							a = 'd';
+							break;
+						case(14):
+							a = 'e';
+							break;
+						case(15):
+							a = 'f';
+							break;
+					}
+					allnum += '' + a;
+				}
+				else {
+					allnum += '' + a;
+				}
+			}
+			return allnum;
+			
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<hr>
+		<button class="btn btn-danger" id="getcolor">获取文本颜色</button>
+		<button class="btn btn-success" id="setcolor">设置文本颜色</button>
+		<hr>
+		<div id="colorbox">ColorBox</div>
+		<hr>
+		<button class="btn btn-info" id="alter">设置表格隔行变色</button>
+		<hr>
+		<table class="table" id="altertable">
+			<thead>
+				<tr>
+					<td>Name</td>
+					<td>Age</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Ai7hoo</td>
+					<td>22</td>
+				</tr>
+				<tr>
+					<td>Bob</td>
+					<td>23</td>
+				</tr>
+				<tr>
+					<td>Queen</td>
+					<td>24</td>
+				</tr>
+				<tr>
+					<td>Jim</td>
+					<td>25</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<table class="table" id="altertable2">
+			<thead>
+				<tr>
+					<td>Name</td>
+					<td>Age</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Ai7hoo</td>
+					<td>22</td>
+				</tr>
+				<tr>
+					<td>Bob</td>
+					<td>23</td>
+				</tr>
+				<tr>
+					<td>Queen</td>
+					<td>24</td>
+				</tr>
+				<tr>
+					<td>Jim</td>
+					<td>25</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
