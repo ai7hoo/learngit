@@ -22,6 +22,9 @@
 		.tb-selected {
 			background: orangered;
 		}
+		.tb-hover {
+			background: #ddd;
+		}
 	</style>
 	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
 	<script src="javascript/jquery.color.js"></script>
@@ -36,11 +39,8 @@
 				console.log( get16num(64) );
 			});
 			
-			$("#alter").bind('click',function(){
-				$("#altertable").alterBgColor();
-			});
-			
-			$("#altertable2").alterBgColor().find('td').css('color',"#aaa");
+
+			$(".table").alterBgColor().find('td').css('color',"#aaa");
 		});
 		
 		//获取十六进制颜色
@@ -88,7 +88,7 @@
 		<hr>
 		<div id="colorbox">ColorBox</div>
 		<hr>
-		<button class="btn btn-info" id="alter">设置表格隔行变色</button>
+		<button class="btn btn-link" id="alter">设置表格隔行变色</button>
 		<hr>
 		<table class="table" id="altertable">
 			<thead>
