@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>regexp</title>
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+	<style>
+		.expout {
+			text-shadow: 0 0 0px #000;
+		}
+		.boxblur {
+			
+		}
+	</style>
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+	<script>
+		$(function(){
+			$("#regbtn").on('click', function(event) {
+				$(".expout").animate({
+					"textShadow": "0 0 3px #000"
+				},500,function(){
+					
+				});
+				// var username = $("#username").val();
+
+				//new一个RegExp对象,两个参数
+				//第一个参数字符串必填
+				//第二个参数可选,i忽略大小写,g全局匹配,m多行匹配
+				// var regnum = new RegExp('box',"igm");
+
+				//另一种方式，自变量
+				// var regnum = /box/gi;
+				// $("#expout").html( username.replace(/box/gi,'空') );
+
+				//test方法是用来检测是否含有，返回布尔值。
+				// alert( regnum.test(username) );
+
+				//使用一句话
+				// alert(/box/i.test("this is a Box"));	//返回true,不区分大小写
+				
+				// var pattern = /box/i;
+				// var str = "this is a Box";
+				// alert( pattern.test(str) );
+				// alert( pattern.exec(str) );	//如果有返回的数组，没有则返回null
+				
+				// var pattern = /box/i;
+				// var str = "this is a box, that is a box";
+				// // alert( pattern.test(str) );
+				// alert( $.type( pattern.exec(str) ) );
+				
+				// var pattern = / /ig;				//加了g开启全局，把所有匹配的字符串返回
+				// var str = 'this is a box, that is other box';
+				// alert( str.search(pattern) );	//返回位置
+				// alert( str.match(pattern) );		//match匹配str返回数组,没有则返回null
+				// alert( str.replace(pattern, '盒子') );
+				// alert( str.split(pattern) );
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<hr>
+		<textarea name="" class="form-control" id="username"></textarea>
+		<hr>
+		<button class="btn btn-info" id="regbtn">正则替换</button>
+		<hr>
+		<div class="expout">some world in here.</div>
+	</div>
+</body>
+</html>
