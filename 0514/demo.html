@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<script>
+		window.onload = function(){
+			var box = document.getElementById("container");
+			var globalstr = "global";
+			function localfun(){
+				var globalstr = "local";
+				return globalstr;
+			}
+			document.write(localfun());
+			document.write(globalstr);
+		};
+	</script>
+</head>
+<body>
+	<div id="contanier"></div>
+</body>
+</html>
