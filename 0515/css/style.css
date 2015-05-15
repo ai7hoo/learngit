@@ -1,0 +1,49 @@
+h2 {
+	color: brown;
+}
+.msgbox {
+	width: 100%;
+	height: 300px;
+	border: 1px solid brown;
+	border-radius: 5px;
+	padding: 20px;
+	overflow: auto;
+}
+#loadmore {
+
+}
+.msg {
+	margin-top: 30px;
+}
+.msg .msg-user {
+	display: inline;
+	border: 1px solid brown;
+	border-bottom: none;
+	padding: 10px 20px;
+	border-radius: 5px 5px 0 0;
+}
+.msg .msg-con {
+	display: block;
+	width: 100%;
+	height: auto;
+	border: 1px solid brown;
+	margin-top: 8px;
+	border-radius: 0 5px 5px 5px;
+	padding: 10px 20px;
+}
+#msgsendbox {
+	margin-top: 20px;
+}
+#msgtextbox {
+	width: 80%;
+	height: auto;
+	float: left;
+}
+#msgname {
+	width: 20%;
+}
+#msgsendbtn {
+	width: 18%;
+	float: right;
+	height: 108px;
+}
