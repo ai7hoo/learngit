@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>arr-demo</title>
+		<script>
+			window.onload = function (){
+				
+			};
+			function ajax(url){
+				//创建AJAX对象
+				var oAjax = null;
+				if(window.XMLHttpRequest){
+					oAjax = new XMLHttpRequest();
+				}
+				else{
+					oAjax = new ActiveXObject('Microsoft.XMLHTTP');
+				}
+				
+				//连接服务器
+				oAjax.open('GET',url,true);
+				
+				//发送数据
+				oAjax.send();
+				
+				//接收数据
+				oAjax.onreadystatechange=function(){
+					if(oAjax.readyState==4){
+						if(oAjax.status==200){
+							fnSucc(oAjax.responseText);
+						}else{
+							fnErr(oAjax.responseText);
+						}
+					}
+				};
+			}
+			
+			//fnSucc
+			function fnSucc(data){
+				var jsonData = eval('('+data+')');
+				console.log(jsonData[0]['user']);
+			}
+			
+			//fnErr
+			function fnErr(data){
+				console.log(data);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<button id="btn">click</button>
+		</div>
+	</body>
+
+</html>
