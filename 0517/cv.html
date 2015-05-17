@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>cv</title>
+		<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+		<style>
+			body {
+				
+			}
+			span {
+				line-height: 34px;
+			}
+			a {
+				float: right;
+			}
+		</style>
+		<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+		<script>
+			$(function(){
+				$(".box").prepend("<input type='text' class='form-control' style='display:none;width:80%'>");
+				$(".box").on("click",'a',function(){
+					var $span = $(this).siblings('span');
+					var $input = $(this).siblings('input');
+					if($(this).text()=='修改'){
+						$(this).text("保存");
+						$span.css("display","none");
+						$input.css("display","inline").val( $span.text() );
+					}
+					else{
+						$(this).text("修改");
+						$input.css("display","none");
+						$span.text($input.val()).css("display","inline");
+					}
+				});
+				$(".box a").trigger('click');
+	
+	
+	
+				//创建构造函数
+				function Foo(){
+				    this.myName = "Foo function.";
+				}
+				
+				Foo.prototype.sayHello = function(){
+				    alert(this.myName);
+				}
+				Foo.prototype.bar = function(){
+				    setTimeout(this.sayHello, 100);
+				}
+				var f = new Foo;
+				f.bar();
+	
+	
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>test</h1>
+			<div class="box">
+				<span>这是一条信息</span>
+				<a href="###">修改</a>
+			</div>
+			<hr>
+			<div class="box">
+				<span>这是一条信息</span>
+				<a href="###">修改</a>
+			</div>
+			<hr>
+			<div class="box">
+				<span>这是一条信息</span>
+				<a href="###">修改</a>
+			</div>
+			<hr>
+			<div class="box">
+				<span>这是一条信息</span>
+				<a href="###">修改</a>
+			</div>
+		</div>
+	</body>
+
+</html>
