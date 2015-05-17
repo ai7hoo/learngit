@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+	<title>demo</title>
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+	<script>
+		window.onload = function(){
+			var btn = document.getElementById("btnbox");
+//			var btn2 = document.getElementById("unbtnbox");
+			var cont = document.getElementById("container");
+			var box = document.getElementById("eventtest");
+//			btn.onclick = function(e){
+//				console.log(e.target);
+//			}
+//			btn.addEventListener("click",function(){
+//				console.log('ok');
+//			},false)
+//			
+//			btn2.removeEventListener('click',fun,false);
+//			function fun(){
+//				console.log('remove');
+//			}
+//			cont.addEventListener('click',function(event){
+//				console.log(event.target);
+//			},false);
+			
+			
+			document.onclick = function (evt){
+				var e = window.event || evt;
+				var targetName = e.target || e.srcElement;
+				console.log(targetName);
+				alert(targetName.tagName);
+				return false;
+			};
+			
+		};
+	</script>
+</head>
+<body>
+	<div class="container" id="container">
+		<button class="btn btn-success" id="btnbox">Success</button>
+		<button class="btn btn-info" id="unbtnbox">Remove</button>
+		<section>
+			<h2>PRC</h2>
+			<p>China's PRC protect us...</p>
+		</section>
+		<div class="row">
+			<div class="col-sm-5">
+				<div class="row">
+					<div class="col-sm-5" id="eventtest">事件捕获与事件冒泡</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

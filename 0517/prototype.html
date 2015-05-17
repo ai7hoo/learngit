@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+
+    // (function(){
+    //     var initializing = false, fnTest = /xyz/.test(function(){xyz;}) ? /\b_super\b/ : /.*/;
+    //     this.Class = function(){};
+    //     Class.extend = function(prop) {
+    //         var _super = this.prototype;
+    //         initializing = true;
+    //         var prototype = new this();
+    //         initializing = false;
+    //         for (var name in prop) {
+    //             prototype[name] = typeof prop[name] == "function" &&
+    //                 typeof _super[name] == "function" && fnTest.test(prop[name]) ?
+    //                 (function(name, fn){
+    //                     return function() {
+    //                         var tmp = this._super;
+    //                         this._super = _super[name];
+    //                         var ret = fn.apply(this, arguments);
+    //                         this._super = tmp;
+    //                         return ret;
+    //                     };
+    //                 })(name, prop[name]) :
+    //                 prop[name];
+    //         }
+    //         function Class() {
+    //             if ( !initializing && this.init )
+    //                 this.init.apply(this, arguments);
+    //         }
+    //         Class.prototype = prototype;
+    //         Class.constructor = Class;
+    //         Class.extend = arguments.callee;
+    //         return Class;
+    //     };
+    // })();
+
+
+	/***利用原型链实现继承***/
+	// function Animal(){
+	// }
+	// Animal.prototype = {
+	// 	name:"animal",
+	// 	weight:0,
+	// 	eat: function(){
+	// 		alert("Animal is eating");
+	// 	}
+	// };
+
+	// function Mammal(){
+	// 	this.name = "mammal";
+	// }
+	// Mammal.prototype = new Animal();
+
+	// function Horse(height, weight){
+	// 	this.name = 'horse',
+	// 	this.height = height,
+	// 	this.weight = weight
+	// }
+	// Horse.prototype = new Mammal();
+
+	// Horse.prototype.eat = function(){
+	// 	alert("Horse is eating grass");
+	// }
+	// var horse = new Horse(100,300);
+
+	// console.log(horse.__proto__ === Horse.prototype);
+	// console.log(Horse.prototype.__proto__ === Mammal.prototype);
+	// console.log(Mammal.prototype.__proto__ === Animal.prototype);
+	
+	// function An(){}
+	// An.prototype = {
+	// 	name:"An",
+	// 	eat:function(){
+	// 		alert("An eat food.");
+	// 	}
+	// };
+	// function Ma(){}
+	// Ma.prototype = new An();
+	// function Ho(name,height,weight){
+	// 	this.name = name;
+	// 	this.height = height;
+	// 	this.weight = weight;
+	// }
+	// Ho.prototype = new Ma();
+
+	// var ho = new Ho('ai7hoo',100,500);
+	// console.log(ho.__proto__ === Ho.prototype);
+	// console.log(Ho.prototype.__proto__ === Ma.prototype);
+	// console.log(Ma.prototype.__proto__ === An.prototype);
+	// console.log(ho.name);
+
+	//声明类person类
+
+	// var Person = Class.extend({
+	// 	_issleeping: true,
+	// 	init: function (name){
+	// 		this._name = name;
+	// 	},
+	// 	isSleeping: function (){
+	// 		return this._issleeping;
+	// 	}
+	// });
+	// //声明Programmer类，并继承 Person
+	// var Programmer = Person.extend({
+	// 	init: function (name, issleeping){
+	// 		//调用父类构造函数
+	// 		this._super(name);
+	// 		//设置自己的状态
+	// 		this._issleeping = issleeping;
+	// 	}
+	// });
+
+	// var person = new Person("张三");
+	// var diors = new Programmer("张江男",false);
+	// console.log(person.isSleeping());
+	// 
+	
+	//声明user构造函数
+	function User(pwd){
+		//定义私有属性
+		var password = pwd;
+		//定义私有方法
+		function getPassword(){
+			//返回壁报中的 password
+			return password;
+		}
+		//特权函数声明，用于该对象其他公有方法能通过该特权方法访问到私有成员
+		this.passwordService = function (){
+			return getPassword();
+		}
+	}
+
+	//公有成员声明
+	User.prototype.checkPassword = function(pwd){
+		return this.passwordService() === pwd;
+	}
+
+	//验证隐藏性
+	var u = new User('123456');
+	//打印true
+	console.log(u.checkPassword("123456"));
+	//打印undefined
+	console.log(u.password);
+	//打印true
+	console.log(typeof u.getPassword === "undefined");
+
+
+
+
+
+
+		
+		
+	</script>
+</head>
+<body>
+	<div class="container"></div>
+</body>
+</html>
