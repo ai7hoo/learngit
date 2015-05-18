@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>bootstrap</title>
+		<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+		<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.js"></script>
+		<script src="bootstrapjs.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<hr>
+			<button class="btn btn-success" data-toggle="popover" title="popover title" data-content="popover center in here you can write more word here.">popover</button>
+			<hr>
+			<div class="row">
+				<div class="col-sm-4">
+					<a href="" class="thumbnail" data-toggle="tooltip" title="图片" data-placement="left">
+						<img src="images/bootstrap.jpg" class="img-responsive" alt="">
+					</a>
+				</div>
+			</div>
+			<hr>
+			<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="this is tooltip">this</button>
+			<hr>
+			<a href="" data-toggle="tooltip" title="this is tooltip">This is a tooltip for a tag</a>
+			<hr>
+			<button class="btn btn-danger btn1" data-toggle="modal" data-target="#myModala">Open modal</button>
+			<button class="btn btn-success btn2" data-toggle="modal" data-target="#myModalb">Open modal</button>
+			<button class="btn btn-warning btn3" data-toggle="modal" data-target="#myModalc">Open modal</button>
+		</div>
+		<div id="myModala" class="modal fade">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span>&times;</span>
+						</button>
+						<h4>This is header</h4>
+					</div>
+					<div class="modal-body"><mark>body</mark></div>
+					<div class="modal-footer">
+						<button class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="myModalb" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" type="button" data-dismiss="modal">
+							<span>&times;</span>
+						</button>
+						<h3>This is other modal box.</h3>
+					</div>
+					<div class="modal-body"></div>
+					<div class="modal-footer">
+						<button class="btn btn-success" data-dismiss="modal">close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="myModalc" class="modal fade">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" type="button" data-dismiss="modal">
+							<span>x</span>
+						</button>
+						<h2>This is header</h2>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-sm-6">
+								<a href="" class="thumbnail">
+									<img src="images/bootstrap.jpg" class="img-responsive" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-warning" data-dismiss="modal">CLOSE</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

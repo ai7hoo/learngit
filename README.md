@@ -18,3 +18,9 @@
 ```HTML
 <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
 ```
+
+- [bootstrap.js](http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.js)
+
+```HTML
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.js"></script>
+```
