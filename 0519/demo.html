@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+		<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.js"></script>
+		<script>
+			$(function(){
+				$("[data-toggle='tooltip']").tooltip();
+				$("[data-toggle='popover']").popover();
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<hr>
+				<button class="btn btn-default" data-toggle="popover" title="this is title" data-content="this is content">click me</button>
+			<hr>
+				<a href="" data-toggle="tooltip" data-placement="top" title="this is a tooltip">tooltip</a>
+			<hr>
+			<button class="btn btn-default" data-toggle="modal" data-target="#myModala">打开模态框</button>
+			<div id="myModala" class="modal fade">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span>x</span></button>
+							<h3>This is modal header</h3>
+						</div>
+						<div class="modal-body">Thisi is body</div>
+						<div class="modal-footer">
+							<button data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<div class="navbar-header">
+						<a href="" class="navbar-brand">Ai7hoo</a>
+					</div>
+					<ul class="nav navbar-nav">
+						<li><a href="">home</a></li>
+						<li class="active"><a href="">home</a></li>
+						<li><a href="">home</a></li>
+					</ul>
+				</div>
+			</nav>
+			<hr>
+			<ul class="breadcrumb">
+				<li><a href="">home</a></li>
+				<li><a href="">about</a></li>
+			</ul>
+			<hr>
+			<nav>
+				<ul class="pagination">
+					<li><a href=""><</a></li>
+					<li><a href="">1</a></li>
+					<li><a href="">1</a></li>
+					<li><a href="">1</a></li>
+					<li><a href="">></a></li>
+				</ul>
+			</nav>
+			<hr>
+			<nav>
+				<ul class="pager">
+					<li class="previous"><a href="">previous</a></li>
+					<li class="next"><a href="">next</a></li>
+				</ul>
+			</nav>
+			<hr>
+			<div class="dropdown">
+				<button class="btn btn-success" data-toggle="dropdown">
+					dropdown
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="">dropdown-menu</a></li>
+					<li class="divider"></li>
+					<li class="bg-success"><a href="">success bg</a></li>
+					<li class="dropdown-header"></li>
+					<li class="disabled"><a href="">disabled</a></li>
+				</ul>
+			</div>
+			<hr>
+			<div class="dropdown">
+				<button class="btn btn-default" data-toggle="dropdown">Dropdown <span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li><a href="">d1</a></li>
+					<li><a href="">d1</a></li>
+					<li><a href="">d1</a></li>
+					<li><a href="">d1</a></li>
+				</ul>
+			</div>
+			<hr>
+			<button type="button" class="close"><span>&times;</span></button>				
+			<div class="clearfix"></div>
+			<h1>This is close button</h1>				
+			<hr>
+			<div class="row">
+				<div class="col-sm-4">
+					<img src="../0518/images/bootstrap.jpg" class="img-responsive img-rounded" alt="">
+				</div>
+				<div class="col-sm-4">
+					<img src="../0518/images/bootstrap.jpg" class="img-responsive img-circle" alt="">
+				</div>
+				<div class="col-sm-4">
+					<img src="../0518/images/bootstrap.jpg" class="img-responsive img-thumbnail" alt="">
+				</div>
+			</div>
+			<hr>
+			<div class="input-group">
+				<span class="input-group-addon">大约</span>
+				<input type="text" class="form-control">
+				<span class="input-group-addon">%</span>
+			</div>
+		</div>
+	</body>
+
+</html>

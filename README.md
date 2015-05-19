@@ -24,3 +24,9 @@
 ```HTML
 <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.js"></script>
 ```
+
+- [angular](http://cdn.bootcss.com/angular.js/1.4.0-rc.1/angular.js)
+
+```HTML
+<script src="http://cdn.bootcss.com/angular.js/1.4.0-rc.1/angular.js"></script>
+```
