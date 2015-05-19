@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax</title>
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+	<script>
+
+		
+		function oajax(pullType,url){
+			if(window.XMLHttpRequest){
+				oajax = new XMLHttpRequest();
+			}
+			else if(window.ActiveXObject){
+				oajax = new ActiveXObject("Microsoft XMLHTTP");
+			}
+			else{
+				console.log('浏览器不支持xmlhttprequest');
+				return false;
+			}
+			
+			oajax.onreadystatechange= stateChange;
+			oajax.open(pullType,url,true);
+			oajax.send();
+		}
+		
+		function stateChange(){
+			if(oajax.readyState==4){
+				if(oajax.status == 200){
+					//字符串转json的方式多种
+					//第一种用eval();第二种用原生JSON.parse();
+					var resText = eval('('+oajax.responseText+')');
+					var resText = JSON.parse(oajax.responseText);
+					
+					//循环输出json数据内容
+					for(var i = 0;i < resText.person.length;i++){
+						console.log(resText.person[i].name + ' 的年龄是： ' + resText.person[i].age);
+					}
+					
+				}
+				else{
+					console.log('something is wrong!');
+				}
+			}
+		}
+
+
+		window.onload = function(){
+			var btn = document.getElementById('btn');
+//			btn.addEventListener("click",function(){
+//				oajax('post','post.json');
+//			})
+			btn.onclick = function(){
+				oajax('post','post.json');
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<hr>
+			<div class="row">
+				<div class="col-sm-4">
+					<button id="btn" class="btn btn-default">Click</button>
+				</div>
+			</div>
+		<hr>
+	</div>
+</body>
+</html>
