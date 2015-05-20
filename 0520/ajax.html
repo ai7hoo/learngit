@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax</title>
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.js"></script>
+	<script>
+		window.onload = function(){
+			var btn1 = document.getElementById('btn1');
+			btn1.onclick = function (){
+				oAjax('get', 'post.json');
+			}
+		};
+		
+		var xmlhttp;
+		function oAjax(getType,url){
+			xmlhttp = null;
+			if(window.XMLHttpRequest){
+				xmlhttp = new XMLHttpRequest();
+			}
+			else if(window.ActiveXObject){
+				xmlhttp = new ActiveXObject('Microsoft.XMLhttp');
+			}
+
+      
+      if(xmlhttp!=null){
+  			xmlhttp.onreadystatechange = stateChange;
+  			xmlhttp.open('GET', url, true);
+  			xmlhttp.send(null);
+      }
+      else {
+        console.log("您的浏览器不支持XMLHttpRequest.");
+			}
+
+		}
+		
+		function stateChange(){
+			if(xmlhttp.readyState == 4){
+				if(xmlhttp.status == 200){
+					//status == 200, it's ok
+					console.log(xmlhttp.readyState);
+					console.log(xmlhttp.status);
+					console.log(xmlhttp.responseText);
+				}
+				else {
+					//alert('错误代码: ' + xmlhttp.statusText);
+					$('#myModal').modal();
+					$('#myModal .modal-header h3').text('错误信息: ');
+					//错误信息是xmlstatusText
+					$("#myModal .modal-body").text(xmlhttp.statusText);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<hr>
+    <div class="row">
+      <div class="col-sm-4">
+        <button class="btn btn-default" data-toggle="modal" data-target="#myModal">Click</button>
+      </div>
+    </div>
+		<hr>
+		<button id="btn1" class="btn btn-default">clik</button>
+	</div>
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" type="button" data-dismiss="modal"><span>x</span></button>
+		  <h3></h3>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+           <button class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
