@@ -30,3 +30,8 @@
 ```HTML
 <script src="http://cdn.bootcss.com/angular.js/1.4.0-rc.1/angular.js"></script>
 ```
+
+- 强制IE使用edge内核渲染
+```HTML
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+```
