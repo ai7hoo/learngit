@@ -1,84 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>ajax</title>
-	<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
-	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
-	<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.js"></script>
-	<script>
-		window.onload = function(){
-			var btn1 = document.getElementById('btn1');
-			btn1.onclick = function (){
-				oAjax('get', 'post.json');
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ajax</title>
+		<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Coda+Caption:800' rel='stylesheet' type='text/css'>
+		<style>
+			.boxa {
+				width: 100%;
+				background: #a1d2a9;
 			}
-		};
-		
-		var xmlhttp;
-		function oAjax(getType,url){
-			xmlhttp = null;
-			if(window.XMLHttpRequest){
-				xmlhttp = new XMLHttpRequest();
+			#boxpic {
+				background: url(http://www.alexdevero.com/img/sketching-pen-paper.jpg) center center;
+				background-attachment: fixed;
+				background-size: cover;
+				padding: 20px;
+				color: #fff;
+				font-family: 'Coda Caption', sans-serif;
 			}
-			else if(window.ActiveXObject){
-				xmlhttp = new ActiveXObject('Microsoft.XMLhttp');
-			}
-
-      
-      if(xmlhttp!=null){
-  			xmlhttp.onreadystatechange = stateChange;
-  			xmlhttp.open('GET', url, true);
-  			xmlhttp.send(null);
-      }
-      else {
-        console.log("您的浏览器不支持XMLHttpRequest.");
-			}
-
-		}
-		
-		function stateChange(){
-			if(xmlhttp.readyState == 4){
-				if(xmlhttp.status == 200){
-					//status == 200, it's ok
-					console.log(xmlhttp.readyState);
-					console.log(xmlhttp.status);
-					console.log(xmlhttp.responseText);
-				}
-				else {
-					//alert('错误代码: ' + xmlhttp.statusText);
-					$('#myModal').modal();
-					$('#myModal .modal-header h3').text('错误信息: ');
-					//错误信息是xmlstatusText
-					$("#myModal .modal-body").text(xmlhttp.statusText);
+		</style>
+		<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.js"></script>
+		<script>
+			function resizeH(){
+				var hc = document.documentElement.clientHeight;
+				var boxa = document.getElementsByClassName('boxa');
+				for(var i = 0;i < boxa.length;i++){
+					boxa[i].style.height = hc + 'px';
 				}
 			}
-		}
-	</script>
-</head>
-<body>
-	<div class="container">
-		<hr>
-    <div class="row">
-      <div class="col-sm-4">
-        <button class="btn btn-default" data-toggle="modal" data-target="#myModal">Click</button>
-      </div>
-    </div>
-		<hr>
-		<button id="btn1" class="btn btn-default">clik</button>
-	</div>
-  <div id="myModal" class="modal fade">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button class="close" type="button" data-dismiss="modal"><span>x</span></button>
-		  <h3></h3>
-        </div>
-        <div class="modal-body"></div>
-        <div class="modal-footer">
-           <button class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+			window.onresize = function(){
+				resizeH();
+			};
+	
+	
+			window.onload = function(){
+
+
+				document.body.onclick = function(){
+				//这个是获取当前显示区域的尺寸的, 常用
+//				var hc = document.documentElement.clientHeight;
+//				var wc = document.documentElement.clientWidth;
+
+				//获取显示器的分辨率尺寸
+//				var hc = window.screen.height;
+//				var wc = window.screen.width;
+
+				//可用工作区域高度, 不包含系统的任务栏, 如windows的底部的任务栏
+//				var hc = window.screen.availHeight;
+//				var wc = window.screen.availWidth;
+
+				//获取文档高度 ==>>2883<<==
+//				var hc = document.body.scrollHeight;
+//				var wc = document.body.scrollWidth;
+
+				//获取BODY文档的尺寸 ==>>2863<<==
+//				var hc = document.body.clientHeight;
+//				var wc = document.body.clientWidth;
+
+				//获取显示区域整个body的尺寸==>> 2863<<==
+//				var hc = document.body.offsetHeight;
+//				var wc = document.body.offsetWidth;
+
+					alert('高度'+hc+' 宽度'+wc);
+				};
+
+
+				resizeH();
+			
+	
+	
+	
+				var btn1 = document.getElementById('btn1');
+				btn1.onclick = function (){
+					oAjax('get', 'post.json');
+				}
+				
+				var boxa1 = document.getElementsByClassName("boxa")[0];
+				boxa1.onclick = function(){
+					console.log(this.tagName);
+				};
+				var parson = new Person();
+				
+				for(prop in parson){
+					console.log(prop);
+				}
+			};
+			
+			function Wu(){
+				//
+			}
+			Wu.prototype = {
+				"where":"star",
+				"COD":true
+			};
+			
+			function Shengwu(){
+				//
+			}
+			Shengwu.prototype = new Wu();
+			function Animal(){
+				//
+			}
+			Animal.prototype = new Shengwu();
+			function Person(){
+				//
+				this.where = 'earth';
+				this.COD = false;
+			}
+			Person.prototype = new Person();
+			
+			
+			var xmlhttp;
+			function oAjax(getType,url){
+				xmlhttp = null;
+				if(window.XMLHttpRequest){
+					xmlhttp = new XMLHttpRequest();
+				}
+				else if(window.ActiveXObject){
+					xmlhttp = new ActiveXObject('Microsoft.XMLhttp');
+				}
+	
+	      
+	      if(xmlhttp!=null){
+	  			xmlhttp.onreadystatechange = stateChange;
+	  			xmlhttp.open('GET', url, true);
+	  			xmlhttp.send(null);
+	      }
+	      else {
+	        console.log("您的浏览器不支持XMLHttpRequest.");
+				}
+	
+			}
+			
+			function stateChange(){
+				if(xmlhttp.readyState == 4){
+					if(xmlhttp.status == 200){
+						//status == 200, it's ok
+						console.log(xmlhttp.readyState);
+						console.log(xmlhttp.status);
+						console.log(xmlhttp.responseText);
+					}
+					else {
+						//alert('错误代码: ' + xmlhttp.statusText);
+						$('#myModal').modal();
+						$('#myModal .modal-header h3').text('错误信息: ');
+						//错误信息是xmlstatusText
+						$("#myModal .modal-body").text(xmlhttp.statusText);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container-fruid">
+			<div class="boxa text-center">
+				<span class=""></span>
+			</div>
+			<hr>
+			<div class="boxa"></div>
+			<hr>
+			<div id="boxpic" class="boxa">
+				<h2>This Hour is bed</h2>
+			</div>
+			<hr>
+			<div class="boxa"></div>
+			<hr>
+			<div class="input-group">
+				<span class="input-group-btn">
+					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Click</button>
+				</span>
+				<span class="input-group-btn">
+					<button type="button" id="btn1" class="btn btn-default">clik</button>
+				</span>
+			</div>
+			<hr>
+		</div>
+		<div id="myModal" class="modal fade">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" type="button" data-dismiss="modal">
+							<span>x</span>
+						</button>
+						<h3></h3>
+					</div>
+					<div class="modal-body"></div>
+					<div class="modal-footer">
+						<button class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
 </html>
