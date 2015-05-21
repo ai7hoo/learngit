@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+	<style>
+		.no-gutter {
+			padding: 0 !important;
+		}
+		.boxpic {
+			transform: rotate(45deg);
+			overflow: hidden;
+		}
+		.boxpic a img {
+			transform: rotate(-45deg);
+		}
+		.bmodal {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background: #1496bf;
+			transition: all linear .6s;
+			
+		}
+		.lineanimate {
+			background-color: #ffffff;
+			position: absolute;
+			opacity: .4;
+			transition: all linear .6s;
+		}
+		.tt {
+			width: 0%;
+			height: 1px;
+			top: 5%;
+			left: 5%;
+		}
+		.rr {
+			width: 1px;
+			height: 0%;
+			top: 5%;
+			right: 5%;
+		}
+		.bb {
+			width: 0%;
+			height: 1px;
+			bottom: 5%;
+			right: 5%;
+		}
+		.ll {
+			width: 1px;
+			height: 0%;
+			bottom: 5%;
+			left: 5%;
+		}
+	</style>
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.js"></script>
+	<script>
+		$(function(){
+			$(".boxpic").css("height",$(".boxpic").width());
+			
+			$(".boxpic").on({
+				"mouseenter": function(){
+					$(".tt").css("width","90%");
+					$(".rr").css("height","90%");
+					$(".bb").css("width","90%");
+					$(".ll").css("height","90%");
+					$(".bmodal").css("opacity",".5");
+				},
+				"mouseleave": function(){
+					$(".tt").css("width","0%");
+					$(".rr").css("height","0%");
+					$(".bb").css("width","0%");
+					$(".ll").css("height","0%");
+					$(".bmodal").css("opacity","1");
+				}
+			});
+			
+		});
+		window.onresize = function(){
+			$(".boxpic").css("height",$(".boxpic").width());
+		};
+	</script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<hr>
+			<hr>
+			<hr>
+			<hr>
+			<div class="col-sm-4 col-sm-offset-4 no-gutter boxpic">
+				<a href="">
+					<img src="../0518/images/bootstrap.jpg" class="img-responsive" alt="">
+				</a>
+				<div class="bmodal"></div>
+				<div class="lineanimate tt"></div>
+				<div class="lineanimate rr"></div>
+				<div class="lineanimate bb"></div>
+				<div class="lineanimate ll"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
