@@ -1,0 +1,14 @@
+body {margin: 0; padding:0;}
+#main {position: relative;height: auto;}
+.box {
+	float: left;
+	padding: 5px;
+}
+.boxcon {
+	padding: 10px;
+	box-shadow: 0 0 5px #aaa;
+	height: auto;
+}
+.boxcon img {
+	width: 200px;
+}
