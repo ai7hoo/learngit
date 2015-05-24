@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin:0;
+			padding:0;
+		}
+		html,body {
+			height:100%;
+			overflow:hidden;
+		}
+		#container {
+			height:100%;
+		}
+		.section {
+			height:100%;
+		}
+		#section0 {
+			background-color: #aaa;
+		}
+		#section1 {
+			background-color: pink;
+		}
+		#section2 {
+			background-color: rosybrown;
+		}
+		#section3 {
+			background-color: #000;
+		}
+		#section4 {
+			background-color: #1a2;
+		}
+		#section5 {
+			background-color: #a9f;
+		}
+		#section6 {
+			background-color: #6e9;
+		}
+		#section7 {
+			background-color: #a6c;
+		}
+		.left {
+			float:left;
+		}
+		#container {
+			width:800%;
+			transition: all linear 1s;
+		}
+		.section {
+			width:12.5%;
+			
+		}
+	</style>
+	<script src="../global/jquery.js"></script>
+	<script src="../global/jquery.mousewheel.js"></script>
+	<script>
+		$(function(){
+			var i = 1;
+			$(document).on("mousewheel",function(event){
+				var winW = document.documentElement.clientWidth || window.innerWidth;
+				var tmp = Math.abs($("#container").css('transform').split(', ')[4]) || 0;
+
+				//console.log(tmp + '<=>' + Math.abs(winW*(i-1)));
+				if( (event.deltaY) < 0 ){
+					if( (tmp == Math.abs(winW*(i-1))) ){
+						if(i > $(".section").length-1){
+							i = 1;
+							$("#container").css('transform','translateX(0px)');
+						}
+						else {
+							$("#container").css('transform','translateX('+(-winW*i)+'px)');
+							i++;
+						}
+					}
+				}
+				else {
+					if( (tmp == Math.abs(winW*(i-1))) ){
+						i--;
+						if(i == 0){
+							i = $(".section").length;
+						}
+						$("#container").css('transform','translateX('+(-winW*(i-1))+'px)');
+					}
+				}
+				console.log(i);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="container" class="left">
+		<div class="section left" id="section0"></div>
+		<div class="section left" id="section1"></div>
+		<div class="section left" id="section2"></div>
+		<div class="section left" id="section3"></div>
+		<div class="section left" id="section4"></div>
+		<div class="section left" id="section5"></div>
+		<div class="section left" id="section6"></div>
+		<div class="section left" id="section7"></div>
+	</div>
+</body>
+</html>
