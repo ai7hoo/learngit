@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+	<script src="main.js"></script>
+	<script>
+		$(function(){
+			//图片异步加载插件
+			//默认要为img标签增加data-src,并且把src本来的属性赋值给它.并使src的属性为空
+			$.asynpic();
+		});
+	</script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="boxa"></div>
+		<img src="" data-src="../0518/images/bootstrap.jpg" width="100" height="100" alt="">
+		<div class="boxb"></div>
+		<img src="" data-src="../0518/images/bootstrap.jpg" width="100" height="100" alt="">
+		<div class="boxc"></div>
+		<img src="" data-src="../0518/images/bootstrap.jpg" width="100" height="100" alt="">
+		<div class="boxd"></div>
+	</div>
+	<div id="num">a</div>
+</body>
+</html>
