@@ -1,0 +1,20 @@
+.container {
+	max-width: 500px;
+}
+.box-block {
+	box-sizing: border-box;
+	border: 1px solid #000;
+	height: 50px;
+	padding: 0;
+	cursor: pointer;
+	background: brown;
+	z-index: 99;
+}
+.box-block:hover {
+	box-shadow: 0 0 5px #fff;
+	border: 1px solid #fff;
+	z-index: 999;
+}
+.click-color {
+	background: #aaa;
+}
