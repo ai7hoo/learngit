@@ -1,0 +1,42 @@
+/* 
+* @Author: Quine
+* @Date:   2015-06-10 23:44:07
+* @Last Modified by:   Marte
+* @Last Modified time: 2015-06-11 00:23:26
+*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix {
+    display: inline-block;
+}
+#draggable1 {
+    float: left;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
+#draggable2 {
+    float: left;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
+#draggable3 {
+    float: left;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
+#sortable {
+}
+#sortable li {
+    list-style: none;
+    padding: 5px 20px;
+    border: 1px solid #aaa;
+}
