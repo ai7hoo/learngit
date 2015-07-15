@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            window.onload = function(){
+                var btn = document.getElementById('btn');
+
+                btn.onclick = function(){
+                    getAjax('response.json','post','json',this,function(rp){
+                        var boxa = document.createElement('span');
+                        boxa.innerHTML = rp.name;
+                        document.getElementById('boxa').appendChild(boxa);
+                        btn.onclick = null;
+                    });
+                };
+            };
+            function getAjax(url,type,dataType,cb,callback){
+                var xhr = null;
+                if(window.XMLHttpRequest){
+                    xhr = new XMLHttpRequest();
+                }
+                else if(window.ActiveXObject){
+                    xhr = new ActiveXObject("Microsoft XMLhttp");
+                }
+                else {
+                    alert("Your brower dont support xhr");
+                }
+                if(xhr != null){
+                    xhr.open(type,url,true);
+                    xhr.onreadystatechange = function(){
+                        getReady(xhr,cb,callback);
+                    };
+                    xhr.send(null);
+                }
+            };
+            function getReady(xhr,cb,callback){
+                if(xhr.readyState == 4){
+                    if(xhr.status == 200){
+                        var rp = eval( '('+ xhr.responseText +')' );
+                        callback(rp);
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button id="btn">点我获取我的名字</button>
+        <div id="boxa">名字：</div>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #box{position:absolute;top:200px;left:600px;border:1px solid #cecece;box-shadow:0 0 3px #cecece;width:200px;height:150px;}
+        #box h3{width:100%;text-align:center;cursor:move;}
+    </style>
+    <script>
+        window.onload = function(){
+            var box = document.getElementById('box');
+            var moveEle = getClass('tit','box')[0];
+            moveEle.onmousedown = function(event){
+                event = event || window.event;
+                    var l = event.clientX-box.offsetLeft;
+                    var t = event.clientY-box.offsetTop;
+                document.onmousemove = function(event){
+                    event = event || window.event;
+                    var lPos = event.clientX-l;
+                    var tPos = event.clientY-t;
+                    console.log(lPos + ':' + tPos);
+                    box.style.top = tPos + 'px';
+                    box.style.left = lPos + 'px';
+                };
+            };
+            moveEle.onmouseup = function(){
+                document.onmousemove=null;
+                document.onmouseup = null;
+            };
+        };
+        //封装事件函数
+        function addEvent(ele,eventType,handler){
+            if(ele.addEventListener){
+                ele.addEventListener(eventType,handler,false);
+            }
+            else if(ele.attachEvent){
+                ele.attachEvent('on'+eventType,handler);
+            }
+            else {
+                ele['on'+eventType] = handler;
+            }
+        }
+
+        //封装获取class函数
+        function getClass(ele,parent){
+            parent = document.getElementById(parent) || document;
+            var oEle = parent.getElementsByTagName('*');
+            var oArr = [];
+            for(var i = 0; i < oEle.length; i++){
+                if(oEle[i].className == ele){
+                    oArr.push(oEle[i]);
+                }
+            }
+            return oArr;
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <h3 class="tit">tit</h3>
+    </div>
+</body>
+</html>

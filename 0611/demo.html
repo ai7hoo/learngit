@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        window.onload = function(){
+            var btn1 = document.getElementById("btn1");
+            
+            var eventUtil = {
+                "addHandler": function(element,type,handler){
+                    if(element.addEventListener){
+                        //DOM2级事件判断
+                        element.addEventListener(type,handler,false);
+                    }
+                    else if(element.attachEvent){
+                        //IE事件判断
+                        element.attachEvent('on'+type,handler);
+                    }
+                    else {
+                        //DOM0级事件判断
+                        element['on'+type] = handler;
+                    }
+                },
+                "removeHandler": function(element,type,handler){
+                    if(element.removeEventListener){
+                        //DOM2级事件判断
+                        element.removeEventListener(type,handler,false);
+                    }
+                    else if(element.datachEvent){
+                        //IE事件判断
+                        element.datachEvent('on'+type,handler);
+                    }
+                    else {
+                        //DOM0级事件判断
+                        element['on'+type] = null;
+                    }
+                }
+            };
+            eventUtil.addHandler(btn1,'click',showMsg);
+        }
+        function showMsg(){
+            console.log('ok');
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1" value="btn1">btn1</button>
+</body>
+</html>

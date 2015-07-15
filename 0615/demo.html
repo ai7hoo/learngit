@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            window.onload = function(){
+                var btn = document.getElementById("btn");
+
+                var eventUtil = {
+                    "addHandler": function(ele,type,handler){
+                        if(ele.addEventListener){
+                            ele.addEventListener(type,handler,false);
+                        }
+                        else if(ele.attachEvent){
+                            ele.attachEvent('on'+type,handler);
+                        }
+                        else {
+                            ele['on'+type] = handler;
+                        }
+                    },
+                    "removeHandler": function(ele,type,handler){
+                        if(ele.removeEventListener){
+                            ele.removeEventListener(type,handler,false);
+                        }
+                        else if(ele.detachEvent){
+                            ele.detachEvent('on'+type,handler);
+                        }
+                        else {
+                            ele['on'+type] = null;
+                        }
+                    }
+                };
+
+                eventUtil.addHandler(btn,'click',function(){
+                    alert('Fuck');
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <button id="btn">点我</button>
+    </body>
+</html>
