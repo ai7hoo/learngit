@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: '微软雅黑';
+            font-size: 12px;
+        }
+        ul {
+            margin-left: 200px;
+        }
+        li {
+            list-style-type: none;
+            float: left;
+            padding: 6px 10px;
+            background-color:#efefef;
+            border: 1px solid #cecece;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        li:hover {
+            background-color:#f36f20;
+            color:#fff;
+            border-color:#f36f20;
+        }
+        li.active {
+            background-color:#f34f20;
+            color:#fff;
+            border-color:#f34f20;
+        }
+
+    </style>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#box").on('click',function(){
+                $.getJSON("goods.js",function(json){
+                    var addhtml = '';
+                    for(var i = 0;i < json.a.length;i++){
+                        addhtml += '<li id=list_'+json.a[i].n+'>'+json.a[i].c+'</li>';
+                    }
+                    $("#list").html(addhtml);
+                });
+            });
+            $("#list").on('click','li',function(){
+                if(!$(this).hasClass("active")){
+                    $(this).addClass('active');
+                    console.log( parseInt($(this).prop('id').substring(5)) );
+                }else {
+                    $(this).removeClass('active');
+                }
+            });
+            $("#subbtn").on('click',function(){
+                var sublist = [];
+                var tmp = '';
+                for(var i = 0;i<$("#list li").length;i++){
+                    if($("#list li").eq(i).hasClass('active')){
+                        tmp = parseInt($("#list li").eq(i).prop('id').substring(5));
+                        sublist.push(tmp);
+                    }
+                }
+                alert(sublist.length);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        点我
+    </div>
+    <ul id="list"></ul>
+    <div id="subbtn">提交</div>
+</body>
+</html>
