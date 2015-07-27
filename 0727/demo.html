@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+    <script type="text/javascript" src="http://cdn.bootcss.com/vue/0.12.8/vue.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function(){
+            var demo = new Vue({
+                el: '#box',
+                data: {
+                    msg:"wocao"
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model="msg" width="" />
+        <input type="text" v-model="msg" width="" />
+    </div>
+</body>
+</html>
