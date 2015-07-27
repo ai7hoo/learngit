@@ -2,24 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
-    <script type="text/javascript" src="http://cdn.bootcss.com/vue/0.12.8/vue.js"></script>
+    <style type="text/css">
+        body {
+            padding:0;
+            margin:0px;
+            font-size: 62.5%;
+            font-family: 'Microsoft Yahei';
+        }
+        p {
+            font-size: 1.2em;
+        }
+    </style>
 
     <script type="text/javascript">
         window.onload = function(){
-            var demo = new Vue({
-                el: '#box',
-                data: {
-                    msg:"wocao"
-                }
-            });
+            // var list = document.getElementById('test-list'),
+            //     arr = [],
+            //     lang = document.querySelectorAll("li.lang");
+            // for(var i = 0;i<lang.length;i++){
+            //     arr.push(lang[i].innerHTML);
+            // }
+            // arr = arr.sort();
+            // list.innerHTML = '';
+            // for(var j=0;j<arr.length;j++){
+            //     var li = document.createElement('li');
+            //     li.class='lang';
+            //     li.innerHTML = arr[j];
+            //     list.appendChild(li);
+            // }
+
+            // var self = document.getElementById('yoursis');
+            var par = document.getElementById('ptag');
+            par.removeChild(par.childNodes[1]);
+
+            var inp1 = document.getElementById("inp1");
+            inp1.value = 'aaa';
         };
     </script>
 </head>
 <body>
-    <div id="box">
-        <input type="text" v-model="msg" width="" />
-        <input type="text" v-model="msg" width="" />
+    <p id= "ptag">FK<i id="yoursis">SIS</i></p>
+    <ol id="test-list">
+        <li class="lang">Scheme</li>
+        <li class="lang">JavaScript</li>
+        <li class="lang">Python</li>
+        <li class="lang">Ruby</li>
+        <li class="lang">Haskell</li>
+    </ol>
+    <div id="form">
+        <input type="text" id="inp1" />
     </div>
 </body>
 </html>
