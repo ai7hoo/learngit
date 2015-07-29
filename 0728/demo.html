@@ -15,6 +15,7 @@
     <script type="text/javascript" src="../global/jquery.js"></script>
     <script type="text/javascript">
         window.onload = function(){
+
             var js = document.createElement('script');
             js.src= 'http://img1.money.126.net/data/hs/kline/day/history/2015/0000001.json?callback=loadStockData&t=' + Date.now();
 
@@ -26,7 +27,6 @@
             
             btn.addEventListener('click', function(event){
                 $.getJSON('http://localhost/learngit/0728/data.json', function(json, textStatus) {
-                        alert(event.pageY);
                         var mm = 0;
                         for(var i = 0;i<json.data.length;i++){
                             var toNum = json.data[i][6]*5;
@@ -46,7 +46,7 @@
         };
     </script>
 </head>
-<body>
+<body>&yen;
     <button id="btn">ajax</button>
     <hr />
     <canvas id="canvas" width='800' height='500'>
