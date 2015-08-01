@@ -1,0 +1,783 @@
+/*common*/
+* {
+	margin:0;
+	padding:0;
+}
+li {
+	list-style:none;
+}
+a {
+	text-decoration:none;
+}
+/*header*/
+#header {
+	width: 100%;
+	height: 67px;
+	min-width: 1200px;
+	background-color: #0265A9;
+}
+.head {
+	margin: 0px auto;
+	width: 1200px;
+	height: 67px;
+	position: relative;
+	z-index: 20;
+}
+.head a > img {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+}
+.head .ul-nav > li {
+	background: url("../images/libg.png") no-repeat;
+	list-style: none;
+	width: 130px;
+	height: 67px;
+	text-align: center;
+	float: left;
+	display: block;
+}
+.head .ul-nav > li:first-child {
+	margin-left: 252px;
+}
+.head .ul-nav > li > a {
+	font: 14px/38px "Microsoft YaHei";
+	width: 128px;
+	height: 67px;
+	color: rgb(255, 255, 255);
+	margin-left: 1px;
+	display: block;
+	font-size-adjust: none;
+	font-stretch: normal;
+}
+.head .ul-nav > li > a > span {
+	font: 12px/12px "Arial";
+	color: rgb(255, 255, 255);
+	text-transform: uppercase;
+	display: block;
+	font-size-adjust: none;
+	font-stretch: normal;
+}
+.head .ul-nav > li > a > span:first-child {
+	font: 14px/34px "Microsoft YaHei";
+	padding-top: 13px;
+	font-size-adjust: none;
+	font-stretch: normal;
+}
+.head .ul-nav > li:hover {
+	width: 128px;
+	border-right-color: rgb(255, 255, 255);
+	border-left-color: rgb(255, 255, 255);
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+}
+.head .ul-nav > li:hover > a {
+	margin-left: 0px;
+	background-color: #2E598B;
+}
+.head .ul-nav > li > ul {
+	background: url("../images/ulbg2.png") no-repeat;
+	margin: 0px auto;
+	width: 94px;
+	display: none;
+}
+.head .ul-nav > li > ul > li {
+	background: url("../images/libg3.png") no-repeat;
+	list-style: none;
+	width: 94px;
+	display: block;
+}
+.head .ul-nav > li > ul > li:first-child {
+	background: url("../images/libg3.png") no-repeat 0px 11px;
+	padding-top: 11px;
+}
+.head .ul-nav > li > ul > li > a {
+	font: 12px/24px "Microsoft YaHei";
+	width: 94px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	display: block;
+	font-size-adjust: none;
+	font-stretch: normal;
+}
+.head .ul-nav > li > ul > li:hover > a {
+	color: rgb(240, 130, 0);
+}
+body {
+	margin:0
+}
+#nr_ac .nr_ac_home_diy * {
+	background:transparent
+}
+#nr_ac .nr_ac_home_diy {
+	position:relative;
+	border-top:6px solid #dcdcdc;
+	margin-bottom:10px;
+}
+#nr_ac .nr_ac_home_diy h1 {
+	display:none;
+	position:absolute;
+	left:50%;
+	top:0;
+	width:1000px;
+	padding-top:30px;
+	margin-left:-500px;
+	font-size:50px
+}
+#nr_ac .nr_ac_home_diy h1 span {
+	position:absolute;
+	display:block;
+	left:0;
+	top:-6px;
+	width:120px;
+	height:6px;
+	background-color:#005aaa
+}
+#nr_ac .nr_ac_home_diy .main {
+	height:650px;
+	background-repeat:no-repeat;
+	background-position:center top;
+	overflow:hidden
+}
+#nr_ac .nr_ac_home_diy .main .btn-group {
+	position:absolute;
+	left:50%;
+	top:490px;
+	width:230px;
+	height:35px;
+	margin-left:-115px;
+	text-align:center;
+	vertical-align:middle;
+	font-size:0
+}
+#nr_ac .nr_ac_home_diy .main .btn-group a {
+	padding:10px;
+	border:1px solid #cecece;
+	font-size:11px;
+	color:#fff;
+	background-color:#005aaa;
+	cursor:pointer
+}
+#nr_ac .nr_ac_home_diy .main .btn-group a.return {
+	margin-right:10px;
+	color:#005aaa;
+	background-color:#fff
+}
+#nr_ac .nr_ac_home_diy .main .slider {
+	position:relative;
+	width:216px;
+	height:10px;
+	border-radius:5px;
+	margin-left:10px;
+	margin-top:10px;
+	background-color:#cacaca
+}
+#nr_ac .nr_ac_home_diy .main .slider .ui-slider-range {
+	position:absolute;
+	top:0;
+	left:0;
+	height:10px;
+	width:100px;
+	border-radius:5px;
+	background-color:#4fa0e9
+}
+#nr_ac .nr_ac_home_diy .main .slider .ui-slider-handle {
+	position:absolute;
+	top:-5px;
+	left:0;
+	width:20px;
+	height:20px;
+	margin-left:-10px;
+	background:url(../images/nr_ac_icon_slider.png) no-repeat center center;
+	cursor:pointer
+}
+#nr_ac .nr_ac_home_diy .main .active {
+	display:block;
+}
+#nr_ac .nr_ac_home_diy .main .active h1 {
+	display:block;
+	z-index:333;
+}
+#nr_ac .nr_ac_home_diy .main li {
+	display:none
+}
+#nr_ac .nr_ac_home_diy .main li li {
+	display:block
+}
+#nr_ac .nr_ac_home_diy .main li .choose {
+	width:990px;
+	height:140px;
+	margin:265px auto 0 auto
+}
+#nr_ac .nr_ac_home_diy .main li .item {
+	display:block;
+	float:left;
+	width:140px;
+	padding:56px;
+	margin:0 28px;
+	text-align:center;
+	background-image:url(../images/nr_ac_home_unit_bg_normal.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	cursor:pointer
+}
+#nr_ac .nr_ac_home_diy .main li .title {
+	position:absolute;
+	left:50%;
+	top:110px;
+	width:140px;
+	height:140px;
+	padding:50px 59px;
+	margin-left:-500px;
+	text-align:center;
+	color:#fff;
+	background:url(../images/nr_ac_home_unit_bg_active.png) no-repeat center center
+}
+#nr_ac .nr_ac_home_diy .main li .step {
+	position:absolute;
+	bottom:30px;
+	left:50%;
+	width:1125px;
+	height:50px;
+	margin-left:-460px
+}
+#nr_ac .nr_ac_home_diy .main li .step li {
+	display:block;
+	float:left;
+	width:300px;
+	height:50px;
+	background:url(../images/nr_ac_home_diy_icon_line.png) no-repeat 36px 30px
+}
+#nr_ac .nr_ac_home_diy .main li .step .last {
+	background:none
+}
+#nr_ac .nr_ac_home_diy .main li .step .last a {
+	color:#fff
+}
+#nr_ac .nr_ac_home_diy .main li .step a {
+	display:block;
+	width:28px;
+	height:100%;
+	text-align:center;
+	font-size:0;
+	color:#005aaa;
+	font-weight:bold;
+	background-image:url(../images/nr_ac_home_icon_item.png);
+	background-repeat:no-repeat;
+	background-position:center 20px
+}
+#nr_ac .nr_ac_home_diy .main li .step .active a {
+	font-size:13px;
+	background-image:url(../images/nr_ac_home_icon_item_active.png)
+}
+#nr_ac .nr_ac_home_diy .main li .areaForm {
+	position:absolute;
+	top:110px;
+	right:50%;
+	width:254px;
+	height:426px;
+	margin-right:-500px
+}
+#nr_ac .nr_ac_home_diy .main li .areaForm .section {
+	margin-top:20px;
+	height:400px;
+	overflow:auto
+}
+#nr_ac .nr_ac_home_diy {
+	background:url(../images/nr_ac_home_diy_bg_empty.jpg) no-repeat 0 0;
+	width:100%;
+	height:735px;
+}
+#nr_ac .nr_ac_home_diy .main li .areaForm h4 {
+	font-size:20px;
+	color:#0151aa
+}
+#nr_ac .nr_ac_home_diy .main li .areaForm .areaSetter {
+	margin-top:26px
+}
+#nr_ac .nr_ac_home_diy .main li .areaForm .input {
+	height:32px;
+	line-height:32px;
+	font-size:14px;
+	color:#005aaa
+}
+#nr_ac .nr_ac_home_diy .main li .areaForm .jspTrack {
+	width:7px;
+	background-color:#cacaca;
+	border:1px solid #abadab;
+	border-radius:3px
+}
+#nr_ac .nr_ac_home_diy .main li .areaForm .jspDrag {
+	background-color:#4fa0e9;
+	border-radius:2px
+}
+#nr_ac .nr_ac_home_diy .main li .areaForm input {
+	float:right;
+	width:104px;
+	height:32px;
+	padding-left:6px;
+	margin-right:28px;
+	border:3px solid #cdcdcd;
+	border-radius:10px;
+	font-size:18px;
+	color:#005aaa;
+	background:#fff url(../images/nr_ac_home_icon_meter.jpg) no-repeat 95% 5px
+}
+#nr_ac .nr_ac_home_diy .main .choose .active {
+	color:#fff;
+	background-image:url(../images/nr_ac_home_unit_bg_active.png)
+}
+#nr_ac .nr_ac_home_diy .main li .final .nav {
+	position:absolute;
+	top:0;
+	left:50%;
+	margin-left:-205px
+}
+#nr_ac .nr_ac_home_diy .main li .final .nav li {
+	width:36px;
+	height:90px;
+	padding:10px;
+	font-size:16px;
+	color:#fff;
+	background-color:#005aaa;
+	background-image:none;
+	cursor:pointer
+}
+#nr_ac .nr_ac_home_diy .main li .final .nav .active {
+	color:#005aaa;
+	background-color:#fff
+}
+#nr_ac .nr_ac_home_diy .main li .final .content {
+	position:absolute;
+	top:0;
+	left:50%;
+	margin-left:-169px
+}
+#nr_ac .nr_ac_home_diy .main li .final .content ul {
+	display:none
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li {
+	float:left;
+	width:326px;
+	height:650px;
+	background-color:#fff
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li .scroll {
+	width:326px;
+	height:435px;
+	overflow:auto
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li h3 {
+	padding:40px 40px 10px 40px;
+	color:#005aaa;
+	font-size:23px
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li p {
+	font-size:12px;
+	padding:20px 40px;
+	line-height:1.5em
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li img {
+	width:100%;
+	border-top:1px solid #f2f2f2;
+	border-bottom:1px solid #f2f2f2
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li h4 {
+	color:#fff;
+	font-size:22px;
+	padding:25px 40px
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li h5 {
+	padding:0 40px
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li dl {
+	height:74px;
+	border-bottom:1px solid #f2f2f2
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li dt {
+	float:left;
+	width:140px;
+	height:74px;
+	text-align:center
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li dt img {
+	width:auto;
+	height:100%;
+	border:none
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li dd {
+	float:right;
+	width:170px;
+	padding-top:20px
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li dd p {
+	padding:0
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li table {
+	width:100%
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li tr {
+	width:100%;
+	height:40px;
+	border-bottom:1px solid #1a6bb3
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li td {
+	vertical-align:middle;
+	font-size:12px
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li .icon {
+	width:75px;
+	text-align:right
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li .icon img {
+	width:auto;
+	height:60%;
+	border:none
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li .tips {
+	clear:both;
+	padding:20px 40px;
+	font-size:10px
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li .jspVerticalBar {
+	width:10px;
+	float:right;
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li .jspTrack {
+	width:10px
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li .jspDrag {
+	width:5px;
+	margin:0 auto;
+	background-color:#005aaa
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li .jspArrowUp {
+	background:url(../images/nr_ac_home_diy_icon_up.png) no-repeat center center
+}
+#nr_ac .nr_ac_home_diy .main li .final .content li li .jspArrowDown {
+	background:url(../images/nr_ac_home_diy_icon_down.png) no-repeat center center
+}
+#nr_ac .nr_ac_home_diy .main li .final .content .blue {
+	color:#fff;
+	background-color:#005aaa
+}
+#nr_ac .nr_ac_home_diy .main li .final .content .blue h3 {
+	color:#fff;
+	border-bottom:1px solid #1a6bb3
+}
+#nr_ac .nr_ac_home_diy .main li .final .content .blue .jspDrag {
+	background-color:#fff
+}
+#nr_ac .nr_ac_home_diy .main li .final .content .blue .jspArrowUp {
+	background:url(../images/nr_ac_home_diy_icon_up_white.png) no-repeat center center
+}
+#nr_ac .nr_ac_home_diy .main li .final .content .blue .jspArrowDown {
+	background:url(../images/nr_ac_home_diy_icon_down_white.png) no-repeat center center
+}
+#nr_ac .nr_ac_home_diy .main li .final .return {
+	display:block;
+	position:absolute;
+	bottom:70px;
+	left:50%;
+	width:122px;
+	height:33px;
+	margin-left:-61px;
+	border:1px solid #cecece;
+	font-size:12px;
+	text-align:center;
+	line-height:33px;
+	color:#000;
+	cursor:pointer
+}
+#nr_ac .nr_ac_home_diy .main li .final .return span {
+	color:#005aaa
+}
+#nr_ac .nr_ac_home_diy .main li .final .panel {
+	padding:0 40px;
+	margin-top:24px;
+	text-align:center
+}
+#nr_ac .nr_ac_home_diy .main li .final .panel a {
+	display:block;
+	float:left;
+	width:110px;
+	height:33px;
+	border:1px solid #cecece;
+	font-size:12px;
+	line-height:33px;
+	background-color:#fff;
+	color:#000;
+	background:#fff url(../images/nr_ac_home_diy_icon_chat.jpg) no-repeat 10px center
+}
+#nr_ac .nr_ac_home_diy .main li .final .panel .download {
+	margin-right:10px;
+	background:#fff url(../images/nr_ac_home_diy_icon_download.jpg) no-repeat 10px center
+}
+#nr_ac .nr_ac_home_diy .sub-title {
+	position: absolute;
+	left: 50%;
+	top: 80px;
+	width: 1000px;
+	padding-top: 30px;
+	margin-left: -500px;
+	font-size: 18px;
+	color: #005aaa;
+	font-weight: bold;
+}
+#nr_ac .nr_ac_home_diy .selector {
+	cursor: pointer;
+}
+#nr_ac .nr_ac_home_diy .nr_ac_radio {
+	display: inline-block;
+	-moz-display: inline-stack;
+ *display: inline;
+ *zoom: 1;
+	width: 24px;
+	height: 24px;
+	background: url(../images/nr_ac_home_diy_radio_normal.jpg) no-repeat center center;
+}
+#nr_ac .nr_ac_home_diy .checked .nr_ac_radio {
+	display: inline-block;
+	-moz-display: inline-stack;
+ *display: inline;
+ *zoom: 1;
+	width: 24px;
+	height: 24px;
+	background: url(../images/nr_ac_home_diy_radio_checked.jpg) no-repeat center center;
+}
+#nr_ac .nr_ac_home_diy .accessories {
+	position: absolute;
+	top: 144px;
+	left: 50%;
+	width: 556px;
+	height: 318px;
+	margin-left: -490px;
+	background-color: #ededed;
+}
+#nr_ac .nr_ac_home_diy .voltage {
+	position: absolute;
+	top: 144px;
+	right: 50%;
+	width: 388px;
+	height: 318px;
+	margin-right: -490px;
+	background-color: #ededed;
+}
+#nr_ac .nr_ac_home_diy .accessories .tips {
+	display: none;
+	position: absolute;
+	left: -76px;
+	top: -95px;
+	width: 353px;
+	height: 217px;
+	background: url(../images/nr_ac_tips_center_bg.png) no-repeat center center;
+	text-align: center;
+	z-index: 1;
+	overflow: hidden;
+}
+#nr_ac .nr_ac_home_diy .accessories .tips img {
+	height: 90%;
+}
+#nr_ac .nr_ac_home_diy .accessories .accessories-contents .contents-title span {
+	color: #005aaa;
+	font-weight: bold;
+}
+#nr_ac .nr_ac_home_diy .accessories .accessories-title, #nr_ac .nr_ac_home_diy .voltage .voltage-title {
+	font-size: 24px;
+	text-align: center;
+	color: #005aaa;
+	font-weight: bold;
+	line-height: 2em;
+}
+#nr_ac .nr_ac_home_diy .accessories .part {
+	border-right: 1px dashed #aaa;
+}
+#nr_ac .nr_ac_home_diy .accessories .accessories-contents li {
+	position: relative;
+	float: left;
+	width: 33.33%;
+	height: 244px;
+	text-align: center;
+}
+#nr_ac .nr_ac_home_diy .voltage .voltage-contents li {
+	position: relative;
+	float: left;
+	width: 50%;
+	height: 244px;
+	text-align: center;
+}
+#nr_ac .nr_ac_home_diy .accessories .accessories-contents .contents-title {
+	color: #4e4e4e;
+	font-size: 14px;
+}
+#nr_ac .nr_ac_home_diy .voltage .voltage-contents-title {
+	color: #4e4e4e;
+	font-size: 14px;
+	text-align: center;
+}
+#nr_ac .nr_ac_home_diy .accessories .accessories-contents .active {
+	background: none;
+}
+#nr_ac .nr_ac_home_diy .accessories .accessories-contents .contents-image .active {
+	display: none;
+}
+#nr_ac .nr_ac_home_diy .accessories .accessories-contents .contents-image .normal {
+	display: inline;
+}
+#nr_ac .nr_ac_home_diy .accessories .accessories-contents .active .active {
+	display: inline;
+}
+#nr_ac .nr_ac_home_diy .accessories .accessories-contents .active .normal {
+	display: none;
+}
+#nr_ac .nr_ac_home_diy .accessories .accessories-contents .contents-sub-title, #nr_ac .nr_ac_home_diy .voltage .voltage-contents .contents-sub-title {
+	color: #005aaa;
+	font-size: 18px;
+}
+#nr_ac .nr_ac_home_diy .accessories .accessories-contents .contents-image, #nr_ac .nr_ac_home_diy .voltage .voltage-contents .contents-image {
+	padding: 24px 0;
+	height: 190px;
+	background: none;
+}
+#nr_ac .nr_ac_home_diy .ctrlSetter {
+	width: 230px;
+	height: 80px;
+	padding: 10px 35px;
+}
+#nr_ac .nr_ac_home_diy .ctrlSetter .line-ctrl, #nr_ac .nr_ac_home_diy .ctrlSetter .remote-ctrl {
+	float: left;
+	width: 60px;
+	height: 60px;
+	margin: 10px;
+}
+#nr_ac .nr_ac_home_diy .ctrlSetter .line-ctrl {
+	width: 60px;
+	height: 60px;
+	background: url(../images/nr_ac_home_diy_icon_line.jpg) no-repeat center center;
+	cursor: pointer;
+}
+#nr_ac .nr_ac_home_diy .ctrlSetter .line-ctrl.good {
+	background: url(../images/nr_ac_home_diy_icon_line_good.jpg) no-repeat center center;
+}
+#nr_ac .nr_ac_home_diy .ctrlSetter .line-ctrl.active {
+	background: url(../images/nr_ac_home_diy_icon_line_active.jpg) no-repeat center center;
+}
+#nr_ac .nr_ac_home_diy .ctrlSetter .line-ctrl.active.good {
+	background: url(../images/nr_ac_home_diy_icon_line_good_active.jpg) no-repeat center center;
+}
+#nr_ac .nr_ac_home_diy .ctrlSetter .remote-ctrl {
+	width: 60px;
+	height: 60px;
+	background: url(../images/nr_ac_home_diy_icon_remote.jpg) no-repeat center center;
+	cursor: pointer;
+}
+#nr_ac .nr_ac_home_diy .ctrlSetter .remote-ctrl.good {
+	background: url(../images/nr_ac_home_diy_icon_remote_good.jpg) no-repeat center center;
+}
+#nr_ac .nr_ac_home_diy .ctrlSetter .remote-ctrl.active {
+	background: url(../images/nr_ac_home_diy_icon_remote_active.jpg) no-repeat center center;
+}
+#nr_ac .nr_ac_home_diy .ctrlSetter .remote-ctrl.active.good {
+	background: url(../images/nr_ac_home_diy_icon_remote_good_active.jpg) no-repeat center center;
+}
+#nr_ac .nr_ac_home_diy .line-tips {
+	display: none;
+	position: absolute;
+	right: 50%;
+	top: 0px !important;
+	width: 400px;
+	height: 230px;
+	margin-right: -520px;
+	padding: 30px 0;
+	text-align: center;
+	background: url(../images/nr_ac_tips_left_bg.png) no-repeat center center;
+	z-index: 100;
+}
+#nr_ac .nr_ac_home_diy .remote-tips {
+	display: none;
+	position: absolute;
+	right: 50%;
+	top:0px !important;
+	width: 400px;
+	height: 230px;
+	margin-right: -520px;
+	padding: 30px 0;
+	text-align: center;
+	background: url(../images/nr_ac_tips_right_bg.png) no-repeat center center;
+	z-index: 100;
+}
+#nr_ac .nr_ac_home_diy .main li .step li {
+	width: 225px;
+}
+/*#nr_ac .nr_ac_home_diy .main li .final .content .blue h3 {
+      background: url(nr_ac_home_diy_icon_step4_title_blue.jpg) no-repeat center 46px;
+    }*/
+
+
+/*section*/
+#jsAreaForm .jspContainer {
+	overflow:hidden;
+}
+#jsAreaForm .jspPane {
+	float:left;
+}
+#jsAreaForm .jspVerticalBar {
+	float:right;
+}
+/*footer*/
+#footer {
+	width: 100%;
+	height: 106px;
+	min-width: 1200px;
+	background-color: #0265A9;
+}
+.foot {
+	font: 12px/normal "宋体";
+	margin: 0px auto;
+	top: 47px;
+	width: 1200px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	position: relative;
+	font-size-adjust: none;
+	font-stretch: normal;
+}
+.foot a {
+	font: 12px/normal "宋体";
+	color: rgb(255, 255, 255);
+	font-size-adjust: none;
+	font-stretch: normal;
+}
+.foot .sp {
+	margin: 0px 21px;
+	color: #B5E1FF;
+}
+.foot .sp1 {
+	margin-right: 60px;
+}
+.foot > img {
+	top: -35px;
+	right: 119px;
+	position: absolute;
+}
+/*selecte_btn*/
+.f_l{ float:left;}
+.f_r{ float: right;}
+#selecte_btn {
+	position: absolute;
+	left: 50%;
+	top:290px;
+	width: 400px;
+	height: 138px;
+	margin-left: -200px !important;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 0px;
+	overflow:hidden;
+}
+#selecte_btn .selecte_btn_1{ width:100px; height:100px; border-radius:100px; background-color:#006699; text-align:center; padding-top:20px; padding:20px; opacity:0.6;}
+#nr_ac .nr_ac_home_diy .choose_xx{ height:138px;}
+#selecte_btn .choose_xx .item1{background:url(../images/nr_ac_home_unit_bg_normal.png) no-repeat center center;float:left;width:138px; height:138px; line-height:24px; padding:40px; color:#06C;}
+#selecte_btn .choose_xx .act{ background:url(../images/nr_ac_home_unit_bg_active.png) no-repeat center center; float:left; width:138px; height:138px;color:#FFF; }

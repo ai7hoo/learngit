@@ -1,0 +1,139 @@
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+	
+	Eric Meyer					:: http://meyerweb.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+	
+-------------------------------------------------------------------------------*/
+
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+
+body {	
+	margin: 0;
+}
+
+.nr_content {
+	width: 100%;
+}
+
+#nr_ac div,#nr_ac span,#nr_ac object,#nr_ac iframe,#nr_ac h1,#nr_ac h2,#nr_ac h3,#nr_ac h4,#nr_ac h5,#nr_ac h6,#nr_ac p,#nr_ac blockquote,#nr_ac pre,#nr_ac abbr,#nr_ac address,#nr_ac cite,#nr_ac code,#nr_ac del,#nr_ac dfn,#nr_ac em,#nr_ac img,#nr_ac ins,#nr_ac kbd,#nr_ac q,#nr_ac samp,#nr_ac small,#nr_ac strong,#nr_ac sub,#nr_ac sup,#nr_ac var,#nr_ac b,#nr_ac i,#nr_ac dl,#nr_ac dt,#nr_ac dd,#nr_ac ol,#nr_ac ul,#nr_ac li,#nr_ac fieldset,#nr_ac form,#nr_ac label,#nr_ac legend,#nr_ac table,#nr_ac caption,#nr_ac tbody,#nr_ac tfoot,#nr_ac thead,#nr_ac tr,#nr_ac th,#nr_ac td,#nr_ac article,#nr_ac aside,#nr_ac figure,#nr_ac footer,#nr_ac header,#nr_ac menu,#nr_ac nav,#nr_ac section,#nr_ac time,#nr_ac mark,#nr_ac audio,#nr_ac video,#nr_ac details,#nr_ac summary {
+
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	color: inherit;
+	font-family: "Microsoft YaHei","微软雅黑",Arial,Helvetica,sans-serif;
+	
+}
+
+#nr_ac a {
+	text-decoration: none;
+}
+
+#nr_ac article,#nr_ac aside,#nr_ac figure,#nr_ac footer,#nr_ac header,#nr_ac nav,#nr_ac section,#nr_ac details,#nr_ac summary {display: block;}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+/* Apply a natural box layout model to all elements: http://paulirish.com/2012/box-sizing-border-box-ftw/ */
+#nr_ac *,#nr_ac *:before,#nr_ac *:after {box-sizing: border-box; }
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues,#nr_ac you might want to replace it with a .responsive class instead. */
+#nr_ac img,#nr_ac .ac_body
+object,#nr_ac .ac_body
+embed {}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+#nr_ac html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted. 
+	don't forget to restore the bullets within content. */
+#nr_ac ul {list-style: none;}
+
+#nr_ac blockquote,#nr_ac q {quotes: none;}
+
+#nr_ac blockquote:before,#nr_ac 
+blockquote:after,#nr_ac 
+q:before,#nr_ac 
+q:after {content: ''; content: none;}
+
+#nr_ac a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+#nr_ac del {text-decoration: line-through;}
+
+#nr_ac abbr[title],#nr_ac dfn[title] {border-bottom: 1px dotted .000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+#nr_ac table {border-collapse: collapse; border-spacing: 0;}
+#nr_ac th {font-weight: bold; vertical-align: bottom;}
+#nr_ac td {font-weight: normal; vertical-align: top;}
+
+#nr_ac hr {display: block; height: 1px; border: 0; border-top: 1px solid .ccc; margin: 1em 0; padding: 0;}
+
+#nr_ac input,#nr_ac select {vertical-align: middle;}
+
+#nr_ac pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well,#nr_ac actually) */
+    word-wrap: break-word; /* IE */
+}
+
+#nr_ac input[type="radio"] {vertical-align: text-bottom;}
+#nr_ac input[type="checkbox"] {vertical-align: bottom;}
+#nr_ac .ie7 input[type="checkbox"] {vertical-align: baseline;}
+#nr_ac .ie6 input {vertical-align: text-bottom;}
+
+#nr_ac select,#nr_ac input,#nr_ac textarea {font: 99% sans-serif;}
+
+#nr_ac table {font-size: inherit; font: 100%;}
+
+#nr_ac small {font-size: 85%;}
+
+#nr_ac strong {font-weight: bold;}
+
+#nr_ac td,#nr_ac td img {vertical-align: top;} 
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+#nr_ac sub,#nr_ac sup {font-size: 75%; line-height: 0; position: relative;}
+#nr_ac sup {top: -0.5em;}
+#nr_ac sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+#nr_ac pre,#nr_ac code,#nr_ac kbd,#nr_ac samp {font-family: monospace,#nr_ac sans-serif;}
+
+/* hand cursor on clickable elements */
+#nr_ac .clickable,#nr_ac .ac_body
+label,#nr_ac 
+input[type=button],#nr_ac 
+input[type=submit],#nr_ac 
+input[type=file],#nr_ac 
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+#nr_ac button,#nr_ac input,#nr_ac select,#nr_ac textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+#nr_ac button,#nr_ac .ac_body
+input[type=button] {width: auto; overflow: visible;}
+ 
+/* scale images in IE7 more attractively */
+#nr_ac .ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover 
+   (commented out as usage is rare,#nr_ac and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache",#nr_ac false,#nr_ac true));}
+*/
+
+/* let's clear some floats */
+#nr_ac .clearfix:before,#nr_ac .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+#nr_ac .clearfix:after { clear: both; }  
+#nr_ac .clearfix { zoom: 1; }  
