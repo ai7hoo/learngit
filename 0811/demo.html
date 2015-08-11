@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		#div1 {
+			width: 488px;
+			height: 70px;
+			padding: 10px;
+			border: 1px solid #aaaaaa;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var myVideo = document.getElementById('myVideo');
+			var vStart = document.getElementById('vStart');
+			var vStop = document.getElementById('vStop');
+			var vPlayStop = document.getElementById('vPlayStop');
+			var vBig = document.getElementById('vBig');
+			var vCenter = document.getElementById('vCenter');
+			var vSmall = document.getElementById('vSmall');
+			
+			//开始播放
+			vStart.onclick = function(){
+				myVideo.play();
+			};
+			vStop.onclick = function(){
+				myVideo.pause();
+			}
+			vPlayStop.onclick = function(){
+				if(myVideo.paused){
+					myVideo.play();
+				}
+				else {
+					myVideo.pause();
+				}
+			}
+			vBig.onclick = function(){
+				myVideo.width = 640;
+			};
+			vCenter.onclick = function(){
+				myVideo.width = 320;
+			}
+			vSmall.onclick = function(){
+				myVideo.width = 160;
+			};
+			
+		};
+		function allowDrop(ev) {
+			ev.preventDefault();
+		}
+		
+		function drag(ev){
+			ev.dataTransfer.setData("Text",ev.target.id);
+		}
+		
+		function drop(ev){
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData("Text");
+			ev.target.appendChild(document.getElementById(data));
+		}
+
+	</script>
+</head>
+<body>
+	<video id="myVideo" width="320" height="240" >
+		<source src="http://www.w3school.com.cn/example/html5/mov_bbb.ogg" type="video/ogg">
+		<source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" type="video/mp4">
+		your browser does not support the video tag.
+	</video>
+	<hr>
+	<button id="vStart">开始</button>
+	<button id="vStop">暂停</button>
+	<button id="vPlayStop">开始/暂停</button>
+	<button id="vBig">大</button>
+	<button id="vCenter">中</button>
+	<button id="vSmall">小</button>
+	<hr>
+	<audio src="song.ogg"></audio>
+	<audio controls="controls">
+		<source src="song.ogg" type="audio/ogg">
+		<source src="song.mp3" type="audio/mp3">
+	</audio>
+	<hr>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<br>
+	<img id="drag1" src="http://www.w3school.com.cn/i/w3school_banner.gif" draggable="true" ondragstart="drag(event)" />
+</body>
+</html>

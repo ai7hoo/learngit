@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<style>
+		
+	</style>
+	<script>
+		function drag(ev){
+			ev.dataTransfer.setData("Text",ev.target.id);
+		}
+		function drop(ev){
+			ev.preventDefault();
+		}
+	</script>
+</head>
+<body>
+	<div id="div1" ondrop="drop(event)"></div>
+	<img src="http://www.w3school.com.cn/i/w3school_banner.gif" draggable="true" ondragstart="drag(event)">
+</body>
+</html>
