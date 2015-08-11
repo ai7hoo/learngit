@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		
+	</style>
+	<script>
+		window.onload = function(){
+			var nav = document.getElementsByTagName("nav");
+			var li = nav[0].getElementsByTagName('li');
+			for(var i = 0;i < li.length;i++){
+				li[i].onclick = function(event){
+					event = event || window.event;
+					event.preventDefault();
+					console.log(event.target);
+				}
+			}
+		};
+	</script>
+</head>
+<body>
+	<header>
+		<nav class="nav">
+			<ul>
+				<li><a href="">HOME</a></li>
+				<li><a href="">ABOUT</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section></section>
+</body>
+</html>
