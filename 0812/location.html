@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		#box {
+			margin-top: 20px;
+			border: 1px solid #ac25da;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var btn = document.getElementById("btn");
+			var box = document.getElementById("box");
+			btn.addEventListener("click",function(){
+				getLocation();
+			},false);
+		};
+		
+		function getLocation(){
+			if(navigator.geolocation){
+				navigator.geolocation.getCurrentPosition(function(position){
+					box.innerHTML = "纬度："+position.coords.latitude + "<br> 经度："+position.coords.longitude;
+				});
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+	<hr>
+	<button id="btn">获取位置信息</button>
+</body>
+</html>
