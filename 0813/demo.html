@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<style>
+		
+	</style>
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script>
+		window.onload = function(){
+			var btn = document.getElementById("btn");
+			var box = document.getElementById("box");
+			btn.onclick = function(){
+				if(navigator.geolocation){
+					navigator.geolocation.getCurrentPosition(showPosition,showError);
+				}
+				else {
+					box.innerHTML = "浏览器不支持地理位置。";
+				}
+			};
+		};
+		function showPosition(position){
+			//box.innerHTML = "维度："+position.coords.latitude + "<br>经度："+position.coords.longitude;
+			console.log(position);
+			var lat = position.coords.latitude;
+			var lon = position.coords.longitude;
+			latlon = new google.maps.LatLng(lat, lon);
+			box.style.height = "250px";
+			box.style.width = "500px";
+			
+			var myOptions = {
+				center:latlon,
+				zoom:14,
+				mapTypeId:google.maps.MapTypeId.ROADMAP,
+				mapTypeControl:false,
+				navigationControlOptions:{
+					style:google.maps.NavigationControlStyle.SMALL
+				}
+			};
+			
+			var map = new google.maps.Map(box,myOptions);
+			var marker = new google.maps.Marker({
+				position:latlon,
+				map:map,
+				title:"你在这里！"
+			});
+		}
+		function showError(error){
+			switch(error.code){
+				case error.PERMISSION_DENIED:
+					box.innerHTML = "用户不允许地理定位";
+					break;
+				case error.POSITION_UNAVAILABLE:
+					box.innerHTML = "无法获取当前位置";
+					break;
+				case error.TIMEOUT:
+					box.innerHTML = "操作超时";
+					break;
+				case error.UNKNOWN_ERROR:
+					box.innerHTML = "未知错误";
+					break;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+	<hr>
+	<button id="btn">获取位置</button>
+</body>
+</html>
