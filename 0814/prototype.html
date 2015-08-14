@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function Cat(name,color){
+			this.name = name;
+			this.color = color;
+		}
+
+		function Person(sex,name,height,weight){
+			this.sex = sex;
+			this.name = name;
+			this.height = Number(height);
+			this.weight = Number(weight);
+			this.BMI = this.weight/(this.height*this.height);
+		}
+
+		// var cat1 = new Cat("大毛","红色");
+		// console.log(cat1.name+"的颜色是"+cat1.color);
+		// console.log(cat1.cu);
+		
+		// var ai7hoo = new Person("男","任群",1.78,100);
+		// console.log(ai7hoo.height);
+		// console.log(ai7hoo.constructor == Person);
+		
+		var str = "我是个一个str";
+		var obj = {des:"我是个一obj"};
+		var fun = function(){
+			console.log("我是fun，谁调用我我属于谁"+this);
+		};
+		
+		obj.fun = fun;
+		console.log(window.str == str);
+		console.log(window.obj == obj);
+		console.log(window.fun == fun);
+		fun();
+		obj.fun();
+		fun.apply(str);
+		
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

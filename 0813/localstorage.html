@@ -14,13 +14,24 @@
 			else {
 				sessionStorage.pagecount = 1;
 			}
-			document.getElementById("box").innerHTML = sessionStorage.pagecount;
+			// document.getElementById("box").innerHTML = sessionStorage.pagecount;
+			var i = 0;
+			btn.onclick = function(){
+				var btn = document.getElementById("btn");
+				
+				var nli = document.createElement("li");			//先创建新的DOM节点
+				var textnode = document.createTextNode(i++);	//如果DOM节点有文本，先新建文本节点
+				nli.appendChild(textnode);						//把文本节点添加到一开始创建的DOM节点
+				document.getElementById("box").appendChild(nli);//再把创建的DOM节点添加到要显示的位置
+			};
+			
 		};
 	</script>
 </head>
 <body>
-	<div id="box"></div>
-	<hr>
-	<button id="btn">获取位置</button>
+	<ul id="box">
+		<li>aaa</li>
+	</ul>
+	<button id="btn">Insert</button>
 </body>
 </html>

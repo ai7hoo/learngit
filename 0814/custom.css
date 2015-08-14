@@ -1,0 +1,15 @@
+/*//css file dom*/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#main {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	box-shadow: 0 0 10px #000;
+}
+.guize {
+	background: url(pic.jpg) no-repeat;
+}
