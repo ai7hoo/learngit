@@ -1,0 +1,33 @@
+a {
+	color: #222;
+	text-decoration: none;
+	font-family: 'microsoft yahei';
+}
+.menu {
+	position: fixed;
+	width: 25%;
+	top: 3em;
+	bottom: 3em;
+	left: 0;
+	z-index: 100;
+	overflow: hidden;
+}
+.main {
+	width: 75%;
+	float: right;
+}
+.menu__inner {
+	width: calc(100% + 25px);
+	overflow-y: auto;
+	height: 100%;
+	position: relative;
+	z-index: 100;
+}
+.menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.menu ul li {
+
+}
