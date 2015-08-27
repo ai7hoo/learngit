@@ -1,0 +1,217 @@
+html {
+  color: #333;
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+}
+
+html.borderbox *, html.borderbox *:before, html.borderbox *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block;
+}
+
+body, button, input, select, textarea {
+  font: 400 14px/1.8 Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: #1abc9c;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #cfcfcf;
+  margin-bottom: 0.8em;
+  height: 10px;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Verdana, 'Helvetica Neue', 'Microsoft Yahei', 'Hiragino Sans GB', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;
+  font-weight: 100;
+  color: #000;
+  line-height: 1.35;
+}
+
+a {
+  color: #2e3740;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f36f20;
+  text-decoration: none;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+.header {
+  width: 100%;
+}
+.header .header-bar {
+  width: 100%;
+  background-color: #F1F1F1;
+}
+.header .header-bar .header-bar-inner {
+  width: 1024px;
+  height: 60px;
+  margin: 0 auto;
+  line-height: 60px;
+}
+.header .header-bar .header-bar-inner .logo {
+  float: left;
+  width: 230px;
+  font-size: 24px;
+}
+.header .header-bar .header-bar-inner .user-login-status {
+  float: left;
+  margin-left: 530px;
+}
+.header .header-bar .header-bar-inner .user-login-status .user-pic img {
+  float: left;
+  margin-top: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.header .header-bar .header-bar-inner .user-login-status .user-pic span {
+  float: left;
+  height: 60px;
+  margin-left: 20px;
+}
+.header .header-bar .header-bar-inner .user-logout {
+  float: right;
+}
+.header .header-bar .header-bar-inner .user-logout a {
+  color: #E94D25;
+}
+
+.nav {
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 10px;
+}
+.nav ul {
+  width: 1024px;
+  margin: 0 auto;
+  border-bottom: 1px solid #CED0D3;
+}
+.nav ul li {
+  float: left;
+  border-top: 1px solid #CED0D3;
+}
+.nav ul li:first-child {
+  border-left: 1px solid #CED0D3;
+}
+.nav ul li a {
+  display: block;
+  float: left;
+  width: 145px;
+  line-height: 50px;
+  text-align: center;
+  border-right: 1px solid #CED0D3;
+  font-size: 16px;
+  transition: all .2s;
+  background-color: #F1F1F1;
+}
+.nav ul li a:hover {
+  background-color: #e94d25;
+  border-right: 1px solid #e94d25;
+  color: #ffffff;
+}
+
+.content {
+  width: 1024px;
+  margin: 0 auto;
+}
+.content .position {
+  width: 100%;
+  height: 50px;
+}
+.content .position h3 {
+  line-height: 50px;
+}
+.content .wrapper {
+  background-color: #F1F1F1;
+  width: 984px;
+  padding: 20px;
+}
+
+.wrapbox {
+  box-shadow: 0 0px 2px #c6c6c6;
+}
+.wrapbox .wrap-tit {
+  width: 100%;
+  height: 40px;
+  border-top: 4px solid #e94d25;
+  line-height: 40px;
+  font-size: 16px;
+  box-shadow: 0 2px 2px #c6c6c6;
+  position: relative;
+  z-index: 2;
+}
+.wrapbox .wrap-tit i {
+  margin-left: 20px;
+}
+.wrapbox .wrap-con {
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+.wrapbox.user-info {
+  width: 317px;
+  float: left;
+}
+.wrapbox.kechengbiao {
+  width: 644px;
+  float: left;
+  margin-left: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
