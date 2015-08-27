@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#box {
+			border: 1px solid #aaa;
+			width: 300px;
+			height: 500px;
+			position: absolute;
+			top: 0;
+			left: 0;
+						
+		}
+	</style>
+	<script src="../global/jquery.js"></script>
+	<script>
+		$(function(){
+			
+		});
+		//禁用手机默认的触屏滚动行为
+		document.addEventListener('touchmove',function(event){
+			event.preventDefault();
+		},false);
+		//判断是否支持触屏事件
+		function isTouchDevice(){
+			try {
+				document.createElement('TouchEvent');
+				bindEvent();
+			}
+			catch(e) {
+				alert('不支持TouchEvent事件' + e.message);
+			}
+		}
+		//绑定事件
+		function bindEvent(){
+			document.addEventListener('touchstart',touchStartFunc,false);
+			document.addEventListener('touchmove',touchMoveFunc,false);
+			document.addEventListener('touchend',touchEndFunc,false);
+		}
+		//touchStart事件
+		function touchStartFunc(e){
+			try{
+				var touch = e.touches[0];
+				var x = Number(touch.pageX);
+				var y = Number(touch.pageY);
+				startX = x;
+				startY = y;
+			}
+			catch(e){
+				alert('touchStartFunc:' + e.message);
+			}
+		}
+		//touchMove事件
+		function touchMoveFunc(e){
+			try{
+				var touch = e.touches[0];
+				var x = Number(touch.pageX);
+				var y = Number(touch.pageY);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

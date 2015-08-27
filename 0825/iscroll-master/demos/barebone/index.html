@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+<title>iScroll demo: barebone</title>
+
+<script type="text/javascript" src="../../build/iscroll.js"></script>
+
+<script type="text/javascript">
+
+var myScroll;
+var myScroll2;
+
+function loaded () {
+	myScroll = new IScroll('#wrapper');
+	myScroll2 = new IScroll('#wrapper2');
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+</script>
+
+<style>
+body {
+	/* On modern browsers, prevent the whole page to bounce */
+	overflow: hidden;
+}
+
+#wrapper,#wrapper2 {
+	float: left;
+	position: relative;
+	width: 50%;
+	height: 300px;
+	overflow: hidden;
+
+	/* Prevent native touch events on Windows */
+	-ms-touch-action: none;
+
+	/* Prevent the callout on tap-hold and text selection */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	/* Prevent text resize on orientation change, useful for web-apps */
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+#scroller,#scroller2 {
+	position: absolute;
+
+	/* Prevent elements to be highlighted on tap */
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	/* Put the scroller into the HW Compositing layer right from the start */
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+</style>
+
+</head>
+<body onload="loaded()">
+
+<div id="wrapper">
+	<div id="scroller">
+		<ul>
+			<li>这是第1个</li>
+			<li>这是第2个</li>
+			<li>这是第3个</li>
+			<li>这是第4个</li>
+			<li>这是第5个</li>
+			<li>这是第6个</li>
+			<li>这是第7个</li>
+			<li>这是第8个</li>
+			<li>这是第9个</li>
+			<li>这是第10个</li>
+			<li>这是第11个</li>
+			<li>这是第12个</li>
+			<li>这是第13个</li>
+			<li>这是第14个</li>
+			<li>这是第15个</li>
+			<li>这是第16个</li>
+			<li>这是第17个</li>
+			<li>这是第18个</li>
+			<li>这是第19个</li>
+			<li>这是第20个</li>
+			<li>这是第21个</li>
+			<li>这是第22个</li>
+			<li>这是第23个</li>
+			<li>这是第24个</li>
+			<li>这是第25个</li>
+			<li>这是第26个</li>
+			<li>这是第27个</li>
+			<li>这是第28个</li>
+			<li>这是第29个</li>
+			<li>这是第30个</li>
+		</ul>
+	</div>
+</div>
+
+<div id="wrapper2">
+	<div id="scroller2">
+		<ul>
+			<li>这是第1个</li>
+			<li>这是第2个</li>
+			<li>这是第3个</li>
+			<li>这是第4个</li>
+			<li>这是第5个</li>
+			<li>这是第6个</li>
+			<li>这是第7个</li>
+			<li>这是第8个</li>
+			<li>这是第9个</li>
+			<li>这是第10个</li>
+			<li>这是第11个</li>
+			<li>这是第12个</li>
+			<li>这是第13个</li>
+			<li>这是第14个</li>
+			<li>这是第15个</li>
+			<li>这是第16个</li>
+			<li>这是第17个</li>
+			<li>这是第18个</li>
+			<li>这是第19个</li>
+			<li>这是第20个</li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>
