@@ -185,6 +185,7 @@ a:focus {
 
 .wrapbox {
   box-shadow: 0 0px 2px #c6c6c6;
+  margin-bottom: 20px;
 }
 .wrapbox .wrap-tit {
   width: 100%;
@@ -204,14 +205,36 @@ a:focus {
   position: relative;
   z-index: 1;
 }
-.wrapbox.user-info {
+.user-info {
   width: 317px;
   float: left;
 }
-.wrapbox.kechengbiao {
+.kechengbiao {
   width: 644px;
   float: left;
   margin-left: 20px;
+}
+.notice {
+  width: 317px;
+  float: left;
+}
+.user-comment {
+  width: 644px;
+  float: left;
+  margin-left: 20px;
+}
+.line-test {
+  width: 317px;
+  float: left;
+}
+.line-class {
+  width: 644px;
+  float: left;
+  margin-left: 20px;
+}
+.teacher-info {
+  width: 100%;
+  float: left;
 }
 
 /*# sourceMappingURL=style.css.map */

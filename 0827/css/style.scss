@@ -172,6 +172,7 @@ a:focus {
 }
 .wrapbox {
     box-shadow: 0 0px 2px #c6c6c6;
+    margin-bottom: 20px;
     .wrap-tit {
         width: 100%;
         height: 40px;
@@ -191,14 +192,41 @@ a:focus {
         z-index: 1;
     }
     // user-info
-    &.user-info {
+    @at-root .user-info {
         width: 317px;
         float: left;
     }
     // kechengbiao
-    &.kechengbiao {
+    @at-root .kechengbiao {
         width: 644px;
         float: left;
         margin-left: 20px;
+    }
+    //notice
+    @at-root .notice {
+        width: 317px;
+        float: left;
+    }
+    //comment
+    @at-root .user-comment {
+        width: 644px;
+        float: left;
+        margin-left: 20px;
+    }
+    //line-test
+    @at-root .line-test {
+        width: 317px;
+        float: left;
+    }
+    //line-class
+    @at-root .line-class {
+        width: 644px;
+        float: left;
+        margin-left: 20px;
+    }
+    //teacher-info
+    @at-root .teacher-info {
+        width: 100%;
+        float: left;
     }
 }
