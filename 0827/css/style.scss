@@ -80,7 +80,6 @@ a:focus {
 //css document
 .header {
     width: 100%;
-    
     .header-bar {
         width: 100%;
         background-color: #F1F1F1;
@@ -144,7 +143,6 @@ a:focus {
                 line-height: 50px;
                 text-align: center;
                 border-right: 1px solid #CED0D3;
-
                 font-size: 16px;
                 transition: all .2s;
                 background-color: #F1F1F1;
@@ -251,15 +249,15 @@ a:focus {
                 li {
                     float: left;
                     width: 100px;
+                    height: 48px;
+                    line-height: 24px;
                     text-align: left;
                     border-left: 1px solid #f1f1f1;
-
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
                     padding: 5px;
+                    white-space: normal;
+                    overflow: hidden;
+                    // text-overflow: ellipsis;
+
                     
                     font-size: 12px;
                     &.kb-tbody-first {
