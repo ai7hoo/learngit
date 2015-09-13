@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#databox {
+  box-sizing: border-box;
+  width: 260px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  border: 1px solid #aaa;
+  box-shadow: 0 0 3px #aaa;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+#databox .databox-tit {
+  width: 100%;
+  padding: 5px;
+  height: 24px;
+  background-color: #eee;
+}
+#databox .databox-body .databox-week dl {
+  height: 20px;
+  border-bottom: 1px solid #aaa;
+}
+#databox .databox-body .databox-week dl dd {
+  list-style: none;
+  float: left;
+  color: #aaa;
+  font-size: 12px;
+  width: 14.2%;
+  text-align: center;
+  line-height: 20px;
+}
+#databox .databox-body .databox-day dl dd {
+  box-sizing: border-box;
+  list-style: none;
+  float: left;
+  color: #aaa;
+  width: 14.28%;
+  text-align: center;
+  border-right: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  height: 24px;
+  line-height: 24px;
+  cursor: pointer;
+}
+#databox .databox-body .databox-day dl dd:nth-child(7n) {
+  border-right: none;
+}
+#databox .databox-body .databox-day dl dd.today {
+  background: #009F95;
+  color: #fff;
+}
+#databox .databox-body .databox-day dl dd:hover {
+  background: #00C1B3;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */
