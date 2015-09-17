@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/main.js"></script>
+	<style>
+		.done {
+			color: red;
+		}
+		.on {
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<h3 id="cat-{{id}}">{{message}}</h3>
+		<p v-repeat="todos" v-on="click:on=!on" class="{{on?'on':''}}">{{text}}</p>
+	</div>
+</body>
+</html>
