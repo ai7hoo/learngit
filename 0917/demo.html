@@ -17,8 +17,40 @@
 </head>
 <body>
 	<div id="box">
-		<h3 id="cat-{{id}}">{{message}}</h3>
-		<p v-repeat="todos" v-on="click:on=!on" class="{{on?'on':''}}">{{text}}</p>
+		<h3 id="cat-{{cat}}">{{message}}</h3>
+		<p v-repeat="todo in todos" class="item-{{todo.id}}">{{todo.text}}</p>
+		<hr />
+		<template v-repeat="li in list">
+			<a class="dt-{{li.id}}" v-on="click:clickEvent(li.id,$event)" href="{{li.href}}">{{li.title}}</a>
+			<hr />
+		</template>
+	</div>
+	<div id="demo">
+		<form id="form">
+			<input type="text" v-model="msg" lazy />{{msg}}
+			<hr />
+			<input type="checkbox" v-model="checked" />{{checked?'yes':'no'}}
+			<hr />
+			<select name="" id="" v-model="selected">
+				<option>one</option>
+				<option>two</option>
+			</select>
+			{{selected}}
+			<hr />
+			<select name="" id="" v-model="multiSelect" multiple>
+				<option>one</option>
+				<option>two</option>
+				<option>three</option>
+			</select>
+			{{multiSelect}}
+		</form>
+	</div>
+	<hr />
+	<div id="compupter">
+		<p v-on="click: reBack">{{fullName}}</p>
+	</div>
+	<div id="mydefine">
+		<p v-mydefine="msg:text"></p>
 	</div>
 </body>
 </html>
