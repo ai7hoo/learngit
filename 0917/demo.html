@@ -50,7 +50,40 @@
 		<p v-on="click: reBack">{{fullName}}</p>
 	</div>
 	<div id="mydefine">
-		<p v-mydefine="msg:text"></p>
+		<p v-mydefine="msg"></p>
+	</div>
+	<hr />
+	<div id="t0920">
+		<p v-repeat="list" v-text="content" v-on="click:reload(id)"></p>
+	</div>
+	<hr />
+	<div id="template0920">
+		<button id="btn" v-on="click:loadMore">btn</button>
+		<template v-repeat="li in list">
+			<h1 v-text="li.title"></h1>
+			<p v-text="li.content"></p>
+		</template>
+	</div>
+	<hr />
+	<div id="demo0921">
+		<input type="checkbox" v-model="checked" />
+		{{checked?'yes':'no'}}
+		<hr />
+		<ul>
+			<li v-repeat="item in items" class="{{item.done?'on':''}}" v-on="click:item.done=!item.done">{{item.tit}}</li>
+		</ul>
+		<hr />
+		<input v-model="msg" number>{{msg}}
+		<hr />
+		<p>
+			<input type="radio" name="picked" v-model="picked" value="1" />
+			<input type="radio" name="picked" v-model="picked" value="2" />
+			{{picked}}
+		</p>
+	</div>
+	<hr />
+	<div id="subString">
+		<p>{{msg | subString '5'}}</p>
 	</div>
 </body>
 </html>
