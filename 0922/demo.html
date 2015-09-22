@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src="/learngit/global/jquery.js"></script>
+        <script src="/learngit/global/vue.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <div id="items">
+            <div class="item" v-repeat="item">
+                <div class="pic">
+                    <img src="{{picUrl}}" alt="" />
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="./../0917/js/jquery.js"></script>
+        <script>
+            $(function(){
+               $.ajax({
+                   url:'http://www.bjsdups.com?p=671&json=1',
+                   type:'GET',
+                   dataType:'jsonp',
+                   success:function(data){
+                       alert(data.status);
+                   },
+                   error:function(){
+                       alert('no');
+                   }
+               });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="box"></div>
+    </body>
+</html>
