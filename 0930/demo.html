@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="../global/jquery.js"></script>
+        <script type="text/javascript" src="../global/vue.js"></script>
+    </head>
+    <body>
+        <div id="box">
+            <img src="{{picUrl}}" alt="" width="300" />
+            <h4>{{title}}</h4>
+            <p>这里是详细的内容信息</p>
+        </div>
+        <script type="text/javascript">
+            var box = new Vue({
+                el:'#box',
+                data: {
+                    title: 'ttt',
+                    content: 'ccc',
+                    picUrl: 'images/default.jpg'
+                }
+            });
+            $.ajax({
+                url: 'http://www.bjsdups.com/?p=659&json=1',
+                type: 'GET',
+                dataType: 'jsonp',
+            })
+            .done(function(data) {
+                console.log(data.post.attachments[0].url);
+                box.$data.picUrl = data.post.attachments[0].url;
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
+            
+        </script>
+    </body>
+</html>
