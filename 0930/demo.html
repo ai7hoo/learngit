@@ -7,7 +7,7 @@
     </head>
     <body>
         <div id="box">
-            <img src="{{picUrl}}" alt="" width="300" />
+            <img src="{{picUrl}}" alt="" width="300" v-on="click:onCl('你好')" />
             <h4>{{title}}</h4>
             <p>这里是详细的内容信息</p>
         </div>
@@ -18,23 +18,31 @@
                     title: 'ttt',
                     content: 'ccc',
                     picUrl: 'images/default.jpg'
+                },
+                methods: {
+                    onCl: function (text) {
+                        alert(text);
+                    }
                 }
             });
-            $.ajax({
-                url: 'http://www.bjsdups.com/?p=659&json=1',
-                type: 'GET',
-                dataType: 'jsonp',
-            })
-            .done(function(data) {
-                console.log(data.post.attachments[0].url);
-                box.$data.picUrl = data.post.attachments[0].url;
-            })
-            .fail(function() {
-                console.log("error");
-            })
-            .always(function() {
-                console.log("complete");
+            $(function(){
+                $.ajax({
+                    url: 'http://www.bjsdups.com/?p=659&json=1',
+                    type: 'GET',
+                    dataType: 'jsonp',
+                })
+                .done(function(data) {
+                    console.log(data.post.attachments[0].url);
+                    box.$data.picUrl = data.post.attachments[0].url;
+                })
+                .fail(function() {
+                    console.log("error");
+                })
+                .always(function() {
+                    console.log("complete");
+                });
             });
+
             
         </script>
     </body>
