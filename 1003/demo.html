@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src=".././global/jquery.js"></script>
+        <script type="text/javascript" src=".././global/vue.js"></script>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .done {
+                color: red;
+            }
+            body {
+                background-color: #3E3D32;
+                color: #fff;
+            }
+            #clockbox {
+                width: 200px;
+                height: 200px;
+                position: relative;
+                margin: 50px auto;
+                border-radius: 50%;
+                box-sizing: border-box;
+                border: 5px solid #cecece;
+            }
+            #sss {
+                width: 100%;
+                height: 20px;
+                margin-top: 85px;
+                position: relative;
+
+                /* css3 */
+                transition: transform 1s linear;
+                transform: rotate(-90deg);
+            }
+            #clocksecond {
+                background-color: #f36f20;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                right: 10px;
+                border-radius: 50%;
+            }
+        </style>
+        <script type="text/javascript">
+            $(function(){
+                var count = -90;
+                // setInterval(function(){
+                //     $("#sss").css("transform",'rotate('+count+'deg)'); 
+                //     count+=6;
+                // },1000);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="clockbox">
+            <div id="sss">
+                <div id="clocksecond"></div>
+            </div>
+        </div>
+        <hr />
+        <div id="box">
+            <ul>
+                <li v-repeat="item" v-on="click:done=!done" class="{{done?'done':''}}">{{title}}</li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            window.onload = function(){
+                var box = new Vue({
+                    el:"#box",
+                    data:{
+                        item: [{
+                            'title':'L1',
+                            'done':false
+                        },{
+                            'title':'L2',
+                            'done':false
+                        },{
+                            'title':'L3',
+                            'done':false
+                        }]
+                    },
+                    methods: {}
+                });
+            };
+        </script>
+    </body>
+</html>
