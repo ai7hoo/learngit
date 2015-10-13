@@ -1,0 +1,10 @@
+body {
+    font-family: 'Microsoft Yahei';
+}
+a:link, a:visited {
+    color: $colorBlack;
+}
+a:hover {
+    color: $colorRed;
+    text-decoration: none;
+}

@@ -1,0 +1,26 @@
+//常用变量
+
+//color
+$colorBlack:#000;//黑色
+$colorRed:#db3900;//红色
+$colorGray1:#d6d6d6;//灰色-低
+$colorGray2:#adadad;//灰色-中
+$colorGray3:#f5f7f6;//灰色-最低
+$colorGray4:#efefef;//灰色-最低
+
+//font-size
+$fz12:12px;
+$fz14:14px;
+$fz16:16px;
+$fz40:40px;
+
+//line-height
+$lineHeight24:24px;
+$lineHeight30:30px;
+
+//mixin
+//边框带圆角
+@mixin border-radius {
+    border:1px solid $colorGray3;
+    border-radius: 3px;
+}

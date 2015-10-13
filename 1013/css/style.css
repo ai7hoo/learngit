@@ -1,0 +1,39 @@
+body {
+  font-family: 'Microsoft Yahei';
+}
+
+a:link, a:visited {
+  color: #000;
+}
+
+a:hover {
+  color: #db3900;
+  text-decoration: none;
+}
+
+#header {
+  background-color: #efefef;
+  height: 30px;
+  line-height: 30px;
+}
+#header .container {
+  font-size: 12px;
+}
+#header .container .left {
+  float: left;
+}
+#header .container .right {
+  float: right;
+}
+#header .container .right div {
+  float: left;
+}
+#header .container .right .phone_num, #header .container .right .weixin_qr {
+  margin-right: 30px;
+}
+
+.container {
+  width: 1190px !important;
+}
+
+/*# sourceMappingURL=style.css.map */

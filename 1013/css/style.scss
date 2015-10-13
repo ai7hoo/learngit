@@ -1,0 +1,36 @@
+//载入变量和mixin
+@import "variables";
+@import "reset";
+
+//顶部条
+#header {
+    background-color: $colorGray4;
+    height: $lineHeight30;
+    line-height: $lineHeight30;
+    .container {
+        font-size: $fz12;
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+            div {
+                float: left;
+            }
+            .phone_num, .weixin_qr {
+                margin-right: 30px;
+            }
+
+        }
+    }
+}
+
+//主要内容
+.container {
+    width: 1190px !important;
+}
+
+//head_inner
+#head_inner {
+    
+}
