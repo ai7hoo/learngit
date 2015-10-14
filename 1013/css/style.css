@@ -36,4 +36,14 @@ a:hover {
   width: 1190px !important;
 }
 
+#logo {
+  float: left;
+  width: 350px;
+  height: 100px;
+}
+
+#search {
+  margin-left: 80px;
+}
+
 /*# sourceMappingURL=style.css.map */
