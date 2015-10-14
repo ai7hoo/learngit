@@ -4,9 +4,9 @@
 
 //顶部条
 #header {
-    background-color: $colorGray4;
-    height: $lineHeight30;
-    line-height: $lineHeight30;
+    background-color: $colorGray1;
+    height: $lh30;
+    line-height: $lh30;
     .container {
         font-size: $fz12;
         .left {
@@ -29,17 +29,194 @@
 .container {
     width: 1190px !important;
 }
+
+//logo、搜索、导航
+.logoSearchNav {
+    @include border;
+}
 #logo {
     float: left;
     width: 350px;
     height: 100px;
 }
 #search {
-    margin-left: 80px;
-    
+    float: left;
+    width: 400px;
+    height: 100px;
+    .searchTop {
+        text-align: center;
+        margin-top: 20px;
+        line-height: $lh30;
+    }
+    .searchForm {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+}
+#nav {
+    width: 320px;
+    height: 60px;
+    margin-top: 40px;
+    float: right;
+    .navlg {
+        width: 100%;
+        ul {
+            padding: 0;
+            li {
+                list-style: none;
+                float: left;
+                margin-left: 20px;
+                font-size: $fz18;
+                line-height: $lh30;
+            }
+        }
+    }
+    .navsm {
+        @include border;
+        border-bottom: none;
+        ul {
+            padding: 0px;
+            li {
+                float: left;
+                margin-left: 20px;
+                list-style: none;
+                line-height: $lh30;
+            }
+        }
+    }
 }
 
 //head_inner
-#head_inner {
-    
+#bd_inner {
+    margin-top: 20px;
+    .bd_left {
+        float: left;
+        width: 730px;
+        .category_nav {
+            @include border;
+            height:40px;
+            .category_nav_title {
+                display: block;
+                float: left;
+                width: 190px;
+                font-size: $fz16;
+                line-height: $lh40;
+                font-weight: bold;
+                text-align: center;
+            }
+            .cat_nav_list {
+                float: left;
+                li {
+                    list-style: none;
+                    float: left;
+                    line-height: $lh40;
+                    margin-right: 20px;
+                }
+            }
+            h4 {
+                
+                font-weight: bold;
+                float: right;
+                margin-right: 80px;
+                position: relative;
+                a {
+                    color: $colorRed;
+                }
+            }
+        }
+        .cat_tags {
+            width: 170px;
+            float: left;
+            .cat_tags_con {
+                .cat_tags_tit {
+                    font-weight: bold;
+                    padding: 4px;
+                    @include border;
+                }
+                .cat_tags_bd {
+                    height: 110px;
+                    font-size: $fz12;
+                    padding: 4px;
+                    ul {
+                        padding: 0px;
+                        li {
+                            list-style: none;
+                            float: left;
+                            margin-right: 20px;
+                            line-height: $lh24;
+                        }
+                    }
+                }
+            }
+        }
+        .slide {
+            width: 540px;
+            height: 280px;
+            float: left;
+            margin-left: 20px;
+            background-color: $colorRed;
+        }
+    }
+    .bd_right {
+        float: right;
+        width: 400px;
+    }
+}
+//首页新品
+#newitem {
+    margin-top: 20px;
+    float: left;
+    width: 730px;
+    .newitem_tit {
+        height: 80px;
+        padding-left: 20px;
+        border-bottom: 1px solid $colorGray1;
+        .title {
+            font-size: $fz16;
+            line-height: 80px;
+            strong {
+                font-size: $fz40;
+            }
+        }
+        .hot_tags {
+            float: right;
+            span {
+                margin-left: 20px;
+                line-height: 100px;
+            }
+        }
+    }
+    .newitem_bd {
+        .item {
+            float: left;
+            width: 236px;
+            height: 375px;
+            margin-bottom: 20px;
+            margin-right: 10px;
+            position: relative;
+            &:nth-child(3n){
+                margin-right: 0px;
+            }
+            .pic {
+                width: 100%;
+                height: 315px;
+                overflow: hidden;
+            }
+            .title {
+                height: 30;
+                line-height: $lh30;
+            }
+            .price_like {
+
+                .price {
+                    float: left;
+                    line-height: $lh24;
+                }
+                .like {
+                    float: right;
+                }
+            }
+        }
+    }
 }
