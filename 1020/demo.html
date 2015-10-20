@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+<script src="js/require.js"></script>
+<script>
+	require.config({
+		paths:{
+			'jquery':'js/jquery',
+			'md5':'js/md5'
+		}
+	});
+	requirejs(['jquery','md5'],function($){
+		alert(MD5('aaa').toUpperCase());
+	});
+</script>
+</body>
+</html>
