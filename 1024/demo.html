@@ -19,8 +19,44 @@
 		};
 
 	</script>
+	<script src="../1020/js/require.js"></script>
 </head>
 <body>
 	<div id="box"></div>
+	<div id="vue">
+		<ul>
+			<template v-repeat="item in items">
+				<li><a href="{{item.link}}" v-text="item.title" data-id="{{item.id}}" class="{{item.isHot?'red':''}}"></a></li>
+			</template>
+		</ul>
+	</div>
+	<script>
+		require.config({
+			paths:{
+				'jquery':'../global/jquery',
+				'Vue':'../global/vue'
+			}
+		});
+		requirejs(['jquery','Vue'],function($,Vue){
+			var v = new Vue({
+				el:'#vue',
+				data:{
+					items:[
+						{
+							link:'http://www.baidu.com',
+							title:'标题',
+							id:'21545',
+							isHot:false
+						},{
+							link:'http://www.qq.com',
+							title:'biaoti',
+							id:'45562',
+							isHot:true
+						}
+					]
+				}
+			});
+		});
+	</script>
 </body>
 </html>
