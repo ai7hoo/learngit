@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function(){
+			var weekDayLabels = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+			var time = new Date();
+			var year = time.getFullYear();
+			var month = time.getMonth()+1;
+			var day = time.getDate();
+			var hour = time.getHours();
+			var minute = time.getMinutes();
+			var second = time.getSeconds();
+			var week = time.getDay();
+			var box = document.getElementById('box');
+			box.innerHTML = '今天是'+year+'年'+month+'月'+day+'日 '+hour+'时'+minute+'分'+second+'秒 '+weekDayLabels[week];
+		};
+
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>
