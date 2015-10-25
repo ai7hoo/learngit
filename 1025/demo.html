@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function(){
+			var lis = document.getElementsByTagName('li');
+			var n = lis.length;
+			var i = 0;
+
+			for(i;i<n;i++){
+				(function(num){
+					lis[num].onclick = function(){
+						alert(num);
+					};
+				}(i))
+			}
+			
+
+			
+			function getTimeLeft(reponseEndTime){
+				var reponseEndTimeFilter = new Date( reponseEndTime.substring(0,19) );
+				var nowTime = new Date();
+				var timeLeft = Math.round( (reponseEndTimeFilter-nowTime)/1000/60 );
+				var Hour = parseInt(timeLeft/60);
+				var Minutes = timeLeft%60;
+				if(Hour >= 1){
+					return Hour+'小时'+Minutes+'分';
+				}else {
+					return Minutes+'分';
+				}
+			}
+			alert(getTimeLeft('2015-10-26 21:14:00.0'));
+		};
+	</script>
+</head>
+<body>
+	<ul id="result">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+</html>

@@ -24,6 +24,7 @@
 <body>
 	<div id="box"></div>
 	<div id="vue">
+		<h1 v-text="fullName"></h1>
 		<ul>
 			<template v-repeat="item in items">
 				<li><a href="{{item.link}}" v-text="item.title" data-id="{{item.id}}" class="{{(item.isHot==1)?'red':''}}"></a></li>
@@ -41,6 +42,8 @@
 			var v = new Vue({
 				el:'#vue',
 				data:{
+					firstName:'Quinn',
+					lastName:'Ren',
 					items:[
 						{
 							link:'http://www.baidu.com',
@@ -54,6 +57,12 @@
 							isHot:1
 						}
 					]
+				},
+				methods:{},
+				computed:{
+					fullName:function(){
+						return this.firstName + ' ' + this.lastName;
+					}
 				}
 			});
 		});
