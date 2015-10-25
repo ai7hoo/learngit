@@ -26,7 +26,7 @@
 	<div id="vue">
 		<ul>
 			<template v-repeat="item in items">
-				<li><a href="{{item.link}}" v-text="item.title" data-id="{{item.id}}" class="{{item.isHot?'red':''}}"></a></li>
+				<li><a href="{{item.link}}" v-text="item.title" data-id="{{item.id}}" class="{{(item.isHot==1)?'red':''}}"></a></li>
 			</template>
 		</ul>
 	</div>
@@ -46,12 +46,12 @@
 							link:'http://www.baidu.com',
 							title:'标题',
 							id:'21545',
-							isHot:false
+							isHot:0
 						},{
 							link:'http://www.qq.com',
 							title:'biaoti',
 							id:'45562',
-							isHot:true
+							isHot:1
 						}
 					]
 				}
