@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function People(){
+			
+		}
+		People.prototype.say = function(){
+			alert('hello');
+		}
+		function Student(){
+			
+		}
+		Student.prototype = new People();
+		
+		var superSay  = Student.call(this);
+		
+		Student.prototype.say = function(){
+			alert('stu-hello');
+		};
+		
+		var s = new Student();
+		s.say();
+	</script>
+</body>
+</html>
