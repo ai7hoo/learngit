@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	function P(name){
+		var _this = {};
+		_this._name = name;
+		_this.sayHello = function(){
+			alert('P '+_this._name);
+		};
+		return _this;
+	}
+	function T(name){
+		var _this = P();
+		_this._name = name;
+		var superSay = _this.sayHello;
+		_this.sayHello = function(){
+			superSay.call(this);
+			alert('T '+_this._name);
+		};
+		return _this;
+	}
+	var t = T("Quinn");
+	t.sayHello();
+</script>
+</body>
+</html>

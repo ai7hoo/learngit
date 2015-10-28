@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	(function(){
+		var n = 'ime';
+		function Person(name){
+			var _this = {};
+			_this._name = name;
+			_this.sayHello = function(){
+				alert("PHello"+_this._name+n);
+			}
+			return _this;
+		}
+		window.Person = Person;
+	}());
+	
+	(function(){
+		function Teacher(name){
+			var _this = Person(name);
+			_this._name = name;
+			var superSay = _this.sayHello;
+			_this.sayHello = function(){
+				superSay.call(this);
+				alert("Thello"+_this._name);
+			}
+			return _this;
+		}
+		window.Teacher = Teacher;
+	}());
+
+	var t = Teacher(" Quinn");
+	t.sayHello();
+</script>
+</body>
+</html>

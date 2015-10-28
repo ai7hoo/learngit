@@ -6,24 +6,34 @@
 </head>
 <body>
 	<script>
-		function People(){
+		(function(){
+			var n = 'ai7hoo';
+			function People(name){
+				this._name = name;
+				
+			}
+			People.prototype.say = function(){
+				alert('peo-hello '+this._name+n);
+			}
+			window.People = People;
+		}());
+
+		(function(){
+			function Student(name){
+				this._name = name;
+			}
+			Student.prototype = new People();
 			
-		}
-		People.prototype.say = function(){
-			alert('hello');
-		}
-		function Student(){
+			var superSay  = Student.prototype.say;
 			
-		}
-		Student.prototype = new People();
+			Student.prototype.say = function(){
+				superSay.call(this);
+				alert('stu-hello '+this._name);
+			};
+			window.Student = Student;
+		}());
 		
-		var superSay  = Student.call(this);
-		
-		Student.prototype.say = function(){
-			alert('stu-hello');
-		};
-		
-		var s = new Student();
+		var s = new Student('Quinn');
 		s.say();
 	</script>
 </body>
