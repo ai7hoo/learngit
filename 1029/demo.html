@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	(function(){
+		function P(name){
+			var _this = {};
+			_this._name = name;
+			_this.say = function(){
+				alert('P '+_this._name);
+			}
+			return _this;
+		}
+		window.P = P;
+	}());
+	
+	(function(){
+		function T(name){
+			var _this = P();
+			_this._name = name;
+			var superSay = _this.say;
+			_this.say = function(){
+				superSay.call(this);
+				alert('T '+_this._name);
+			}
+			return _this;
+		}
+		window.T = T;
+	}());
+	
+	var t = T('quinn');
+	t.say();
+</script>
+</body>
+</html>
