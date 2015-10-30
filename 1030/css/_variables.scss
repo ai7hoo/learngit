@@ -1,0 +1,28 @@
+//定义常量和常用属性
+
+//主色
+$clb: #1D7AD9;//蓝色
+$cly: #FF8C00;//黄色
+
+//灰色
+$clg: #000000;//黑色-文本色
+$clg-h: #808080;//高度灰色-文字链接
+$clg-c: #DDDDDD;//中度灰色-边框
+$clg-l: #F6F6F6;//低度灰色-背景色
+
+@mixin allWidth {
+    width: 100%;
+}
+@mixin fixedWidth {
+    width: 1000px;
+    margin: 0 auto;
+}
+@mixin lhs {
+    line-height: 24px;
+}
+@mixin lhc {
+    line-height: 30px;
+}
+@mixin lhe {
+    line-height: 36px;
+}

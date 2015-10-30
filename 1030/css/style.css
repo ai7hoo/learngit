@@ -1,0 +1,29 @@
+/* 
+* @Author: Quinn
+* @Date:   2015-10-30 17:44:28
+* @Last Modified by:   Quinn
+* @Last Modified time: 2015-10-30 17:44:38
+*/
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, dl, dt, dd, input { margin: 0; padding: 0; }
+
+body { font-size: 14px; font-family: "Microsoft Yahei"; }
+
+img { border: none; }
+
+li { list-style: none; }
+
+input, select, textarea { outline: none; }
+
+textarea { resize: none; }
+
+a { text-decoration: none; }
+
+.clearfix { zoom: 1; }
+.clearfix:after { content: ""; display: block; clear: both; }
+
+#header { width: 100%; }
+#header .toolBar { width: 1000px; margin: 0 auto; text-align: right; line-height: 30px; }
+#header .logoBar { width: 100%; background-color: #1D7AD9; height: 90px; }
+#header .logoBar .logoBarInner { width: 1000px; margin: 0 auto; }
+
+/*# sourceMappingURL=style.css.map */

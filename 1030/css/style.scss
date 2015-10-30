@@ -1,0 +1,31 @@
+/* 
+* @Author: Quinn
+* @Date:   2015-10-30 17:44:28
+* @Last Modified by:   Quinn
+* @Last Modified time: 2015-10-30 17:44:38
+*/
+
+//重置样式
+@import "reset";
+@import "variables";
+
+//首页
+#header {
+    @include allWidth;
+    .toolBar {
+        @include fixedWidth;
+        text-align: right;
+        @include lhc;
+    }
+    .logoBar {
+        @include allWidth;
+        background-color: $clb;
+        height: 90px;
+        .logoBarInner {
+            @include fixedWidth;
+            .logo {
+
+            }
+        }
+    }
+}
