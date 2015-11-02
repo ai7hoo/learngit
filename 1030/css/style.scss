@@ -24,8 +24,151 @@
         .logoBarInner {
             @include fixedWidth;
             .logo {
-
+                float: left;
+                width: 320px;
+                height: 90px;
+            }
+            .searchBar {
+                float: left;
+                width: 530px;
+                height: 90px;
+                margin-top: 30px;
+                .searchBarLeft {
+                    float: left;
+                    line-height: 30px;
+                    height: 30px;
+                    select {
+                        height: 30px;
+                        border: none;
+                        option {
+                            font-family: 'Microsoft Yahei';
+                        }
+                    }
+                }
+                .searchBarForm {
+                    padding-top: 1px;
+                    -moz-padding-top: 1px;
+                    input {
+                        width: 300px;
+                        margin-left: 5px;
+                        height: 30px;
+                        line-height: 30px;
+                        border: none;
+                        font-family: 'Microsoft Yahei';
+                    }
+                    button {
+                        font-family: 'Microsoft Yahei';
+                        background-color: $cly;
+                        border: none;
+                        width: 70px;
+                        height: 30px;
+                        color: #ffffff;
+                        cursor: pointer;
+                    }
+                }
             }
         }
+    }
+}
+#container {
+    @include fixedWidth;
+    margin-top: 20px;
+    .innerLeft {
+        float: left;
+        width: 760px;
+        .listFilter {
+            background-color: $clg-l;
+            border: 1px solid $clg-c;
+            width: 100%;
+            .listFilterTit {
+                height: 30px;
+                line-height: 30px;
+                padding-left: 20px;
+                background-color: $clg-c;
+                border-bottom: 1px solid $clg-c;
+                span {
+                    float: left;
+                }
+                ul {
+                    float: left;
+                    margin-left: 10px;
+                    li {
+                        float: left;
+                        padding: 0 10px;
+                        cursor: pointer;
+                        &.on {
+                            background-color: $clg-l;
+                            border-top: 2px solid $clb;
+                        }
+                    }
+                }
+            }
+            .listFilterCon {
+                ul {
+                    li {
+                        float: left;
+                        text-align: left;
+                        padding: 0 10px;
+                        line-height: 30px;
+                        cursor: pointer;
+                        &:hover {
+                            color: $cly;
+                        }
+                        span {
+
+                        }
+                        i {
+                            color: $clg-h;
+                            font-style: normal;
+                        }
+                    }
+                }
+            }
+        }
+        .resultList {
+            margin-top: 20px;
+            table {
+                width: 100%;
+                border: 1px solid $clg-c;
+                line-height: 30px;
+                tr {
+                    td {
+                        padding-left: 5px;
+                    }
+                }
+                tr:nth-child(odd){
+                    
+                }
+                tr:nth-child(even){
+                    background-color: $clg-l;
+                }
+            }
+            .resultListTit {
+                background-color: $clg-c;
+                line-height: 36px;
+            }
+        }
+        .pageBox {
+            margin-top: 20px;
+            text-align: right;
+            .pageBoxText {
+                
+            }
+            .pageBoxBtn {
+                border: 1px solid $clg-c;
+                background-color: $clg-l;
+                padding: 5px 10px;
+                margin-left: 5px;
+                &:hover {
+                    background-color: $clg-c;
+                }
+            }
+        }
+    }
+    .innerRight {
+        float: right;
+        width: 220px;
+        background-color: $clg-l;
+        border: 1px solid $clg-c;
     }
 }

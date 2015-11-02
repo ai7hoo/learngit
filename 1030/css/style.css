@@ -25,5 +25,34 @@ a { text-decoration: none; }
 #header .toolBar { width: 1000px; margin: 0 auto; text-align: right; line-height: 30px; }
 #header .logoBar { width: 100%; background-color: #1D7AD9; height: 90px; }
 #header .logoBar .logoBarInner { width: 1000px; margin: 0 auto; }
+#header .logoBar .logoBarInner .logo { float: left; width: 320px; height: 90px; }
+#header .logoBar .logoBarInner .searchBar { float: left; width: 530px; height: 90px; margin-top: 30px; }
+#header .logoBar .logoBarInner .searchBar .searchBarLeft { float: left; line-height: 30px; height: 30px; }
+#header .logoBar .logoBarInner .searchBar .searchBarLeft select { height: 30px; border: none; }
+#header .logoBar .logoBarInner .searchBar .searchBarLeft select option { font-family: 'Microsoft Yahei'; }
+#header .logoBar .logoBarInner .searchBar .searchBarForm { padding-top: 1px; -moz-padding-top: 1px; }
+#header .logoBar .logoBarInner .searchBar .searchBarForm input { width: 300px; margin-left: 5px; height: 30px; line-height: 30px; border: none; font-family: 'Microsoft Yahei'; }
+#header .logoBar .logoBarInner .searchBar .searchBarForm button { font-family: 'Microsoft Yahei'; background-color: #FF8C00; border: none; width: 70px; height: 30px; color: #ffffff; cursor: pointer; }
+
+#container { width: 1000px; margin: 0 auto; margin-top: 20px; }
+#container .innerLeft { float: left; width: 760px; }
+#container .innerLeft .listFilter { background-color: #F6F6F6; border: 1px solid #DDDDDD; width: 100%; }
+#container .innerLeft .listFilter .listFilterTit { height: 30px; line-height: 30px; padding-left: 20px; background-color: #DDDDDD; border-bottom: 1px solid #DDDDDD; }
+#container .innerLeft .listFilter .listFilterTit span { float: left; }
+#container .innerLeft .listFilter .listFilterTit ul { float: left; margin-left: 10px; }
+#container .innerLeft .listFilter .listFilterTit ul li { float: left; padding: 0 10px; cursor: pointer; }
+#container .innerLeft .listFilter .listFilterTit ul li.on { background-color: #F6F6F6; border-top: 2px solid #1D7AD9; }
+#container .innerLeft .listFilter .listFilterCon ul li { float: left; text-align: left; padding: 0 10px; line-height: 30px; cursor: pointer; }
+#container .innerLeft .listFilter .listFilterCon ul li:hover { color: #FF8C00; }
+#container .innerLeft .listFilter .listFilterCon ul li i { color: #808080; font-style: normal; }
+#container .innerLeft .resultList { margin-top: 20px; }
+#container .innerLeft .resultList table { width: 100%; border: 1px solid #DDDDDD; line-height: 30px; }
+#container .innerLeft .resultList table tr td { padding-left: 5px; }
+#container .innerLeft .resultList table tr:nth-child(even) { background-color: #F6F6F6; }
+#container .innerLeft .resultList .resultListTit { background-color: #DDDDDD; line-height: 36px; }
+#container .innerLeft .pageBox { margin-top: 20px; text-align: right; }
+#container .innerLeft .pageBox .pageBoxBtn { border: 1px solid #DDDDDD; background-color: #F6F6F6; padding: 5px 10px; margin-left: 5px; }
+#container .innerLeft .pageBox .pageBoxBtn:hover { background-color: #DDDDDD; }
+#container .innerRight { float: right; width: 220px; background-color: #F6F6F6; border: 1px solid #DDDDDD; }
 
 /*# sourceMappingURL=style.css.map */

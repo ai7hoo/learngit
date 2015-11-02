@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>台湾研究所</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
@@ -14,12 +15,96 @@
         </div>
         <div class="logoBar">
             <div class="logoBarInner">
-                <div class="logo"></div>
-                <div class="searchBar"></div>
+                <div class="logo">
+                    <img src="images/logo.png" alt="" />
+                </div>
+                <div class="searchBar">
+                    <div class="searchBarLeft">
+                        <select name="catName" id="">
+                            <option value="1">全文检索</option>
+                            <option value="1">编号</option>
+                            <option value="1">分类</option>
+                        </select>
+                    </div>
+                    <div class="searchBarForm">
+                        <input type="text" /><button>搜索</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div id="container"></div>
+    <div id="container">
+        <div class="innerLeft">
+            <!-- 筛选 start -->
+            <div class="listFilter clearfix">
+                <div class="listFilterTit">
+                    <span>筛选：</span>
+                    <ul>
+                        <li class="on">发表年度</li>
+                        <li>发表年度</li>
+                        <li>发表年度</li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+                <div class="listFilterCon">
+                    <ul>
+                        <li>
+                            <span>2015</span>
+                            <i>(299)</i>
+                        </li>
+                        <li>
+                            <span>2015</span>
+                            <i>(299)</i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 筛选 end -->
+            <!-- 结果列表 start -->
+            <div class="resultList clearfix">
+                <table >
+                    <!-- 列表标题 start -->
+                    <tr class="resultListTit">
+                        <td width="10%">
+                            <input type="checkbox" />
+                        </td>
+                        <td width="45%" align="center">题名</td>
+                        <td width="15%">作者</td>
+                        <td width="15%">来源</td>
+                        <td width="15%">发表时间</td>
+                    </tr>
+                    <!-- 列表标题 end -->
+                    <!-- results loop start -->
+                    <tr>
+                        <td>
+                            <input type="checkbox" /> 1
+                        </td>
+                        <td>洪秀柱将带领国民党打出一场漂亮选战</td>
+                        <td>张麟征</td>
+                        <td>台声</td>
+                        <td>2015-07-05</td>
+                    </tr>
+                    <!-- result loop end -->
+                </table>
+            </div>
+            <!-- 结果列表 end -->
+            <!-- 分页 start -->
+            <div class="pageBox">
+                <span class="pageBoxText">找到 614 条结果</span>
+                <span class="pageBoxNow">1</span>
+                <a href="" class="pageBoxBtn">2</a>
+                <a href="" class="pageBoxBtn">3</a>
+                <a href="" class="pageBoxBtn">4</a>
+                <a href="" class="pageBoxBtn">5</a>
+                <a href="" class="pageBoxBtn">6</a>
+                <a href="" class="pageBoxBtn">下一页</a>
+            </div>
+            <!-- 分页 end -->
+        </div>
+        <div class="innerRight">
+            0
+        </div>
+    </div>
     <div id="footer"></div>
 </body>
 </html>
