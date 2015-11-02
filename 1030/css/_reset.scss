@@ -20,7 +20,11 @@ textarea {
     resize: none;
 }
 a {
+    color: $clb;
     text-decoration: none;
+    &:hover {
+        color: $cly;
+    }
 }
 .clearfix {
     &:after {
@@ -29,4 +33,7 @@ a {
         clear: both;
     }
     zoom: 1;
+}
+.hide {
+    display: none;
 }

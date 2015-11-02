@@ -6,8 +6,8 @@
 */
 
 //重置样式
-@import "reset";
 @import "variables";
+@import "reset";
 
 //首页
 #header {
@@ -73,6 +73,7 @@
 #container {
     @include fixedWidth;
     margin-top: 20px;
+    margin-bottom: 20px;
     .innerLeft {
         float: left;
         width: 760px;
@@ -82,7 +83,7 @@
             width: 100%;
             .listFilterTit {
                 height: 30px;
-                line-height: 30px;
+                @include lhc;
                 padding-left: 20px;
                 background-color: $clg-c;
                 border-bottom: 1px solid $clg-c;
@@ -109,7 +110,7 @@
                         float: left;
                         text-align: left;
                         padding: 0 10px;
-                        line-height: 30px;
+                        @include lhc;
                         cursor: pointer;
                         &:hover {
                             color: $cly;
@@ -145,7 +146,7 @@
             }
             .resultListTit {
                 background-color: $clg-c;
-                line-height: 36px;
+                @include lhe;
             }
         }
         .pageBox {
@@ -170,5 +171,157 @@
         width: 220px;
         background-color: $clg-l;
         border: 1px solid $clg-c;
+        .rightTit {
+            box-sizing: border-box;
+            width: 100%;
+            border-bottom:1px solid $clg-c;
+            @include lhc;
+            padding-left: 20px;
+            font-weight: bold;
+        }
+        .rightCon {
+            margin-bottom: 20px;
+            ul {
+                padding: 10px 0 0 20px;
+                li {
+                    @include lhc;
+                    span {
+                        float: right;
+                        margin-right: 10px;
+                        color: $clg-h;
+                    }
+                }
+            }
+            .searchHistory {
+                margin-top: 10px;
+                .searchHistoryPage {
+                    color: $clg-h;
+                    margin-left: 20px;
+                }
+                .clearSearchHistory {
+                    float: right;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    //详情页
+    .detailLeft {
+        float: left;
+        width: 760px;
+        .detailTitDec {
+            background-color: $clg-l;
+            border: 1px solid $clg-c;
+            // width: 100%;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            .detailTit {
+                font-size: 18px;
+                padding: 20px 0 20px;
+            }
+            .paperTools {
+                a {
+                    display: inline-block;
+                    width: 36px;
+                    height: 36px;
+                    @at-root .iconDown {
+                        display: inline-block;
+                        width: 36px;
+                        height: 36px;
+                        background: url(../images/icon.png) no-repeat;
+                        background-position: 0 0;
+                        &:hover {
+                            background-position: 0 -36px;
+                        }
+                    }
+                    @at-root .iconRead {
+                        display: inline-block;
+                        width: 36px;
+                        height: 36px;
+                        background: url(../images/icon.png) no-repeat;
+                        background-position: -36px 0;
+                        &:hover {
+                            background-position: -36px -36px;
+                        }
+                    }
+                }
+            }
+            .paperAbstract {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                .pre {
+                    float: left;
+                    width: 40px;
+                    cursor: text;
+                    font-weight: bold;
+                }
+                .text {
+                    float: left;
+                    width: 680px;
+                }
+            }
+            .paperInfo {
+                .paperPic {
+                    float: left;
+                    width: 130px;
+                    height: 160px;
+                }
+                .paperAu {
+                    float: left;
+                    width: 590px;
+                    .row {
+                        @include lhs;
+                        .pre {
+                            float: left;
+                            width: 100px;
+                            cursor: text;
+                            text-align: right;
+                            font-weight: bold;
+                        }
+                        .text {
+                            float: right;
+                            width: 480px;
+                            .keyWord {
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .nodeSearch {
+            margin-top: 20px;
+            border-top: 1px solid $clg-c;
+            padding-top: 20px;
+            //text-align: right;
+            padding-right: 20px;
+            input {
+                height: 30px;
+            }
+            button {
+                height: 30px;
+                background-color: $cly;
+                border: none;
+                color: #ffffff;
+            }
+        }
+        .nodeSearchResult {
+            margin-top: 10px;
+            border: 1px dashed $clg-h;
+            margin-right: 20px;
+            padding: 10px;
+            background-color: $clg-c;
+        }
+    }
+}
+#footer {
+    @include allWidth;
+    background-color: $clb;
+    .innerFooter {
+        @include fixedWidth;
+        padding: 10px 0px;
+        a {
+            color: #ffffff;
+        }
     }
 }

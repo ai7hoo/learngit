@@ -16,10 +16,13 @@ input, select, textarea { outline: none; }
 
 textarea { resize: none; }
 
-a { text-decoration: none; }
+a { color: #1D7AD9; text-decoration: none; }
+a:hover { color: #FF8C00; }
 
 .clearfix { zoom: 1; }
 .clearfix:after { content: ""; display: block; clear: both; }
+
+.hide { display: none; }
 
 #header { width: 100%; }
 #header .toolBar { width: 1000px; margin: 0 auto; text-align: right; line-height: 30px; }
@@ -34,7 +37,7 @@ a { text-decoration: none; }
 #header .logoBar .logoBarInner .searchBar .searchBarForm input { width: 300px; margin-left: 5px; height: 30px; line-height: 30px; border: none; font-family: 'Microsoft Yahei'; }
 #header .logoBar .logoBarInner .searchBar .searchBarForm button { font-family: 'Microsoft Yahei'; background-color: #FF8C00; border: none; width: 70px; height: 30px; color: #ffffff; cursor: pointer; }
 
-#container { width: 1000px; margin: 0 auto; margin-top: 20px; }
+#container { width: 1000px; margin: 0 auto; margin-top: 20px; margin-bottom: 20px; }
 #container .innerLeft { float: left; width: 760px; }
 #container .innerLeft .listFilter { background-color: #F6F6F6; border: 1px solid #DDDDDD; width: 100%; }
 #container .innerLeft .listFilter .listFilterTit { height: 30px; line-height: 30px; padding-left: 20px; background-color: #DDDDDD; border-bottom: 1px solid #DDDDDD; }
@@ -54,5 +57,38 @@ a { text-decoration: none; }
 #container .innerLeft .pageBox .pageBoxBtn { border: 1px solid #DDDDDD; background-color: #F6F6F6; padding: 5px 10px; margin-left: 5px; }
 #container .innerLeft .pageBox .pageBoxBtn:hover { background-color: #DDDDDD; }
 #container .innerRight { float: right; width: 220px; background-color: #F6F6F6; border: 1px solid #DDDDDD; }
+#container .innerRight .rightTit { box-sizing: border-box; width: 100%; border-bottom: 1px solid #DDDDDD; line-height: 30px; padding-left: 20px; font-weight: bold; }
+#container .innerRight .rightCon { margin-bottom: 20px; }
+#container .innerRight .rightCon ul { padding: 10px 0 0 20px; }
+#container .innerRight .rightCon ul li { line-height: 30px; }
+#container .innerRight .rightCon ul li span { float: right; margin-right: 10px; color: #808080; }
+#container .innerRight .rightCon .searchHistory { margin-top: 10px; }
+#container .innerRight .rightCon .searchHistory .searchHistoryPage { color: #808080; margin-left: 20px; }
+#container .innerRight .rightCon .searchHistory .clearSearchHistory { float: right; margin-right: 10px; }
+#container .detailLeft { float: left; width: 760px; }
+#container .detailLeft .detailTitDec { background-color: #F6F6F6; border: 1px solid #DDDDDD; padding-bottom: 20px; padding-left: 20px; }
+#container .detailLeft .detailTitDec .detailTit { font-size: 18px; padding: 20px 0 20px; }
+#container .detailLeft .detailTitDec .paperTools a { display: inline-block; width: 36px; height: 36px; }
+.iconDown { display: inline-block; width: 36px; height: 36px; background: url(../images/icon.png) no-repeat; background-position: 0 0; }
+.iconDown:hover { background-position: 0 -36px; }
+.iconRead { display: inline-block; width: 36px; height: 36px; background: url(../images/icon.png) no-repeat; background-position: -36px 0; }
+.iconRead:hover { background-position: -36px -36px; }
+#container .detailLeft .detailTitDec .paperAbstract { margin-top: 20px; margin-bottom: 20px; }
+#container .detailLeft .detailTitDec .paperAbstract .pre { float: left; width: 40px; cursor: text; font-weight: bold; }
+#container .detailLeft .detailTitDec .paperAbstract .text { float: left; width: 680px; }
+#container .detailLeft .detailTitDec .paperInfo .paperPic { float: left; width: 130px; height: 160px; }
+#container .detailLeft .detailTitDec .paperInfo .paperAu { float: left; width: 590px; }
+#container .detailLeft .detailTitDec .paperInfo .paperAu .row { line-height: 24px; }
+#container .detailLeft .detailTitDec .paperInfo .paperAu .row .pre { float: left; width: 100px; cursor: text; text-align: right; font-weight: bold; }
+#container .detailLeft .detailTitDec .paperInfo .paperAu .row .text { float: right; width: 480px; }
+#container .detailLeft .detailTitDec .paperInfo .paperAu .row .text .keyWord { margin-right: 10px; }
+#container .detailLeft .nodeSearch { margin-top: 20px; border-top: 1px solid #DDDDDD; padding-top: 20px; padding-right: 20px; }
+#container .detailLeft .nodeSearch input { height: 30px; }
+#container .detailLeft .nodeSearch button { height: 30px; background-color: #FF8C00; border: none; color: #ffffff; }
+#container .detailLeft .nodeSearchResult { margin-top: 10px; border: 1px dashed #808080; margin-right: 20px; padding: 10px; background-color: #DDDDDD; }
+
+#footer { width: 100%; background-color: #1D7AD9; }
+#footer .innerFooter { width: 1000px; margin: 0 auto; padding: 10px 0px; }
+#footer .innerFooter a { color: #ffffff; }
 
 /*# sourceMappingURL=style.css.map */
