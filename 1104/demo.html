@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function (){
+			writeNum(50);
+		};
+		function writeNum(num){
+			var cn = document.createTextNode(num+',');
+			var box = document.getElementById('box');
+			box.appendChild(cn);
+			if(num > 0){
+				writeNum(--num);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>
