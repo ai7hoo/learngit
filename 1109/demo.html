@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../global/jquery.js"></script>
+	<script>
+		$(function(){
+			$.ajax({
+				url:'http://192.168.1.108:8080/guanjiabm7/get_provider_service_item',
+				dataType:'JSON',
+			});
+			$(document).ajaxError(function(a,b,c){
+				console.log(a);
+			});
+		});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
