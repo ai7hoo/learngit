@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript" src="../global/jquery.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            var user = {
+                name:'ai7hoo',
+                password:'asdfiarf5a4d52af',
+                cid:'s5dFas1d51a5sd1f5',
+                price:'555'
+            }
+            myAjax('http://localhost/jsonp.js','POST',JSON.stringify(user),function(data){
+                alert('ok');
+            });
+        };
+        function myAjax(url,type,postData,sucCallback,errCallback){
+            $.ajax({
+                url:url,
+                type:type,
+                data:postData,
+                dataType:'json',
+                contentType:'application/json',
+                beforeSend:function(){},
+                success:function(){
+                    sucCallback();
+                },
+                error:function(error){
+                    if( /401/.test(error.responseText) ){
+                        myAjax(url,type,postData,sucCallback,errCallback);
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

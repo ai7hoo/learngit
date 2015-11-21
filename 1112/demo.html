@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="//cdn.bootcss.com/vue/1.0.4/vue.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    isVip:false
+                },
+                methods:{},
+                computed:{
+                    msgA:function(){
+                        return this.msg.split('').reverse().join('');
+                    }
+                }
+            });
+
+            vm.isVip = true;
+        }
+    </script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="msg" />
+        <li v-if="isVip">{{msgA}}</li>
+    </div>
+</body>
+</html>
