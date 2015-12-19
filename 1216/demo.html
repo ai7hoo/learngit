@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="semantic.css" />
+        <style type="text/css">
+            body {
+                padding: 2em;
+            }
+        </style>
+        <script type="text/javascript">
+            window.onload = function(){
+                $(".ui.checkbox").checkbox();
+                $(".dropdown").dropdown();
+                $(".message .close").on('click',function(){
+                    $(this).closest('.message').fadeOut();
+                });
+                $('.accordion').accordion();
+                $("#add").on('click',function(){
+                    $("#testdimmer").dimmer('show');
+                });
+                $('.menu .item').tab();
+            }
+        </script>
+    </head>
+    <body>
+        <hr />
+        <table class="ui celled striped table">
+            <tbody>
+                <tr>
+                    <td>Quinn</td>
+                    <td>24</td>
+                    <td>Nan</td>
+                </tr>
+                <tr>
+                    <td>Quinn</td>
+                    <td>24</td>
+                    <td>Nan</td>
+                </tr>
+                <tr>
+                    <td>Quinn</td>
+                    <td>24</td>
+                    <td>Nan</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <div class="ui top attached tabular menu">
+            <a href="" class="active item" data-tab="first">1</a>
+            <a href="" class="item" data-tab="second">1</a>
+            <a href="" class="item" data-tab="third">1</a>
+        </div>
+        <ui class="ui bottom attached active tab segment" data-tab="first">11</ui>
+        <ui class="ui bottom attached tab segment" data-tab="second">22</ui>
+        <ui class="ui bottom attached tab segment" data-tab="third">33</ui>
+        <hr />
+        <div class="ui text shape">
+            <div class="sides">
+                <div class="active ui header side">you know?</div>
+                <div class="active ui header side">this is other line</div>
+                <div class="active ui header side">this is last line</div>
+            </div>
+        </div>
+        <hr />
+        <div class="ui segment" id="testdimmer">
+            <i class="add icon" id="add"></i>
+            aaa <br />
+            aaa <br />
+            aaa <br />
+            aaa <br />
+            aaa <br />
+        </div>
+        <hr />
+        <div class="ui styled accordion">
+            <div class="active title">
+                <i class="dropdown icon"></i>
+                题目
+            </div>
+            <div class="active content">
+                <p>Neirong</p>
+            </div>
+            <div class="title">
+                <i class="dropdown icon"></i>
+                题目
+            </div>
+            <div class="content">
+                <p>Neirong</p>
+            </div>
+        </div>
+        <hr />
+        <div class="ui accordion">
+            <div class="active title">
+                <i class="dropdown icon"></i>
+                what is dog?
+            </div>
+            <div class="active content">
+                <p>dog is livestock</p>
+            </div>
+            <div class="title">
+                <i class="dropdown icon"></i>
+                aaa
+            </div>
+            <div class="content">
+                <p>aaaaaaaaaaaaaaaaa</p>
+            </div>
+        </div>
+        <div class="ui accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                timu
+            </div>
+            <div class="content">neirong</div>
+        </div>
+        <hr />
+        <div class="ui grid">
+            <div class="four wide column">1</div>
+            <div class="four wide column">1</div>
+            <div class="four wide column">1</div>
+            <div class="four wide column">1</div>
+            <div class="four wide column">2</div>
+            <div class="four wide column">2</div>
+            <div class="four wide column">2</div>
+            <div class="four wide column">2</div>
+            <div class="ten wide column">3</div>
+            <div class="six wide column">3</div>
+        </div>
+        <hr />
+        <table class="ui table">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Age</td>
+                    <td>Birth</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aiqhoo</td>
+                    <td>24</td>
+                    <td>08/15</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <div class="ui large message">large</div>
+        <hr />
+        <div class="ui black message">black</div>
+        <div class="ui yellow message">yellow</div>
+        <div class="ui green message">green</div>
+        <div class="ui blue message">blue</div>
+        <div class="ui orange message">orange</div>
+        <div class="ui purple message">purple</div>
+        <div class="ui pink message">pink</div>
+        <div class="ui red message">red</div>
+        <div class="ui teal message">teal</div>
+        <hr />
+        <div class="ui success compact message">
+            we win!
+        </div>
+        <hr />
+        <div class="ui compact message">
+            <p>this is a message</p>
+        </div>
+        <hr />
+        <div class="ui floating message">
+            <p>will go.</p>
+        </div>
+        <hr />
+        <div class="ui hidden message">
+            <p>you can't see me</p>
+        </div>
+        <div class="ui visible message">
+            <p>you can see me.</p>
+        </div>
+        <hr />
+        <div class="ui message">
+            <i class="close icon"></i>
+            <div class="header">welcome to back.</div>
+            <p>this is a special msg.</p>
+        </div>
+        <hr />
+        <div class="ui icon message">
+            <i class="notched circle icon"></i>
+            <div class="content">
+                <div class="header">wait for me</div>
+                <p>we will collect your info about phone.</p>
+            </div>
+        </div>
+        <hr />
+        <div class="ui icon message">
+            <i class="wechat icon"></i>
+            <div class="content">
+                <div class="header">header</div>
+                <p>p tags</p>
+            </div>
+        </div>
+        <hr />
+        <div class="ui message">
+            <div class="header">tou</div>
+            <ul class="list">
+                <li>a</li>
+                <li>a</li>
+                <li>a</li>
+                <li>a</li>
+                <li>a</li>
+            </ul>
+        </div>
+        <hr />
+        <div class="ui message">
+            <div class="header">tou</div>
+            <p>women</p>
+        </div>
+        <hr />
+		<div class="ui vertical menu">
+			<div class="ui dropdown item">
+				<i class="dropdown icon"></i>
+				类别
+				<div class="menu">
+					<a class="item">car</a>
+					<a class="item">car</a>
+					<a class="item">car</a>
+				</div>
+			</div>
+		</div>
+		<hr />
+        <div class="ui form">
+            <div class="fields">
+                <div class="six wide field">
+                    <input type="text" />
+                </div>
+                <div class="four wide field">
+                    <input type="text" />
+                </div>
+                <div class="six wide field"></div>
+            </div>
+        </div>
+        <hr />
+        <div class="ui form">
+            <div class="inline field">
+                <label for="">姓名</label>
+                <input type="text" placeholder姓名 />
+            </div>
+        </div>
+        <hr />
+        <div class="ui warning message">
+            <p>bbbb</p>
+        </div>
+        <hr />
+        <div class="ui error message">
+            <p>aaaa</p>
+        </div>
+        <hr />
+        <div class="ui form">
+            <div class="inline fields">
+                <label for="fruit">选择喜欢的水果</label>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="fruit" checked="" />
+                        <label>苹果</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="fruit" />
+                        <label>香蕉</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="ui form">
+            <div class="field">
+                <label for=""></label>
+                <select name="" id="" class="ui search dropdown">
+                    <option value="a">a</option>
+                    <option value="b">b</option>
+                    <option value="c">c</option>
+                    <option value="d">d</option>
+                </select>
+            </div>
+        </div>
+        <hr />
+        <div class="ui form">
+            <div class="field">
+                <label for="">性别</label>
+                <select name="" id="" class="ui dropdown">
+                    <option value="">性别</option>
+                    <option value="0">女</option>
+                    <option value="1">男</option>
+                </select>
+            </div>
+        </div>
+        <hr />
+        <div class="ui form">
+            <div class="inline field">
+                <div class="ui checkbox">
+                    <input type="checkbox" />
+                    <label for="">复选框</label>
+                </div>
+            </div>
+            <div class="inline field">
+                <ui class="ui slider checkbox">
+                    <input type="checkbox" />
+                    <label for="">滑块</label>
+                </ui>
+            </div>
+            <div class="inline field">
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" />
+                    <label for="">切换</label>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="ui form">
+            <div class="field error">
+                <label for="">text</label>
+                <textarea name=""></textarea>
+            </div>
+        </div>
+        <hr />
+        <div class="ui form">
+            <div class="field">
+                <label for="">用户名称</label>
+                <input type="text" />
+            </div>
+        </div>
+        <hr />
+        <div class="ui form">
+            <div class="field button">
+                <label>yonghushuru</label>
+                <input type="text" />
+            </div>
+        </div>
+        <hr />
+        <form class="ui form">
+            <h4 class="ui dividing header">user info</h4>
+            <div class="two fields">
+                <div class="field">
+                    <label>Name</label>
+                    <div class="two fields">
+                        <div class="field">
+                            <input type="text" placeholder="姓" />
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="名" />
+                        </div>
+                    </div>
+                </div>
+  <div class="field">
+    <div class="ui checkbox">
+      <input type="checkbox" name="hot-deals">
+      <label>同意 <a href="#">服务条款</a>。</label>
+    </div>
+  </div>
+            </div>
+        </form>
+        <hr />
+        <div class="ui breadcrumb">
+            <a href="" class="section">home</a>
+            <i class="right chevron icon divider"></i>
+            <a href="" class="section">shop</a>
+        </div>
+        <hr />
+        <div class="ui breadcrumb">
+            <a href="" class="section">home</a>
+            <div class="divider"> / </div>
+            <a href="" class="section">shop</a>
+        </div>
+        <hr />
+        <div class="ui three steps">
+            <div class="step">
+                <i class="truck icon"></i>
+                <div class="content">
+                    <div class="title">truck</div>
+                    <div class="description">selected trucked</div>
+                </div>
+            </div>
+            <div class="active step">
+                <i class="payment icon"></i>
+                <div class="content">
+                    <div class="title">payment</div>
+                    <div class="description">input your info</div>
+                </div>
+            </div>
+            <div class="disabled step">
+                <i class="info icon"></i>
+                <div class="content">
+                    <div class="title">info</div>
+                    <div class="description">aaaa</div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="ui circular segment">
+            <h2 class="ui header">
+                now buy
+                <div class="sub header">
+                    $10.99
+                </div>
+                <div class="sub header">
+                    $10.99
+                </div>
+                <div class="sub header">
+                    $10.99
+                </div>
+            </h2>
+        </div>
+        <hr />
+        <div class="ui primary segment">
+            <p>aaa</p>
+        </div>
+        <div class="ui teal segment">
+            <p>aaa</p>
+        </div>
+        <hr />
+        <div class="ui blue segment">
+            <p>a</p>
+            <div class="ui blue segment">
+                <p>b</p>
+                <div class="ui blue segment">
+                    <p>c</p>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="ui compact segment">
+            <p>this is a morbithis is a morbithis is a morbithis is a morbithis is a morbithis is a morbithis is a morbithis is a morbithis is a morbithis is a morbi</p>
+        </div>
+        <hr />
+        <div class="ui circular rotate reveal image">
+            <img src="http://www.semantic-ui-cn.com/images/demo/invention.jpg" alt="" class="visible content" />
+            <img src="http://www.semantic-ui-cn.com/images/demo/title.png" alt="" class="hidden content" />
+        </div>
+        <hr />
+        <div class="ui circular reveal">
+            <p class="visible content">aaa</p>
+            <p class="hidden content">bbb</p>
+        </div>
+        <hr />
+        <div class="ui segment">
+            <p></p>
+            <div class="ui active dimmer">
+                <div class="ui loader"></div>
+            </div>
+        </div>
+        <hr />
+        <div class="ui animated list">
+            <div class="ui circular item">
+                <img src="http://www.semantic-ui-cn.com/images/avatar/small/helen.jpg" class="" alt="" />
+            </div>
+        </div>
+        <hr />
+        <div class="ui divided list">
+            <div class="item">
+                <i class="map marker icon"></i>
+                <div class="content">
+                    <a href="" class="header">semantic ui</a>
+                    <div class="description">very good web design</div>
+                </div>
+            </div>
+            <div class="item">
+                <i class="map marker icon"></i>
+                    <span class="content">
+                        <a href="" class="header">bootstrap</a>
+                        <div class="description">good web design</div>
+                    </span>
+            </div>
+        </div>
+        <hr />
+        <div class="ui list">
+            <div class="item">
+                <div class="header">sz</div>
+                one beautiful city
+            </div>
+            <div class="item">
+                <div class="header">bj</div>
+                one buautiful city
+            </div>
+        </div>
+        <hr />
+        <div class="ui link list">
+            <div class="active item">index</div>
+            <a href="" class="item">about</a>
+            <a href="" class="item">about</a>
+            <a href="" class="item">about</a>
+        </div>
+        <hr />
+        <ol class="ui list">
+            <li>a</li>
+            <li>a</li>
+            <li>a</li>
+            <li>b
+                <ol>
+                    <li>c</li>
+                    <li>c</li>
+                    <li>c</li>
+                    <li>c</li>
+                </ol>
+            </li>
+        </ol>
+        <hr />
+        <div class="ui ordered list">
+            <a href="" class="item">a</a>
+            <a href="" class="item">a</a>
+            <div class="item">
+                <a href="">b</a>
+                <div class="list">
+                    <a href="" class="item">html</a>
+                    <a href="" class="item">javascript</a>
+                </div>
+            </div>
+            <a href="" class="item">a</a>
+        </div>
+        <hr />
+        <div class="ui bulleted list">
+            <a href="" class="item">a</a>
+            <a href="" class="item">a</a>
+            <div class="item">
+                <a href="">新朋友</a>
+                <div class="list">
+                    <a href="" class="item">b</a>
+                    <a href="" class="item disabled">b</a>
+                    <a href="" class="item">b</a>
+                    <a href="" class="item">b</a>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <ul class="ui list">
+            <li>a</li>
+            <li>a</li>
+            <li>a</li>
+            <li>a</li>
+        </ul>
+        <hr />
+        <div class="ui compact menu">
+            <a href="" class="item">
+                <i class="icon mail"></i> 消息
+                <span class="floating ui circular red label">10</span>
+            </a>
+            <a href="" class="item">
+                <i class="icon users"></i> 朋友
+                <span class="floating ui circular red label">99</span>
+            </a>
+        </div>
+        <hr />
+        <div class="ui black circular label">10</div>
+        <div class="ui red circular label">10</div>
+        <div class="ui blue circular label">10</div>
+        <div class="ui teal circular label">10</div>
+        <div class="ui green circular label">10</div>
+        <div class="ui purple circular label">10</div>
+        <div class="ui orange circular label">10</div>
+        <hr />
+        <div class="ui raised segment">
+            <a href="" class="ui ribbon label">dog</a>
+            <p>beautiful animal</p>
+            <a href="" class="ui teal ribbon label">cat</a>
+            <p>it's loney</p>
+            <a href="" class="ui red ribbon label">unknow</a>
+            <p>i'm afriad</p>
+        </div>
+        <hr />
+        <a href="" class="ui tag green label">
+            <i class="like icon"></i>
+        </a>
+        <hr />
+        <div class="yellow ui message">必须放在容器中</div>
+        <div class="ui left floated medium image">
+            <a href="" class="ui left red corner label">
+                <i class="like icon"></i>
+            </a>
+            <img src="http://www.semantic-ui-cn.com/images/demo/highres2.jpg" alt="" />
+        </div>
+        <div></div>
+        <hr />
+        <div class="ui fluid icon input">
+            <input type="text" />
+        </div>
+        <hr />
+        <div class="ui transparent input">
+            <input type="text" placeholder="search" />
+        </div>
+        <hr />
+        <ui class="ui right action input">
+            <input type="text" />
+            <div class="ui teal labeled icon button">
+                复制
+                <i class="search icon"></i>
+            </div>
+        </ui>
+        <hr />
+        <div class="ui left action input">
+            <div class="ui teal labeled icon button">
+                <i class="cart icon"></i>
+                结算
+            </div>
+            <input type="text" />
+        </div>
+        <hr />
+        <div class="ui action input">
+            <input type="text" />
+            <div class="ui button">search</div>
+        </div>
+        <hr />
+        <div class="ui right labeled left icon input">
+            <i class="tags icon"></i>
+            <input type="text" />
+            <div class="ui tag label">
+                <i class="tags icon"></i>
+            </div>
+        </div>
+        <hr />
+        <div class="ui labeled input">
+            <div class="ui label">
+                http://
+            </div>
+            <input type="text" />
+        </div>
+        <hr />
+        <div class="ui corner labeled input">
+            <input type="text" />
+            <div class="ui corner label">
+                <i class="tag icon"></i>
+            </div>
+        </div>
+        <hr />
+        <div class="ui left icon input">
+            <input type="text" />
+            <i class="user icon"></i>
+        </div>
+        <hr />
+        <div class="ui icon input">
+            <input type="text" placeholder="search" />
+            <i class="search icon"></i>
+        </div>
+        <hr />
+        <div class="ui input error">
+            <input type="text" placeholder="error" />
+        </div>
+        <hr />
+        <div class="ui left icon input loading">
+            <input type="text" placeholder="search" />
+            <i class="search icon"></i>
+        </div>
+        <div class="ui right icon input loading">
+            <input type="text" placeholder="search" />
+            <i class="search icon"></i>
+        </div>
+        <hr />
+        <div class="ui input focus">
+            <input type="text" placeholder="search" />
+        </div>
+        <hr />
+        <div class="ui input">
+            <input type="text" placeholder="search" />
+        </div>
+        <hr />
+        <div class="ui basic buttons">
+            <ui class="ui button">1</ui>
+            <ui class="ui button">2</ui>
+            <ui class="ui button">3</ui>
+        </div>
+        <hr />
+        <div class="ui vertical buttons">
+            <div class="ui button">a</div>
+            <div class="ui button">b</div>
+            <div class="ui button">c</div>
+        </div>
+        <hr />
+        <div class="ui left attached button">left</div>
+        aaa
+        <div class="right attached ui button">right</div>
+        <hr />
+        <div class="ui top attached button">顶部</div>
+        <div class="ui attached segment">aaa</div>
+        <div class="ui top attached button">底部</div>
+        <hr />
+        <div class="circular ui icon button">
+            <i class="icon settings"></i>
+        </div>
+        <hr />
+        <div class="fluid ui button">适应</div>
+        <hr />
+        <div class="ui toggle button">投票</div>
+        <hr />
+        <div class="mini ui black button">btn</div>
+        <div class="tiny ui yellow button">btn</div>
+        <div class="small ui green button">btn</div>
+        <div class="medium ui blue button">btn</div>
+        <div class="ui orange button">nal</div>
+        <div class="large ui purple button">btn</div>
+        <div class="big ui red button">btn</div>
+        <div class="huge ui pink button">btn</div>
+        <div class="massive ui teal button">btn</div>
+        <hr />
+        <div class="ui youtube button">
+            <i class="weibo icon"></i>
+            weibo
+        </div>
+        <hr />
+        <div class="ui loading button">加载中</div>
+        <hr />
+        <div class="ui disabled button">
+            <i class="user icon"></i>
+            已关注
+        </div>
+        <hr />
+        <div class="ui active button">
+            <i class="user icon"></i>
+            关注
+        </div>
+        <hr />
+        <div class="ui buttons">
+            <div class="ui button">取消</div>
+            <div class="or" data-text='或'></div>
+            <ui class="ui positive button">保存</ui>
+        </div>
+        <hr />
+        <div class="ui icon buttons">
+            <div class="ui button">
+                <i class="align left icon"></i>
+            </div>
+            <div class="ui button">
+                <i class="align left icon"></i>
+            </div>
+        </div>
+        <hr />
+        <div class="ui buttons">
+            <div class="ui button">one</div>
+            <div class="ui button">two</div>
+            <div class="ui button">three</div>
+        </div>
+        <hr />
+        <div class="ui inverted se gment">
+            <div class="ui inverted black button">black</div>
+            <div class="ui inverted yellow button">yellow</div>
+        </div>
+        <hr />
+        <div class="ui black basic button">黑色</div>
+        <div class="ui yellow basic button">黄色</div>
+        <hr />
+        <div class="ui basic button">
+            <i class="icon user"></i>
+            添加朋友
+        </div>
+        <hr />
+        <div class="ui labeled icon button">
+            <i class="pause icon"></i>
+            暂停
+        </div>
+        <hr />
+        <div class="ui icon button">
+            <i class="cloud icon"></i>
+        </div>
+        <hr />
+        <div class="ui animated button">
+            <div class="visible content">下一步</div>
+            <div class="hidden content">
+                <i class="right arrow icon"></i>
+            </div>
+        </div>
+        <hr />
+        <div class="ui primary button">primary</div>
+        <div class="ui button">btn</div>
+        <div class="ui secondary button">btn</div>
+        <hr />
+        <button class="ui button">btn</button>
+        <hr />
+        <div class="ui button">按钮</div>
+        <hr />
+        <h3 class="ui header">界面绝对大小</h3>
+        <div class="ui button">按钮</div>
+        <div class="ui input">
+            <input type="text" placeholder="something in here" />
+        </div>
+        <hr />
+        <div class="ui header">定义边框样式</div>
+        <div class="ui segment">分段</div>
+        <div class="ui button">按钮</div>
+        <div class="ui menu">
+            <div class="item">一</div>
+            <div class="item">二</div>
+            <div class="item">三</div>
+        </div>
+        <table class="ui definition table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>标题一</th>
+                    <th>标题二</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>定义</td>
+                    <td>1A</td>
+                    <td>2A</td>
+                </tr>
+                <tr>
+                    <td>定义</td>
+                    <td>1B</td>
+                    <td>2B</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <div class="ui four column stackable padded grid">
+            <div class="blue column"></div>
+            <div class="green column"></div>
+            <div class="orange column"></div>
+            <div class="pink column"></div>
+            <div class="purple column"></div>
+            <div class="red column"></div>
+            <div class="teal column"></div>
+            <div class="yellow column"></div>
+        </div>
+        <hr />
+        <a href="###" class="ui primary button">主色</a>
+        <a href="###" class="ui secondary button">辅色</a>
+        <hr />
+        <div class="ui very relaxed items">
+            <div class="item">
+                <div class="image">
+                    <img src="http://www.semantic-ui-cn.com/images/wireframe/image.png" alt="" />
+                </div>
+                <div class="content">
+                    <a href="" class="ui header">超链接标题</a>
+                    <div class="description">
+                        <p>从明天起，做一个幸福的人。喂马、劈柴，周游世界。从明天起，关心粮食和蔬菜。我有一所房子，面朝大海，春暖花开。从明天起，和每一个亲人通信。告诉他们我的幸福。那<a href="#link">幸福</a> 的闪电告诉我的。我将告诉每一个人，给每一条河每一座山取一个温暖的名字。陌生人，我也为你祝福。愿你有一个灿烂的前程。愿你有情人终成眷属。愿你在尘世获得幸福。我只愿面朝大海，春暖花开。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="ui card">
+            <a href="###" class="image">
+                <img src="http://www.semantic-ui-cn.com/images/avatar/large/steve.jpg" alt="" />
+            </a>
+            <div class="content">
+                <a href="###" class="header">Quinn</a>
+                <div class="meta">
+                    <a href="" class="time">或者就是为了改变世界</a>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <p>从明天起。。。<a href="###">海子</a></p>
+        <div class="ui list">
+            <a href="###" class="item">超链接</a>
+            <a href="###" class="item">超链接</a>
+            <a href="###" class="item">超链接</a>
+            <a href="###" class="item">超链接</a>
+        </div>
+        <hr />
+        <p>从明天起，做一个幸福的人。喂马、劈柴，周游世界。从明天起，关心粮食和蔬菜。我有一所房子，面朝大海，春暖花开。从明天起，和每一个亲人通信。告诉他们我的幸福。那幸福的闪电告诉我的。我将告诉每一个人，给每一条河每一座山取一个温暖的名字。陌生人，我也为你祝福。愿你有一个灿烂的前程。愿你有情人终成眷属。愿你在尘世获得幸福。我只愿面朝大海，春暖花开。</p>
+        <p>从明天起，做一个幸福的人。喂马、劈柴，周游世界。从明天起，关心粮食和蔬菜。我有一所房子，面朝大海，春暖花开。从明天起，和每一个亲人通信。告诉他们我的幸福。那幸福的闪电告诉我的。我将告诉每一个人，给每一条河每一座山取一个温暖的名字。陌生人，我也为你祝福。愿你有一个灿烂的前程。愿你有情人终成眷属。愿你在尘世获得幸福。我只愿面朝大海，春暖花开。</p>
+        <hr />
+        <a href="###" target="_blank">1. <i class="world icon"></i>要做到<sup>心</sup><sub>中</sub><mark>有</mark><small>数</small></a>
+        <hr />
+        <kbd>console.log('aaa');</kbd>
+        <hr />
+        <fieldset>
+            <legend>legend</legend>
+        </fieldset>
+        <hr />
+        <h1>一级标题</h1>
+        <h2>二级标题</h2>
+        <h3>三级标题</h3>
+        <h4>四级标题</h4>
+        <h5>五级标题</h5>
+        <hr />
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="semantic.js"></script>
+    </body>
+</html>
