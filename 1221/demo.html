@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <div id="box" ng-app='myApp' ng-controller="myCtrl">
+        <h4 ng-bind="sayHello()"></h4>
+        <input type="text" ng-model="msg[0].age" />
+        <ul>
+            <li ng-repeat="x in msg" ng-bind="x.name+'的年龄是'+x.age"></li>
+        </ul>
+    </div>
+    </body>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/myCtrl.js"></script>
+    <script type="text/javascript">
+    </script>
+</html>
