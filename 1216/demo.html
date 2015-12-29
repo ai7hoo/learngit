@@ -9,23 +9,21 @@
                 padding: 2em;
             }
         </style>
-        <script type="text/javascript">
-            window.onload = function(){
-                $(".ui.checkbox").checkbox();
-                $(".dropdown").dropdown();
-                $(".message .close").on('click',function(){
-                    $(this).closest('.message').fadeOut();
-                });
-                $('.accordion').accordion();
-                $("#add").on('click',function(){
-                    $("#testdimmer").dimmer('show');
-                });
-                $('.menu .item').tab();
-            }
-        </script>
     </head>
     <body>
         <hr />
+		<div class="field example">
+
+<form class="ui form segment" id="myForm">
+  <div class="field">
+    <label>Name</label>
+    <input type="text" name="SERVER_REQUIRED_NAME" data-validate="name">
+  </div>
+  <div class="ui blue submit button">Submit</div>
+</form>
+
+</div>
+		<hr />
         <table class="ui celled striped table">
             <tbody>
                 <tr>
@@ -872,7 +870,12 @@
         <h4>四级标题</h4>
         <h5>五级标题</h5>
         <hr />
-        <script type="text/javascript" src="jquery.js"></script>
-        <script type="text/javascript" src="semantic.js"></script>
+        <script type="text/javascript" src="sea.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+		<script>
+			seajs.use(['main'],function(main){
+				main();
+			});
+		</script>
     </body>
 </html>

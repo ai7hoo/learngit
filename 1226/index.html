@@ -1,0 +1,22 @@
+<script src="//cdn.bootcss.com/socket.io/1.3.7/socket.io.js"></script>
+<script>
+var socket = io.connect('http://localhost:1377');
+function tijiao(){
+	var name = document.getElementById("nm").value;
+	var message = document.getElementById("msg").value;
+	var id = (new Date()).getTime();
+	
+	socket.on('news', function (data){
+		alert('a');
+		console.log(data);
+	});
+	
+	socket.emit('anotherNews',{ name: name,message:message,id:id });
+}
+</script>
+
+<body>
+<input id="nm" type='text' placeholder="名字" />
+<input id="msg" type='text' placeholder="消息" />
+<button onclick="tijiao();">tijiao</button>
+</body>
