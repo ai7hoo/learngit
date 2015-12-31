@@ -42,15 +42,17 @@
     <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.5.8/js/sm.min.js' charset='utf-8'></script>
     <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.5.8/js/sm-extend.min.js' charset='utf-8'></script>
     <script type="text/javascript">
-      $.init();
-// 添加'refresh'监听器
-$(document).on('refresh', '.pull-to-refresh-content',function(e) {
-    // 模拟2s的加载过程
-    alert('a');
-    // 加载完毕需要重置
-    $.pullToRefreshDone('.pull-to-refresh-content');
-});
-$("#consoleLog").text(JSON.stringify($.device));
+		$.init();
+		// 添加'refresh'监听器
+		$(document).on('refresh', '.pull-to-refresh-content',function(e) {
+			// 模拟2s的加载过程
+			alert('a');
+			// 加载完毕需要重置
+			$.pullToRefreshDone('.pull-to-refresh-content');
+		});
+		$("#consoleLog").text(JSON.stringify($.device));
+		
+
     </script>
   </body>
 </html>
