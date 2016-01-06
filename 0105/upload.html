@@ -1,0 +1,62 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>AJAX File Upload - Advanced Demo</title>
+</head>
+<body>
+	<input type="file" name="file" id="demo1" accept="image/png,image/jpeg,image/gif" capture="camera" />
+	<hr />
+	<div id="box"></div>
+	<hr />
+	<script type="text/javascript" src="http://cdn.bootcss.com/zepto/1.1.6/zepto.js"></script>
+	<script type="text/javascript" src="jquery.ajaxfileupload.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			var interval;
+			function applyAjaxFileUpload(element) {
+				$(element).AjaxFileUpload({
+					action: "AjaxFileUpload/demos/upload.php",
+					onChange: function(filename) {
+						var $span = $("<span />").attr("class", $(this).attr("id")).text("Uploading").insertAfter($(this));
+						//$(this).remove();
+						interval = window.setInterval(function() {
+							var text = $span.text();
+							if (text.length < 13) {
+								$span.text(text + ".");
+							} else {
+								$span.text("Uploading");
+							}
+						}, 200);
+					},
+					onSubmit: function(filename) {
+						return true;
+					},
+					onComplete: function(filename, response) {
+						window.clearInterval(interval);
+						var $span = $("span." + $(this).attr("id")).text(filename + " "),
+							$fileInput = $("<input />").attr({
+									type: "file",
+									name: $(this).attr("name"),
+									id: $(this).attr("id")
+								});
+						$("#box").append( $span );
+						if (typeof(response.error) === "string") {
+							$span.replaceWith($fileInput);
+							applyAjaxFileUpload($fileInput);
+							alert(response.error);
+							return;
+						}
+						$("<a />").attr("href", "#").text("X").bind("click", function(e) {
+								applyAjaxFileUpload($fileInput);
+							}).appendTo($span);
+					}
+				});
+			}
+			applyAjaxFileUpload("#demo1");
+		});
+
+	</script>
+</body>
+</html>
