@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      .v-link-active {color: red;}
+      v-cloak {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h2>test</h2>
+      <p>
+        <a v-link="{ path:'/foo' }">foo</a>
+        <a v-link="{ path:'/bar' }">bar</a>
+      </p>
+      <router-view></router-view>
+    </div>
+    <div id="box">
+      <h2>test</h2>
+      <p>
+        <a v-link="{ path:'/a' }">a</a>
+        <a v-link="{ path:'/b' }">b</a>
+      </p>
+      <router-view></router-view>
+    </div>
+    <script src="http://cdn.bootcss.com/vue/1.0.13/vue.min.js"></script>
+    <script src="http://cdn.bootcss.com/vue-router/0.7.7/vue-router.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>

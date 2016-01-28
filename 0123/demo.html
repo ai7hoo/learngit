@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form id="demoForm">
+        <fieldset>
+            <legend>登陆表单</legend>
+            用户名：<input type="text" name="username">
+            <input type="submit" value="登录"/>
+        </fieldset>
+    </form>
+    <script src="jquery-1.10.0.js"></script>
+    <script src="http://cdn.bootcss.com/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+    <script>
+        var validator1;
+        $(function(){
+            validator1 = $("#demoForm").validate({
+                debug:true,
+                rules:{
+                    'username':{
+                        required:true,
+                        minlength:6,
+                        maxlength:8
+                    }
+                },
+                messages:{
+                    'username':{
+                        required:'请输入用户名',
+                        minlength:'用户名长度不能小于6',
+                        maxlnegth:'用户名不能大于18'
+                    }
+                },
+                highlight:function(element, errorClass, validClass){
+                    $(element).addClass(errorClass).removeClass(validClass);
+                    $(element).fadeOut().fadeIn();
+                },
+                unhighlight:function(element, errorClass, validClass){
+                    $(element).removeClass(errorClass).addClass(validClass);
+                },
+                submitHandler:function(form){
+                    console.log($(form).serialize())
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <script src="http://cdn.bootcss.com/vue/1.0.13/vue.min.js"></script>
+    <script>
+        window.onload = function(){
+            var myComponent = Vue.extend({
+                template:'<p v-text="msg"></p>',
+                props:['msg']
+            });
+            
+            Vue.component('my-component',myComponent);
+            
+            new Vue({
+                el:"#app"
+            });
+        };
+        function copyUrl2(){
+            var Url2=document.getElementById("biao1");
+            Url2.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            alert("已复制好，可贴粘。");
+        }
+    </script>
+</head>
+<body>
+    <div id="app">
+        <my-component msg="hello vue.js"></my-component>
+    </div>
+    <textarea id="biao1">用户定义的代码区域</textarea>
+    <input type="button" onClick="copyUrl2()" value="点击复制代码" />
+</body>
+</html>

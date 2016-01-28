@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="app">
+      <my-component></my-component>
+    </div>
+    <ul id="box">
+      <compon v-for="item in userList" v-text="item.name+' is '+item.age+' old.'"></compon>
+    </ul>
+    <div id="vm">
+      <vm-component v-for="item in arr" v-text="item.name"></vm-component>
+    </div>
+    <script src="http://cdn.bootcss.com/vue/1.0.14/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

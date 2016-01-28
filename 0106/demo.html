@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+  <div id="box">
+    <input type="text" v-model="parentMsg" />
+    <br />
+    <child :my-message="parentMsg"></child>
+  </div>
+
+  <script src="//cdn.bootcss.com/vue/1.0.13/vue.js"></script>
+  <script type="text/javascript">
+    window.onload = function(){
+
+      Vue.component('child',{
+        props:['myMessage'],
+        template:'<div>{{ myMessage }}</div>'
+      });
+
+      new Vue({
+        el:"#box",
+        data:{
+          parentMsg:'aaa'
+        }
+      });
+
+    };
+  </script>
+  </body>
+</html>
