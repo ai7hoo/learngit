@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="example">原始数据</div>
+    <script type="text/javascript" src="sea.js"></script>
+    <script type="text/javascript">
+      seajs.use(['init'],function(init){
+        init(function($){
+          $('#example').text('B612');
+        });
+      });
+    </script>
+  </body>
+</html>

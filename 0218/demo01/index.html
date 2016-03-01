@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="box"></div>
+    <script type="text/babel">
+      var titles = [
+        <h2>t1</h2>,
+        <h3>t2</h3>,
+        <h4>t3</h4>
+      ];
+      ReactDOM.render(
+        <div>{titles}</div>,
+        document.getElementById('box')
+      );
+    </script>
+  </body>
+</html>
