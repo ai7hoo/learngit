@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .v-link-active-exact {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model='username' placeholder="name">
+        <input type="text" v-model='userpassword' placeholder="password">
+        <input type="text" v-model='usersex' placeholder="sex">
+        <my-compontent msg='hello' :username='username' :userpassword='userpassword' :usersex='usersex'></my-compontent>
+    </div>
+    <div id="example">
+        <input type="text" v-model="myPassword">
+        <custom-component my-name="ai7hoo" :my-password="myPassword" my-age="25"></custom-component>
+    </div>
+    <script src="node_modules/vue/dist/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/0.7.10/vue-router.min.js"></script>
+    <script>
+        var MyComponent = Vue.extend({
+            props:['msg','username','userpassword','usersex'],
+            template:'<span>{{msg}}</span><span>{{username}}</span><span>{{userpassword}}</span><span>{{usersex}}</span>'
+        });
+        Vue.component('my-compontent',MyComponent);
+        new Vue({
+            el:'#app'
+        });
+        
+        var CustomComponent = Vue.extend({
+            props:['myName','myPassword','myAge'],
+            template:'<span>{{myName}}-{{myPassword}}-{{myAge}}</span>'
+        });
+        Vue.component('custom-component',CustomComponent);
+        new Vue({
+            el:"#example",
+            methods:{
+                dilogNum:function(){
+                    alert(1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

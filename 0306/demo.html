@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+    <script src="node_modules/vue/dist/vue.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/0.7.10/vue-router.min.js"></script>
+    <script type="text/javascript">
+      window.onload = function(){
+        
+        var AppNav = Vue.extend({
+            template:'<div>this is nav.</div>'
+        });
+
+        var App = Vue.extend({
+            template:'<app-nav></app-nav><app-view></app-view>',
+            components:{
+                'app-nav':AppNav,
+                'app-view':{
+                    template:'<app-sidebar></app-sidebar><app-content></app-content>',
+                    components:{
+                        'app-sidebar':{
+                            template:'<div>this is sidebar.</div>'
+                        },
+                        'app-content':{
+                            template:'<div>this is content.</div>'
+                        }
+                    }
+                }
+            }
+        });
+        new App({
+            el:'#app'
+        });
+        var router = VueRouter();
+        router.map({
+            '/appnav':{
+                component:AppNav
+            }
+        });
+        router.start();
+      };
+    </script>
+  </head>
+  <body>
+    <div id="app" v-cloak>0</div>
+  </body>
+</html>

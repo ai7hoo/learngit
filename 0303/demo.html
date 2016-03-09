@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link href="http://cdn.bootcss.com/tooltipster/3.3.0/css/tooltipster.css" rel="stylesheet">
+        <link href="http://cdn.bootcss.com/tooltipster/3.3.0/css/themes/tooltipster-light.css" rel="stylesheet">
+    </head>
+    <body>
+      <div id="example">
+        <img src="my-image.png" class="tooltip" title="请输入店铺地址" />
+        <input type="text" class="tooltip" title="请输入你的商品链接地址。" />
+      </div>
+      <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
+      <script src="http://cdn.bootcss.com/tooltipster/3.3.0/js/jquery.tooltipster.js"></script>
+      <script type="text/javascript">
+        $(function(){
+          $('.tooltip').tooltipster({
+            theme: 'tooltipster-light'
+          });
+        });
+      </script>
+    </body>
+</html>

@@ -10,7 +10,7 @@ require.config({
     'zepto':'http://g.alicdn.com/sj/lib/zepto/zepto',
     'sm':'http://g.alicdn.com/msui/sm/0.6.2/js/sm',
     'sm-extend':'http://g.alicdn.com/msui/sm/0.6.2/js/sm-extend',
-    'Vue':'vue/dist/vue.min',
+    'Vue':'vue/dist/vue.min'
   },
   shim:{
     'sm':{

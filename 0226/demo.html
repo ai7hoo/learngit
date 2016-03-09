@@ -18,10 +18,7 @@
         <!-- 你的html代码 -->
         <div class="page">
             <header class="bar bar-nav">
-                <a class="button button-link button-nav pull-left" href="#">
-                    <span class="icon icon-left"></span>
-                    返回
-                </a>
+                <a class="icon icon-me pull-left open-panel"></a>
                 <h1 class="title">我的生活</h1>
             </header>
             <nav class="bar bar-tab">
@@ -45,15 +42,29 @@
             <div class="content">
               <!-- 这里是页面内容区 s -->
 
-              <div class="content-block">
-                <div id="example">
-                  <my-component></my-component>
+                <div class="content-block">
+                    <div id="example">
+                        <my-component></my-component>
+                    </div>
                 </div>
-              </div>
+                <div class="content-padded">
+                    <a href="/">open new router page</a>
+                </div>
               <!-- 这里是页面内容区 e -->
             </div>
         </div>
     </div>
+
+    <div class="panel-overlay"></div>
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block">
+            <p>这是一个侧栏</p>
+            <p></p>
+            <!-- Click on link with "close-panel" class will close panel -->
+            <p><a href="#" class="close-panel">关闭</a></p>
+        </div>
+    </div>
+
     <script src="bower_components/requirejs/require.js" data-main="scripts/main"></script>
   </body>
 </html>

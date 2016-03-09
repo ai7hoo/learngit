@@ -35,5 +35,30 @@ requirejs(['jquery','bootstrap','Vue'],function($,bootstrap,Vue){
     }
     console.log(tArr);
     address.addList=tArr;
-  })
+  });
+
+  $("#box").on('click',function(event){
+    // 接管接口
+    $.oldGetJSON = $.getJSON;
+
+    $.getJSON = function(url,callback){
+      console.log( 'url: %s', url );
+      callback({
+        status:'ok',
+        data:{
+          id:1445,
+          nickname:'quinn'
+        }
+      });
+    }
+    // 接管接口
+
+    $.getJSON('http://localhost/test.php',function(res){
+      if(res.status == 'ok'){
+        alert(res.data.nickname);
+      }
+    });
+
+    $.getJSON = $.oldGetJSON; // 恢复接口
+  });
 });
