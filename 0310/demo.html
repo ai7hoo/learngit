@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+          [v-cloak] {display: none;}
+        </style>
+    </head>
+    <body>
+      <div class="container">
+        <br />
+        <textarea class="form-control" name="testbox" id="testbox" cols="100" rows="10">张小明，15912345678，江苏省 无锡市 滨湖区 河埒街道 河埒新村万达广场，214000</textarea>
+        <br />
+        <button class="btn btn-primary" id="tijiao">检测</button>
+        <br />
+        <br />
+        <div id="example" class="" v-cloak>
+          <ul class="list-group" v-if="addList.length>0">
+            <li class="list-group-item" v-for="item in addList">
+              <div class="row">
+                <div class="col-xs-2">
+                  <input type="text" class="form-control" v-model="item.split('，')[0]" />
+                </div>
+                <div class="col-xs-2">
+                  <input type="text" class="form-control" v-model="item.split('，')[1]" />
+                </div>
+                <div class="col-xs-5">
+                  <input type="text" class="form-control" v-model="item.split('，')[2]" />
+                </div>
+                <div class="col-xs-2">
+                  <input type="text" class="form-control" v-model="item.split('，')[3]" />
+                </div>
+                <div class="col-xs-1">
+                  <button class="btn btn-primary">提交</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <script type="text/javascript" src="bower_components/requirejs/require.js" data-main="js/main.js"></script>
+    </body>
+</html>

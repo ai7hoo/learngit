@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        [v-cloak]{display: none}
+    </style>
+</head>
+<body>
+    <div id="example" v-cloak>
+        <input type="text" v-model="userName">
+        <my-component :user-name="userName.split('').reverse().join('')| uppercase" v-on:click="alertNum(userName)"></my-component>
+    </div>
+    <hr>
+    <div id="box">
+        <parent-node></parent-node>
+    </div>
+    <script src="node_modules/requirejs/require.js" data-main="main.js"></script>
+    <script>
+        require.config({
+            paths:{
+                'jquery':'node_modules/jquery/dist/jquery',
+                'vue':'node_modules/vue/dist/vue.min'
+            }
+        });
+    </script>
+</body>
+</html>
