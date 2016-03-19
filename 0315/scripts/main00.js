@@ -9,7 +9,7 @@ requirejs(['vue','vue-router'],function(Vue,VueRouter){
   var Foo = Vue.extend({
     template:
     '<div>'+
-    '头头'+
+    '<p>头头</p>'+
     '<router-view></router-view>'+
     '</div>'
   });
