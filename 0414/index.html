@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="HelloAngular">
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <style>
+    [ng-cloak] {display:none;}
+  </style>
 </head>
 <body>
-
+<div ng-controller="HelloAngular">
+  <p ng-cloak>{{greeting.text}}, Angular</p>
+  <hello></hello>
+</div>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="HelloAngular_Module.js"></script>
 </body>
 </html>
