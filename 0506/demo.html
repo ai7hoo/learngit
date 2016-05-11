@@ -7,81 +7,23 @@
         [v-cloak]{
             display: none;
         }
-        .text-red {
-            color: red;
-        }
     </style>
 </head>
 <body>
-    <div id="app" v-cloak>
-        <ul>
-            <li v-for="item in scores">{{item.count}}</li>
-        </ul>
-        <hr/>
-        <template v-if="isVip">0</template>
-        <template v-else>1</template>
-        <hr/>
-        <span>{{fullName}}</span>
-        <hr/>
-        <span>{{firstName}}</span>
-        <hr/>
-        <span>{{lastName}}</span>
-        <hr/>
-        <div>
-            <a v-on:click="openLink">bt</a>
-            <a @click="openLink">bt</a>
-            <a v-bind:href="href">bt</a>
-            <a :href="href">bt</a>
-        </div>
-        <hr/>
-        <div v-if="isVip">is vip</div>
-        <hr/>
-        <span id="a-{{id}}" :class="{ 'text-red':isVip }">{{lover.split('').reverse().join('')}}</span>
-        <hr/>
-        project:{{test | capitalize}}
+    <div id="example" v-cloak>
+        <my-component></my-component>
     </div>
     <script src="vue.js"></script>
     <script>
-        var vm = new Vue({
-            el:"#app",
-            data:{
-                scores:[{
-                    id:1,
-                    count:32
-                },{
-                    id:5,
-                    count:63
-                }],
-                id:25,
-                test:"ai7hoo",
-                isVip:true,
-                lover:'gxj',
-                href:'http://www.bt.com',
-                firstName:'ren',
-                lastName:'qun'
-            },
-            computed:{
-                fullName:{
-                    get:function(){
-                        return this.firstName+' '+this.lastName;
-                    },
-                    set:function(newValue){
-                        var names = newValue.split(' ');
-                        this.firstName = names[0];
-                        this.lastName = names[names.length - 1];
-                    }
-                }
-            },
-            methods:{
-                openLink:function(){
-                    this.test = 'renqun'
-                }
-            }
+        var MyComponent = Vue.extend({
+            template:'<div>A custom component!</div>'
         });
-        setTimeout(function(){
-            vm.test = 'quinn';
-            vm.fullName = 'join green';
-        },3000);
+
+        Vue.component('my-component',MyComponent);
+
+        new Vue({
+            el:"#example"
+        });
     </script>
 </body>
 </html>

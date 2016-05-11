@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <!-- 子组件 -->
+    <template id="child-tpl">
+        <h2>{{tit}}</h2>
+        <h4>{{userAge}}</h4>
+        <ul>
+            <li v-for="item in items" @click="dosomething($index)">{{item.desc}}--{{item.time}}</li>
+        </ul>
+    </template>
+    <!-- 父组件 -->
+    <div id="app">
+        <input type="text" v-model="title">
+        <my-component :tit="title" :items="newslist" :user-age="age" ></my-component>
+    </div>
+    <script>
+        Vue.component('my-component',{
+            template:'#child-tpl',
+            props:['tit','items','userAge'],
+            methods:{
+                dosomething:function(ind){
+                    alert(ind);
+                }
+            }
+        });
+
+        var Parent = new Vue({
+            el:"#app",
+            data:{
+                title:'默认标题',
+                age:23,
+                newslist:[{
+                    desc:'新闻描述简介1',
+                    time:'2016-05-11 11:13:24'
+                },{
+                    desc:'新闻描述简介2',
+                    time:'2016-05-11 11:13:45'
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

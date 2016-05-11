@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <!-- 子组件 -->
+    <template id="child-tpl">
+        <h1>{{message}}</h1>
+        <p>
+            <ul>
+                <li v-for="item in users">{{item.uname}}-{{item.age}}</li>
+            </ul>
+        </p>
+    </template>
+
+    <!-- 父组件 -->
+    <div id="events-example">
+        <input type="text" v-model="msg">
+        <child v-bind:message="msg" v-bind:users="userlist"></child>
+    </div>
+
+    <script>
+        Vue.component('child',{
+            template:'#child-tpl',
+            props:['message','users']
+        });
+
+        var Parent = new Vue({
+            el:"#events-example",
+            data: {
+                msg:'world',
+                userlist:[{
+                    uname:'xx',
+                    age:24
+                },{
+                    uname:'rr',
+                    age:32
+                },{
+                    uname:'aa',
+                    age:18
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
