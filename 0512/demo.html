@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 子组件 -->
+    <template id="tpl">
+        <h1>{{title | capitalize}}</h1>
+        <ul>
+            <li v-for="item in items" track-by="$index">{{item}}</li>
+        </ul>
+    </template>
+    <!-- 父组件 -->
+    <div id="app">
+        <input type="text" v-model="tit">
+        <my-components :title="tit" :items="littit"></my-components>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        Vue.component("my-components",{
+            template:'#tpl',
+            props:['title','items','littit']
+        });
+        var App = new Vue({
+            el:"#app",
+            data:{
+                tit:'text',
+                userlist:[{
+                    uname:'quinn',
+                    age:26
+                },{
+                    uname:'ai7hoo',
+                    age:20
+                },{
+                    uname:'renqun',
+                    age:32
+                }]
+            },
+            computed:{
+                littit:function(){
+                    return this.tit.split('').join('');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

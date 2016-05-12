@@ -1,1 +1,3 @@
-document.write('It Works.');
+require("./style.css");
+require("./vue.js");
+require("./content.js");
